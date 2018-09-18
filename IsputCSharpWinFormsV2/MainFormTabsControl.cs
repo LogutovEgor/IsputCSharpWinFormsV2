@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace IsputCSharpWinFormsV2
 {
-    public enum TabName { FileTab, MainTab }
+    public enum TabName { FileTab, MainTab, InsertTab }
     public partial class MainForm
     {
         private ToolStrip activeToolStrip;
@@ -39,6 +39,10 @@ namespace IsputCSharpWinFormsV2
                 case TabName.MainTab:
                     activeTabButton = MainTabButton;
                     activeToolStrip = ToolStripMain;
+                    break;
+                case TabName.InsertTab:
+                    activeTabButton = InsertTabButton;
+                    activeToolStrip = ToolStripInsert;
                     break;
             }
             activeTabButton.BackColor = Color.FromArgb(241, 241, 241);

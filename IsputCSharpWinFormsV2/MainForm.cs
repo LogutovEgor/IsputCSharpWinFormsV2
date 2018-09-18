@@ -25,6 +25,9 @@ namespace IsputCSharpWinFormsV2
             this.FormBorderStyle = FormBorderStyle.None;
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.ResizeRedraw, true);
+
+            LeftMenuAndInfPanel.Visible = true;
+            MainWorkSpacePanel.Visible = false;
         }
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -105,18 +108,34 @@ namespace IsputCSharpWinFormsV2
                 case "MainTabButton":
                     SetTab(TabName.MainTab);
                     break;
+                case "InsertTabButton":
+                    SetTab(TabName.InsertTab);
+                    break;
             }
         }
 
         private void SwitchMainPanel()
         {
             MainWorkSpacePanel.Visible = !MainWorkSpacePanel.Visible;
-            //InfAndFileMenuPanel.Visible = !InfAndFileMenuPanel.Visible;
+            LeftMenuAndInfPanel.Visible = !LeftMenuAndInfPanel.Visible;
         }
         private void ButtonBack_Click(object sender, EventArgs e)
         {
             SwitchMainPanel();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            RadioButton button = new RadioButton();
+            button.Location = this.Location;
+            button.Left = 100;
+            button.Visible = true;
+
+            button.BackColor = Color.Red;
+            button.Width = 40;
+            button.Height = 40;
+            this.LeftMenuAndInfPanel.Controls.Add(button);
+        }
     }
 }
