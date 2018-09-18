@@ -50,7 +50,6 @@
             this.SaveFileButton = new System.Windows.Forms.Button();
             this.OpenFileButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.MainWorkSpacePanel.SuspendLayout();
             this.TabsLayoutPanel.SuspendLayout();
             this.Header.SuspendLayout();
@@ -260,7 +259,6 @@
             // LeftMenuAndInfPanel
             // 
             this.LeftMenuAndInfPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.LeftMenuAndInfPanel.Controls.Add(this.button1);
             this.LeftMenuAndInfPanel.Controls.Add(this.LeftMenuPanel);
             this.LeftMenuAndInfPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LeftMenuAndInfPanel.Location = new System.Drawing.Point(0, 32);
@@ -386,16 +384,6 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.ButtonBack_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(427, 144);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,7 +435,6 @@
         private System.Windows.Forms.Button OpenFileButton;
         private System.Windows.Forms.Button SaveFileAsButton;
         private System.Windows.Forms.Button SaveFileButton;
-        private System.Windows.Forms.Button button1;
     }
 }
 

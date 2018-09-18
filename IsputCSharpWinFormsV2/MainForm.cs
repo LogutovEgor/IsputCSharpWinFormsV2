@@ -124,18 +124,5 @@ namespace IsputCSharpWinFormsV2
             SwitchMainPanel();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            RadioButton button = new RadioButton();
-            button.Location = this.Location;
-            button.Left = 100;
-            button.Visible = true;
-
-            button.BackColor = Color.Red;
-            button.Width = 40;
-            button.Height = 40;
-            this.LeftMenuAndInfPanel.Controls.Add(button);
-        }
     }
 }
