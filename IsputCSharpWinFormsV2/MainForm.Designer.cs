@@ -52,7 +52,6 @@
             this.SaveFileButton = new System.Windows.Forms.Button();
             this.OpenFileButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.MainWorkSpacePanel.SuspendLayout();
             this.TabsLayoutPanel.SuspendLayout();
             this.Header.SuspendLayout();
@@ -267,7 +266,6 @@
             // LeftMenuAndInfPanel
             // 
             this.LeftMenuAndInfPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.LeftMenuAndInfPanel.Controls.Add(this.button1);
             this.LeftMenuAndInfPanel.Controls.Add(this.label1);
             this.LeftMenuAndInfPanel.Controls.Add(this.dateTimePicker1);
             this.LeftMenuAndInfPanel.Controls.Add(this.LeftMenuPanel);
@@ -416,15 +414,6 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.ButtonBack_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(412, 263);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -481,7 +470,6 @@
 
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
     }
 }
 
