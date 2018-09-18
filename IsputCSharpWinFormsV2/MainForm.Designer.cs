@@ -43,6 +43,7 @@
             this.BottomPanel = new System.Windows.Forms.Panel();
             this.ResizePictureBox = new System.Windows.Forms.PictureBox();
             this.LeftMenuAndInfPanel = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.LeftMenuPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.SaveFileAsButton = new System.Windows.Forms.Button();
@@ -50,7 +51,7 @@
             this.SaveFileButton = new System.Windows.Forms.Button();
             this.OpenFileButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.MainWorkSpacePanel.SuspendLayout();
             this.TabsLayoutPanel.SuspendLayout();
             this.Header.SuspendLayout();
@@ -262,13 +263,22 @@
             // LeftMenuAndInfPanel
             // 
             this.LeftMenuAndInfPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.LeftMenuAndInfPanel.Controls.Add(this.checkBox1);
+            this.LeftMenuAndInfPanel.Controls.Add(this.label1);
+            this.LeftMenuAndInfPanel.Controls.Add(this.dateTimePicker1);
             this.LeftMenuAndInfPanel.Controls.Add(this.LeftMenuPanel);
             this.LeftMenuAndInfPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LeftMenuAndInfPanel.Location = new System.Drawing.Point(0, 32);
             this.LeftMenuAndInfPanel.Name = "LeftMenuAndInfPanel";
             this.LeftMenuAndInfPanel.Size = new System.Drawing.Size(800, 386);
             this.LeftMenuAndInfPanel.TabIndex = 4;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(505, 221);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(151, 20);
+            this.dateTimePicker1.TabIndex = 3;
             // 
             // LeftMenuPanel
             // 
@@ -387,16 +397,15 @@
             this.BackButton.TabIndex = 0;
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.ButtonBack_Click);
+            //
+            // label1
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(300, 70);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(411, 118);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "label1";
             // 
             // MainForm
             // 
@@ -450,7 +459,10 @@
         private System.Windows.Forms.Button OpenFileButton;
         private System.Windows.Forms.Button SaveFileAsButton;
         private System.Windows.Forms.Button SaveFileButton;
-        private System.Windows.Forms.CheckBox checkBox1;
+
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label1;
+
     }
 }
 
