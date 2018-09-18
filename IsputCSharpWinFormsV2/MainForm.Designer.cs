@@ -397,7 +397,7 @@
             this.BackButton.TabIndex = 0;
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.ButtonBack_Click);
-            // 
+            //
             // label1
             // 
             this.label1.AutoSize = true;
@@ -459,8 +459,10 @@
         private System.Windows.Forms.Button OpenFileButton;
         private System.Windows.Forms.Button SaveFileAsButton;
         private System.Windows.Forms.Button SaveFileButton;
+
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
+
     }
 }
 
