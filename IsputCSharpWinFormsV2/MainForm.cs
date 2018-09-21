@@ -124,5 +124,11 @@ namespace IsputCSharpWinFormsV2
             SwitchMainPanel();
         }
 
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            AddQuestionForm newAddQuestionForm = new AddQuestionForm();
+            newAddQuestionForm.ShowDialog();
+            
+        }
     }
 }
