@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnswerClasses.cs" />
     <Compile Include="AddAnswerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +64,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionClasses.cs" />
     <EmbeddedResource Include="AddAnswerForm.resx">
       <DependentUpon>AddAnswerForm.cs</DependentUpon>
     </EmbeddedResource>
