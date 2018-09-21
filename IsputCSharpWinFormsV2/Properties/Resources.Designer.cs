@@ -123,6 +123,16 @@ namespace IsputCSharpWinFormsV2.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Plus_Math_32px {
+            get {
+                object obj = ResourceManager.GetObject("Plus_Math_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Restore_Window_32px {
             get {
                 object obj = ResourceManager.GetObject("Restore_Window_32px", resourceCulture);
