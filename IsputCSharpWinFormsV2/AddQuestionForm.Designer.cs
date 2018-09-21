@@ -42,11 +42,15 @@
             this.QuestionTextLabel = new System.Windows.Forms.Label();
             this.QuestionTextBox = new System.Windows.Forms.TextBox();
             this.SaveQuestionButton = new System.Windows.Forms.Button();
+            this.DifficultLevelGroupBox = new System.Windows.Forms.GroupBox();
+            this.DifficultLevelTextBox = new System.Windows.Forms.TextBox();
+            this.DifficultLevelTextLabel = new System.Windows.Forms.Label();
             this.Header.SuspendLayout();
             this.MainPanel.SuspendLayout();
             this.CorrectAnswersGroupBox.SuspendLayout();
             this.AnswersGroupBox.SuspendLayout();
             this.QuestionTextGroupBox.SuspendLayout();
+            this.DifficultLevelGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // Header
@@ -81,6 +85,7 @@
             // 
             // MainPanel
             // 
+            this.MainPanel.Controls.Add(this.DifficultLevelGroupBox);
             this.MainPanel.Controls.Add(this.CorrectAnswersGroupBox);
             this.MainPanel.Controls.Add(this.AnswersGroupBox);
             this.MainPanel.Controls.Add(this.QuestionTextGroupBox);
@@ -124,11 +129,11 @@
             this.CorrectAnswersCheckedListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.CorrectAnswersCheckedListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CorrectAnswersCheckedListBox.FormattingEnabled = true;
-            this.CorrectAnswersCheckedListBox.Location = new System.Drawing.Point(146, 45);
+            this.CorrectAnswersCheckedListBox.Location = new System.Drawing.Point(13, 45);
             this.CorrectAnswersCheckedListBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.CorrectAnswersCheckedListBox.Name = "CorrectAnswersCheckedListBox";
             this.CorrectAnswersCheckedListBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.CorrectAnswersCheckedListBox.Size = new System.Drawing.Size(76, 180);
+            this.CorrectAnswersCheckedListBox.Size = new System.Drawing.Size(209, 180);
             this.CorrectAnswersCheckedListBox.TabIndex = 6;
             // 
             // AnswersGroupBox
@@ -165,12 +170,12 @@
             this.AnswersTabelLayoutPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.AnswersTabelLayoutPanel.ColumnCount = 1;
             this.AnswersTabelLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.AnswersTabelLayoutPanel.Location = new System.Drawing.Point(140, 45);
+            this.AnswersTabelLayoutPanel.Location = new System.Drawing.Point(13, 45);
             this.AnswersTabelLayoutPanel.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.AnswersTabelLayoutPanel.Name = "AnswersTabelLayoutPanel";
             this.AnswersTabelLayoutPanel.RowCount = 1;
             this.AnswersTabelLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.AnswersTabelLayoutPanel.Size = new System.Drawing.Size(250, 150);
+            this.AnswersTabelLayoutPanel.Size = new System.Drawing.Size(377, 150);
             this.AnswersTabelLayoutPanel.TabIndex = 3;
             // 
             // AddAnswerButton
@@ -220,11 +225,11 @@
             // QuestionTextBox
             // 
             this.QuestionTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.QuestionTextBox.Location = new System.Drawing.Point(140, 45);
+            this.QuestionTextBox.Location = new System.Drawing.Point(13, 45);
             this.QuestionTextBox.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.QuestionTextBox.Multiline = true;
             this.QuestionTextBox.Name = "QuestionTextBox";
-            this.QuestionTextBox.Size = new System.Drawing.Size(250, 60);
+            this.QuestionTextBox.Size = new System.Drawing.Size(377, 60);
             this.QuestionTextBox.TabIndex = 1;
             // 
             // SaveQuestionButton
@@ -244,6 +249,35 @@
             this.SaveQuestionButton.Text = "Сохранить";
             this.SaveQuestionButton.UseVisualStyleBackColor = false;
             // 
+            // DifficultLevelGroupBox
+            // 
+            this.DifficultLevelGroupBox.Controls.Add(this.DifficultLevelTextLabel);
+            this.DifficultLevelGroupBox.Controls.Add(this.DifficultLevelTextBox);
+            this.DifficultLevelGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DifficultLevelGroupBox.Location = new System.Drawing.Point(437, 13);
+            this.DifficultLevelGroupBox.Name = "DifficultLevelGroupBox";
+            this.DifficultLevelGroupBox.Size = new System.Drawing.Size(232, 120);
+            this.DifficultLevelGroupBox.TabIndex = 11;
+            this.DifficultLevelGroupBox.TabStop = false;
+            // 
+            // DifficultLevelTextBox
+            // 
+            this.DifficultLevelTextBox.Location = new System.Drawing.Point(13, 45);
+            this.DifficultLevelTextBox.Name = "DifficultLevelTextBox";
+            this.DifficultLevelTextBox.Size = new System.Drawing.Size(209, 20);
+            this.DifficultLevelTextBox.TabIndex = 0;
+            // 
+            // DifficultLevelTextLabel
+            // 
+            this.DifficultLevelTextLabel.AutoSize = true;
+            this.DifficultLevelTextLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DifficultLevelTextLabel.ForeColor = System.Drawing.Color.White;
+            this.DifficultLevelTextLabel.Location = new System.Drawing.Point(10, 18);
+            this.DifficultLevelTextLabel.Name = "DifficultLevelTextLabel";
+            this.DifficultLevelTextLabel.Size = new System.Drawing.Size(137, 17);
+            this.DifficultLevelTextLabel.TabIndex = 1;
+            this.DifficultLevelTextLabel.Text = "Уровень сложности";
+            // 
             // AddQuestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,6 +295,8 @@
             this.AnswersGroupBox.ResumeLayout(false);
             this.QuestionTextGroupBox.ResumeLayout(false);
             this.QuestionTextGroupBox.PerformLayout();
+            this.DifficultLevelGroupBox.ResumeLayout(false);
+            this.DifficultLevelGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -281,5 +317,8 @@
         private System.Windows.Forms.GroupBox QuestionTextGroupBox;
         private System.Windows.Forms.GroupBox AnswersGroupBox;
         private System.Windows.Forms.GroupBox CorrectAnswersGroupBox;
+        private System.Windows.Forms.GroupBox DifficultLevelGroupBox;
+        private System.Windows.Forms.Label DifficultLevelTextLabel;
+        private System.Windows.Forms.TextBox DifficultLevelTextBox;
     }
 }
