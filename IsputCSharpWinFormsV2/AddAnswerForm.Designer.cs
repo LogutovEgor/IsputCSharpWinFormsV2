@@ -31,10 +31,10 @@
             this.Header = new System.Windows.Forms.Panel();
             this.ButtonCloseWindow = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.SaveAnswerButton = new System.Windows.Forms.Button();
             this.AnswerTextGroupBox = new System.Windows.Forms.GroupBox();
             this.AnswerTextLabel = new System.Windows.Forms.Label();
             this.AnswerTextBox = new System.Windows.Forms.TextBox();
-            this.SaveAnswerButton = new System.Windows.Forms.Button();
             this.Header.SuspendLayout();
             this.MainPanel.SuspendLayout();
             this.AnswerTextGroupBox.SuspendLayout();
@@ -77,8 +77,25 @@
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(0, 32);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(450, 418);
+            this.MainPanel.Size = new System.Drawing.Size(450, 186);
             this.MainPanel.TabIndex = 3;
+            // 
+            // SaveAnswerButton
+            // 
+            this.SaveAnswerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
+            this.SaveAnswerButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.SaveAnswerButton.FlatAppearance.BorderSize = 0;
+            this.SaveAnswerButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
+            this.SaveAnswerButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
+            this.SaveAnswerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveAnswerButton.ForeColor = System.Drawing.Color.White;
+            this.SaveAnswerButton.Location = new System.Drawing.Point(0, 156);
+            this.SaveAnswerButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
+            this.SaveAnswerButton.Name = "SaveAnswerButton";
+            this.SaveAnswerButton.Size = new System.Drawing.Size(450, 30);
+            this.SaveAnswerButton.TabIndex = 10;
+            this.SaveAnswerButton.Text = "Сохранить";
+            this.SaveAnswerButton.UseVisualStyleBackColor = false;
             // 
             // AnswerTextGroupBox
             // 
@@ -117,29 +134,12 @@
             this.AnswerTextBox.Size = new System.Drawing.Size(250, 60);
             this.AnswerTextBox.TabIndex = 1;
             // 
-            // SaveAnswerButton
-            // 
-            this.SaveAnswerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
-            this.SaveAnswerButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.SaveAnswerButton.FlatAppearance.BorderSize = 0;
-            this.SaveAnswerButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
-            this.SaveAnswerButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
-            this.SaveAnswerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveAnswerButton.ForeColor = System.Drawing.Color.White;
-            this.SaveAnswerButton.Location = new System.Drawing.Point(0, 388);
-            this.SaveAnswerButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
-            this.SaveAnswerButton.Name = "SaveAnswerButton";
-            this.SaveAnswerButton.Size = new System.Drawing.Size(450, 30);
-            this.SaveAnswerButton.TabIndex = 10;
-            this.SaveAnswerButton.Text = "Сохранить";
-            this.SaveAnswerButton.UseVisualStyleBackColor = false;
-            // 
             // AddAnswerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(73)))), ((int)(((byte)(107)))));
-            this.ClientSize = new System.Drawing.Size(450, 450);
+            this.ClientSize = new System.Drawing.Size(450, 218);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.Header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -6,11 +6,11 @@ using System.Text;
 //Kiyashko
 namespace IsputCSharpWinFormsV2
 {
-    class Questions
+    class Question
     {
         //Right answers
         List<int> rightAnswers;
-        public string Question { get; set; }
+        public string questiontext { get; set; }
         public List<Answer> Answers { get; }
         public List<int> RightAnswer { get { return rightAnswers; } set { value = rightAnswers; } }
         public void AddTextAnswer(string answer)
