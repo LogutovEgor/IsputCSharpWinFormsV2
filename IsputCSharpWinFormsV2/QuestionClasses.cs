@@ -13,6 +13,8 @@ namespace IsputCSharpWinFormsV2
         public string questiontext { get; set; }
         public List<string> Answers { get; }
         public List<int> RightAnswer { get { return rightAnswers; } set { value = rightAnswers; } }
+        public Question()
+        { }
         public void AddTextAnswer(string answer)
         {
             Answers.Add(new TextAnswer(answer));
