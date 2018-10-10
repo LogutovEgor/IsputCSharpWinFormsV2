@@ -207,8 +207,8 @@ namespace IsputCSharpWinFormsV2
             };
             pictureButton.MouseClick += delegate (object sender2, MouseEventArgs e2)
             {
-                for(int i=0;i<panel1.Controls.Count;i++)
-                        (panel1.Controls[i] as Button).FlatAppearance.BorderColor = Color.FromArgb(17, 57, 83);
+                for(int i=0;i<SlidesPanel.Controls.Count;i++)
+                        (SlidesPanel.Controls[i] as Button).FlatAppearance.BorderColor = Color.FromArgb(17, 57, 83);
 
                 (sender2 as Button).FlatAppearance.BorderColor = Color.White;
                 Manager.GetInstance().ActiveQuestion = Convert.ToInt32(((sender2 as Button).Name));
@@ -217,20 +217,20 @@ namespace IsputCSharpWinFormsV2
 
 
             List<Control> slides = new List<Control>();
-            foreach (Control nextButton in panel1.Controls)
+            foreach (Control nextButton in SlidesPanel.Controls)
             {
                 slides.Add(nextButton);
             }
 
 
-            panel1.Controls.Clear();
-            panel1.Controls.Add(pictureButton);
+            SlidesPanel.Controls.Clear();
+            SlidesPanel.Controls.Add(pictureButton);
 
 
             pictureButton.Size = new Size(pictureButton.Size.Width, (int)(pictureButton.Size.Width * 0.75f));
             foreach (Control item in slides)
             {
-                panel1.Controls.Add(item);
+                SlidesPanel.Controls.Add(item);
             }
         }
 
@@ -242,7 +242,7 @@ namespace IsputCSharpWinFormsV2
         private void panel1_SizeChanged(object sender, EventArgs e)
         {
             //ControlCollection controlCollection = panel1.Controls;
-            foreach(Control c in panel1.Controls)
+            foreach(Control c in SlidesPanel.Controls)
             {
                 c.Size = new Size(c.Size.Width, (int)(c.Size.Width * 0.75f));
             }
