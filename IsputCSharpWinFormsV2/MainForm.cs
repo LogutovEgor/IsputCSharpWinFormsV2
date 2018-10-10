@@ -130,5 +130,123 @@ namespace IsputCSharpWinFormsV2
             newAddQuestionForm.ShowDialog();
             
         }
+
+        private void AddAnswerButton_Click(object sender, EventArgs e)
+        {
+            ///
+            GroupBox groupBox = new GroupBox
+            {
+                Size = new Size(450, 44),
+                Dock = DockStyle.Top,
+                Padding = new Padding(10,2,2,2),
+                Text = ""
+            };
+            ///
+            CheckBox checkBox = new CheckBox
+            {
+                Size = new Size(25, 25),
+                Dock = DockStyle.Right,
+                Padding = new Padding(6,0,0,5),
+                Text = "",
+            };
+            ///
+            TextBox textBox = new TextBox
+            {
+                Size = new Size(10, 20),
+                Dock = DockStyle.Fill,
+                Margin = new Padding(0)        
+            };
+            groupBox.Controls.AddRange(new Control[] {checkBox, textBox});
+            panel3.Controls.Add(groupBox);
+
+            //Bitmap printscreen = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
+            Bitmap printPanel = new Bitmap(panel2.Bounds.Width, panel2.Bounds.Height);
+            Graphics graphics = Graphics.FromImage(printPanel as Image);
+            //graphics.CopyFromScreen(0, 0, 0, 0, printscreen.Size);
+            graphics.CopyFromScreen(panel2.PointToScreen(Point.Empty), Point.Empty, printPanel.Size);
+            //printscreen.Save(@"C:\printscreen.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+
+            /*PictureBox pictureBox = new PictureBox
+            {
+                Image = printPanel,
+                Dock = DockStyle.Top,
+                Size = new Size(170, 110),
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                Padding = new Padding(5)                
+
+            };*/
+            Manager.GetInstance().AddQuestion();
+            int num = Manager.GetInstance().Questions.Count;
+            num -= 1;
+            Button pictureButton = new Button
+            {
+                Name = num.ToString(),
+                BackgroundImage = printPanel,
+                BackgroundImageLayout = ImageLayout.Stretch,
+                Dock = DockStyle.Top,
+                FlatStyle = FlatStyle.Flat
+            };
+            //pictureBox.FlatAppearance.MouseDownBackColor = Color.FromArgb(60, 93, 149);
+            //pictureBox.FlatAppearance.MouseOverBackColor = Color.FromArgb(60, 155, 200);
+            pictureButton.FlatAppearance.BorderSize = 1;
+            pictureButton.FlatAppearance.BorderColor = Color.FromArgb(17, 57, 83);
+
+            /*pictureBox.MouseEnter += delegate (object sender2, EventArgs e2)
+            {
+                (sender2 as Button).FlatAppearance.BorderColor = Color.FromArgb(60, 155, 200);
+            };*/
+            pictureButton.MouseEnter += (object sender2, EventArgs e2) =>
+            {
+                if (Convert.ToInt32((sender2 as Button).Name) != Manager.GetInstance().ActiveQuestion)
+                    (sender2 as Button).FlatAppearance.BorderColor = Color.FromArgb(60, 155, 200);
+            };
+            pictureButton.MouseLeave += delegate (object sender2, EventArgs e2)
+            {
+                if (Convert.ToInt32((sender2 as Button).Name) != Manager.GetInstance().ActiveQuestion)
+                    (sender2 as Button).FlatAppearance.BorderColor = Color.FromArgb(17, 57, 83);
+            };
+            pictureButton.MouseClick += delegate (object sender2, MouseEventArgs e2)
+            {
+                for(int i=0;i<panel1.Controls.Count;i++)
+                        (panel1.Controls[i] as Button).FlatAppearance.BorderColor = Color.FromArgb(17, 57, 83);
+
+                (sender2 as Button).FlatAppearance.BorderColor = Color.White;
+                Manager.GetInstance().ActiveQuestion = Convert.ToInt32(((sender2 as Button).Name));
+            };
+
+
+
+            List<Control> slides = new List<Control>();
+            foreach (Control nextButton in panel1.Controls)
+            {
+                slides.Add(nextButton);
+            }
+
+
+            panel1.Controls.Clear();
+            panel1.Controls.Add(pictureButton);
+
+
+            pictureButton.Size = new Size(pictureButton.Size.Width, (int)(pictureButton.Size.Width * 0.75f));
+            foreach (Control item in slides)
+            {
+                panel1.Controls.Add(item);
+            }
+        }
+
+        private void PictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panel1_SizeChanged(object sender, EventArgs e)
+        {
+            //ControlCollection controlCollection = panel1.Controls;
+            foreach(Control c in panel1.Controls)
+            {
+                c.Size = new Size(c.Size.Width, (int)(c.Size.Width * 0.75f));
+            }
+            
+        }
     }
 }

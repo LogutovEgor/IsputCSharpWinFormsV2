@@ -39,22 +39,22 @@
             this.CorrectAnswersTextLabel = new System.Windows.Forms.Label();
             this.CorrectAnswersCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.AnswersGroupBox = new System.Windows.Forms.GroupBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.AnswerTextLabel = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AddAnswerButton = new System.Windows.Forms.Button();
             this.QuestionTextGroupBox = new System.Windows.Forms.GroupBox();
             this.QuestionTextLabel = new System.Windows.Forms.Label();
             this.QuestionTextBox = new System.Windows.Forms.TextBox();
             this.SaveQuestionButton = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Header.SuspendLayout();
             this.MainPanel.SuspendLayout();
             this.DifficultLevelGroupBox.SuspendLayout();
             this.CorrectAnswersGroupBox.SuspendLayout();
             this.AnswersGroupBox.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.QuestionTextGroupBox.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Header
@@ -183,6 +183,14 @@
             this.AnswersGroupBox.TabIndex = 9;
             this.AnswersGroupBox.TabStop = false;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(13, 45);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(377, 160);
+            this.listBox1.TabIndex = 6;
+            // 
             // AnswerTextLabel
             // 
             this.AnswerTextLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(73)))), ((int)(((byte)(107)))));
@@ -196,19 +204,6 @@
             this.AnswerTextLabel.TabIndex = 4;
             this.AnswerTextLabel.Text = "Ответы";
             this.AnswerTextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.удалитьToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(119, 26);
-            // 
-            // удалитьToolStripMenuItem
-            // 
-            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
-            this.удалитьToolStripMenuItem.Text = "Удалить";
             // 
             // AddAnswerButton
             // 
@@ -281,13 +276,18 @@
             this.SaveQuestionButton.Text = "Сохранить";
             this.SaveQuestionButton.UseVisualStyleBackColor = false;
             // 
-            // listBox1
+            // contextMenuStrip1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(13, 45);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(377, 147);
-            this.listBox1.TabIndex = 6;
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.удалитьToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(119, 26);
+            // 
+            // удалитьToolStripMenuItem
+            // 
+            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.удалитьToolStripMenuItem.Text = "Удалить";
             // 
             // AddQuestionForm
             // 
@@ -306,9 +306,9 @@
             this.DifficultLevelGroupBox.PerformLayout();
             this.CorrectAnswersGroupBox.ResumeLayout(false);
             this.AnswersGroupBox.ResumeLayout(false);
-            this.contextMenuStrip1.ResumeLayout(false);
             this.QuestionTextGroupBox.ResumeLayout(false);
             this.QuestionTextGroupBox.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

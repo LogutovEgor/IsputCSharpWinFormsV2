@@ -7,19 +7,19 @@ namespace IsputCSharpWinFormsV2
     class Manager
     {
         private static Manager Instance;
-        private List<Question> questions; 
+        private List<Question> questions;
         Manager()
         {
-           
+            questions = new List<Question>();
         }
         
         public void AddQuestion()
         {
-            Question question = null;
+            Question question = new Question();
             
             questions.Add(question);
         }
-        public Manager GetInstance()
+        public static Manager GetInstance()
         {
             if (Instance == null)
                 Instance = new Manager();
