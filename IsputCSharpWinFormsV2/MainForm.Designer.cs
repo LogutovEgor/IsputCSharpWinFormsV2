@@ -30,14 +30,30 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MainWorkSpacePanel = new System.Windows.Forms.Panel();
-            this.ToolStripInsert = new System.Windows.Forms.ToolStrip();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.QuestionTextGroupBox = new System.Windows.Forms.GroupBox();
+            this.QuestionTextBox = new System.Windows.Forms.TextBox();
+            this.QuestionTextLabel = new System.Windows.Forms.Label();
+            this.AnswersGroupBox = new System.Windows.Forms.GroupBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.AnswerTextLabel = new System.Windows.Forms.Label();
+            this.AddAnswerButton = new System.Windows.Forms.Button();
             this.ToolStripMain = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.ToolStripInsert = new System.Windows.Forms.ToolStrip();
             this.TabsLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.InsertTabButton = new System.Windows.Forms.Button();
             this.FileTabButton = new System.Windows.Forms.Button();
             this.MainTabButton = new System.Windows.Forms.Button();
             this.Header = new System.Windows.Forms.Panel();
+            this.ButtonMaximizeWindow = new System.Windows.Forms.Button();
+            this.ButtonMinimizeWindow = new System.Windows.Forms.Button();
+            this.ButtonCloseWindow = new System.Windows.Forms.Button();
             this.BottomPanel = new System.Windows.Forms.Panel();
+            this.ResizePictureBox = new System.Windows.Forms.PictureBox();
             this.LeftMenuAndInfPanel = new System.Windows.Forms.Panel();
             this.LeftMenuPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -45,26 +61,27 @@
             this.CreateFileButton = new System.Windows.Forms.Button();
             this.SaveFileButton = new System.Windows.Forms.Button();
             this.OpenFileButton = new System.Windows.Forms.Button();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.BackButton = new System.Windows.Forms.Button();
-            this.ButtonMaximizeWindow = new System.Windows.Forms.Button();
-            this.ButtonMinimizeWindow = new System.Windows.Forms.Button();
-            this.ButtonCloseWindow = new System.Windows.Forms.Button();
-            this.ResizePictureBox = new System.Windows.Forms.PictureBox();
             this.MainWorkSpacePanel.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.QuestionTextGroupBox.SuspendLayout();
+            this.AnswersGroupBox.SuspendLayout();
             this.ToolStripMain.SuspendLayout();
             this.TabsLayoutPanel.SuspendLayout();
             this.Header.SuspendLayout();
             this.BottomPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ResizePictureBox)).BeginInit();
             this.LeftMenuAndInfPanel.SuspendLayout();
             this.LeftMenuPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ResizePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // MainWorkSpacePanel
             // 
             this.MainWorkSpacePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(73)))), ((int)(((byte)(107)))));
+            this.MainWorkSpacePanel.Controls.Add(this.tableLayoutPanel3);
             this.MainWorkSpacePanel.Controls.Add(this.ToolStripMain);
             this.MainWorkSpacePanel.Controls.Add(this.ToolStripInsert);
             this.MainWorkSpacePanel.Controls.Add(this.TabsLayoutPanel);
@@ -72,8 +89,182 @@
             this.MainWorkSpacePanel.Location = new System.Drawing.Point(0, 32);
             this.MainWorkSpacePanel.Margin = new System.Windows.Forms.Padding(0);
             this.MainWorkSpacePanel.Name = "MainWorkSpacePanel";
-            this.MainWorkSpacePanel.Size = new System.Drawing.Size(800, 386);
+            this.MainWorkSpacePanel.Size = new System.Drawing.Size(818, 437);
             this.MainWorkSpacePanel.TabIndex = 0;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel3.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.panel2, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 30);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(818, 407);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(118)))), ((int)(((byte)(171)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(5);
+            this.panel1.Size = new System.Drawing.Size(157, 401);
+            this.panel1.TabIndex = 4;
+            this.panel1.SizeChanged += new System.EventHandler(this.panel1_SizeChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.tableLayoutPanel2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(166, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(649, 401);
+            this.panel2.TabIndex = 5;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.QuestionTextGroupBox, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.AnswersGroupBox, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(649, 401);
+            this.tableLayoutPanel2.TabIndex = 15;
+            // 
+            // QuestionTextGroupBox
+            // 
+            this.QuestionTextGroupBox.AutoSize = true;
+            this.QuestionTextGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.QuestionTextGroupBox.Controls.Add(this.QuestionTextBox);
+            this.QuestionTextGroupBox.Controls.Add(this.QuestionTextLabel);
+            this.QuestionTextGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.QuestionTextGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.QuestionTextGroupBox.Location = new System.Drawing.Point(10, 10);
+            this.QuestionTextGroupBox.Margin = new System.Windows.Forms.Padding(10);
+            this.QuestionTextGroupBox.Name = "QuestionTextGroupBox";
+            this.QuestionTextGroupBox.Padding = new System.Windows.Forms.Padding(10);
+            this.QuestionTextGroupBox.Size = new System.Drawing.Size(629, 112);
+            this.QuestionTextGroupBox.TabIndex = 9;
+            this.QuestionTextGroupBox.TabStop = false;
+            // 
+            // QuestionTextBox
+            // 
+            this.QuestionTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.QuestionTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.QuestionTextBox.Location = new System.Drawing.Point(10, 40);
+            this.QuestionTextBox.Margin = new System.Windows.Forms.Padding(0);
+            this.QuestionTextBox.Multiline = true;
+            this.QuestionTextBox.Name = "QuestionTextBox";
+            this.QuestionTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.QuestionTextBox.Size = new System.Drawing.Size(609, 62);
+            this.QuestionTextBox.TabIndex = 1;
+            // 
+            // QuestionTextLabel
+            // 
+            this.QuestionTextLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(73)))), ((int)(((byte)(107)))));
+            this.QuestionTextLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.QuestionTextLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.QuestionTextLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.QuestionTextLabel.ForeColor = System.Drawing.Color.White;
+            this.QuestionTextLabel.Location = new System.Drawing.Point(10, 23);
+            this.QuestionTextLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.QuestionTextLabel.Name = "QuestionTextLabel";
+            this.QuestionTextLabel.Size = new System.Drawing.Size(609, 17);
+            this.QuestionTextLabel.TabIndex = 2;
+            this.QuestionTextLabel.Text = "Текст вопроса";
+            this.QuestionTextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // AnswersGroupBox
+            // 
+            this.AnswersGroupBox.Controls.Add(this.panel3);
+            this.AnswersGroupBox.Controls.Add(this.AnswerTextLabel);
+            this.AnswersGroupBox.Controls.Add(this.AddAnswerButton);
+            this.AnswersGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AnswersGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AnswersGroupBox.Location = new System.Drawing.Point(10, 142);
+            this.AnswersGroupBox.Margin = new System.Windows.Forms.Padding(10);
+            this.AnswersGroupBox.Name = "AnswersGroupBox";
+            this.AnswersGroupBox.Padding = new System.Windows.Forms.Padding(10);
+            this.AnswersGroupBox.Size = new System.Drawing.Size(629, 249);
+            this.AnswersGroupBox.TabIndex = 13;
+            this.AnswersGroupBox.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.AutoScroll = true;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(10, 40);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(609, 169);
+            this.panel3.TabIndex = 6;
+            // 
+            // AnswerTextLabel
+            // 
+            this.AnswerTextLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(73)))), ((int)(((byte)(107)))));
+            this.AnswerTextLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.AnswerTextLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AnswerTextLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AnswerTextLabel.ForeColor = System.Drawing.Color.White;
+            this.AnswerTextLabel.Location = new System.Drawing.Point(10, 23);
+            this.AnswerTextLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.AnswerTextLabel.Name = "AnswerTextLabel";
+            this.AnswerTextLabel.Size = new System.Drawing.Size(609, 17);
+            this.AnswerTextLabel.TabIndex = 4;
+            this.AnswerTextLabel.Text = "Ответы";
+            this.AnswerTextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // AddAnswerButton
+            // 
+            this.AddAnswerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
+            this.AddAnswerButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.AddAnswerButton.FlatAppearance.BorderSize = 0;
+            this.AddAnswerButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
+            this.AddAnswerButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
+            this.AddAnswerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddAnswerButton.ForeColor = System.Drawing.Color.White;
+            this.AddAnswerButton.Location = new System.Drawing.Point(10, 209);
+            this.AddAnswerButton.Margin = new System.Windows.Forms.Padding(5, 10, 5, 10);
+            this.AddAnswerButton.Name = "AddAnswerButton";
+            this.AddAnswerButton.Size = new System.Drawing.Size(609, 30);
+            this.AddAnswerButton.TabIndex = 5;
+            this.AddAnswerButton.Text = "Добавить ответ";
+            this.AddAnswerButton.UseVisualStyleBackColor = false;
+            this.AddAnswerButton.Click += new System.EventHandler(this.AddAnswerButton_Click);
+            // 
+            // ToolStripMain
+            // 
+            this.ToolStripMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ToolStripMain.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.ToolStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1});
+            this.ToolStripMain.Location = new System.Drawing.Point(0, 30);
+            this.ToolStripMain.Name = "ToolStripMain";
+            this.ToolStripMain.Size = new System.Drawing.Size(818, 27);
+            this.ToolStripMain.TabIndex = 2;
+            this.ToolStripMain.Text = "toolStrip1";
+            this.ToolStripMain.Visible = false;
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(126, 24);
+            this.toolStripButton1.Text = "Добавить вопрос";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // ToolStripInsert
             // 
@@ -86,19 +277,6 @@
             this.ToolStripInsert.Text = "toolStrip1";
             this.ToolStripInsert.Visible = false;
             // 
-            // ToolStripMain
-            // 
-            this.ToolStripMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.ToolStripMain.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ToolStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
-            this.ToolStripMain.Location = new System.Drawing.Point(0, 30);
-            this.ToolStripMain.Name = "ToolStripMain";
-            this.ToolStripMain.Size = new System.Drawing.Size(800, 27);
-            this.ToolStripMain.TabIndex = 2;
-            this.ToolStripMain.Text = "toolStrip1";
-            this.ToolStripMain.Visible = false;
-            // 
             // TabsLayoutPanel
             // 
             this.TabsLayoutPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
@@ -106,7 +284,7 @@
             this.TabsLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.TabsLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.TabsLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.TabsLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 560F));
+            this.TabsLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 578F));
             this.TabsLayoutPanel.Controls.Add(this.InsertTabButton, 2, 0);
             this.TabsLayoutPanel.Controls.Add(this.FileTabButton, 0, 0);
             this.TabsLayoutPanel.Controls.Add(this.MainTabButton, 1, 0);
@@ -115,7 +293,7 @@
             this.TabsLayoutPanel.Name = "TabsLayoutPanel";
             this.TabsLayoutPanel.RowCount = 1;
             this.TabsLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TabsLayoutPanel.Size = new System.Drawing.Size(800, 30);
+            this.TabsLayoutPanel.Size = new System.Drawing.Size(818, 30);
             this.TabsLayoutPanel.TabIndex = 1;
             // 
             // InsertTabButton
@@ -181,24 +359,87 @@
             this.Header.Dock = System.Windows.Forms.DockStyle.Top;
             this.Header.Location = new System.Drawing.Point(0, 0);
             this.Header.Name = "Header";
-            this.Header.Size = new System.Drawing.Size(800, 32);
+            this.Header.Size = new System.Drawing.Size(818, 32);
             this.Header.TabIndex = 0;
             this.Header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Header_MouseDown);
             this.Header.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Header_MouseMove);
             this.Header.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Header_MouseUp);
+            // 
+            // ButtonMaximizeWindow
+            // 
+            this.ButtonMaximizeWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonMaximizeWindow.BackgroundImage = global::IsputCSharpWinFormsV2.Properties.Resources.Maximize_Window_32px;
+            this.ButtonMaximizeWindow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ButtonMaximizeWindow.FlatAppearance.BorderSize = 0;
+            this.ButtonMaximizeWindow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
+            this.ButtonMaximizeWindow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
+            this.ButtonMaximizeWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonMaximizeWindow.Location = new System.Drawing.Point(746, 0);
+            this.ButtonMaximizeWindow.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonMaximizeWindow.Name = "ButtonMaximizeWindow";
+            this.ButtonMaximizeWindow.Size = new System.Drawing.Size(36, 32);
+            this.ButtonMaximizeWindow.TabIndex = 2;
+            this.ButtonMaximizeWindow.UseVisualStyleBackColor = true;
+            this.ButtonMaximizeWindow.Click += new System.EventHandler(this.RestoreWindowButton_Click);
+            // 
+            // ButtonMinimizeWindow
+            // 
+            this.ButtonMinimizeWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonMinimizeWindow.BackgroundImage = global::IsputCSharpWinFormsV2.Properties.Resources.Minimize_Window_32px;
+            this.ButtonMinimizeWindow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ButtonMinimizeWindow.FlatAppearance.BorderSize = 0;
+            this.ButtonMinimizeWindow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
+            this.ButtonMinimizeWindow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
+            this.ButtonMinimizeWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonMinimizeWindow.Location = new System.Drawing.Point(710, 0);
+            this.ButtonMinimizeWindow.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonMinimizeWindow.Name = "ButtonMinimizeWindow";
+            this.ButtonMinimizeWindow.Size = new System.Drawing.Size(36, 32);
+            this.ButtonMinimizeWindow.TabIndex = 1;
+            this.ButtonMinimizeWindow.UseVisualStyleBackColor = true;
+            this.ButtonMinimizeWindow.Click += new System.EventHandler(this.MinimizeWindowButton_Click);
+            // 
+            // ButtonCloseWindow
+            // 
+            this.ButtonCloseWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonCloseWindow.BackgroundImage = global::IsputCSharpWinFormsV2.Properties.Resources.Close_Window_32px;
+            this.ButtonCloseWindow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ButtonCloseWindow.FlatAppearance.BorderSize = 0;
+            this.ButtonCloseWindow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(59)))), ((int)(((byte)(36)))));
+            this.ButtonCloseWindow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
+            this.ButtonCloseWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonCloseWindow.Location = new System.Drawing.Point(782, 0);
+            this.ButtonCloseWindow.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonCloseWindow.Name = "ButtonCloseWindow";
+            this.ButtonCloseWindow.Size = new System.Drawing.Size(36, 32);
+            this.ButtonCloseWindow.TabIndex = 0;
+            this.ButtonCloseWindow.UseVisualStyleBackColor = true;
+            this.ButtonCloseWindow.Click += new System.EventHandler(this.CloseWindowButton_Click);
             // 
             // BottomPanel
             // 
             this.BottomPanel.Controls.Add(this.ResizePictureBox);
             this.BottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BottomPanel.Enabled = false;
-            this.BottomPanel.Location = new System.Drawing.Point(0, 418);
+            this.BottomPanel.Location = new System.Drawing.Point(0, 469);
             this.BottomPanel.Name = "BottomPanel";
-            this.BottomPanel.Size = new System.Drawing.Size(800, 32);
+            this.BottomPanel.Size = new System.Drawing.Size(818, 32);
             this.BottomPanel.TabIndex = 1;
             this.BottomPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Header_MouseDown);
             this.BottomPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Header_MouseMove);
             this.BottomPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Header_MouseUp);
+            // 
+            // ResizePictureBox
+            // 
+            this.ResizePictureBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ResizePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ResizePictureBox.Image")));
+            this.ResizePictureBox.Location = new System.Drawing.Point(786, 0);
+            this.ResizePictureBox.Margin = new System.Windows.Forms.Padding(0);
+            this.ResizePictureBox.Name = "ResizePictureBox";
+            this.ResizePictureBox.Size = new System.Drawing.Size(32, 32);
+            this.ResizePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.ResizePictureBox.TabIndex = 1;
+            this.ResizePictureBox.TabStop = false;
             // 
             // LeftMenuAndInfPanel
             // 
@@ -207,7 +448,7 @@
             this.LeftMenuAndInfPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LeftMenuAndInfPanel.Location = new System.Drawing.Point(0, 32);
             this.LeftMenuAndInfPanel.Name = "LeftMenuAndInfPanel";
-            this.LeftMenuAndInfPanel.Size = new System.Drawing.Size(800, 386);
+            this.LeftMenuAndInfPanel.Size = new System.Drawing.Size(818, 437);
             this.LeftMenuAndInfPanel.TabIndex = 4;
             // 
             // LeftMenuPanel
@@ -218,7 +459,7 @@
             this.LeftMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LeftMenuPanel.Location = new System.Drawing.Point(0, 0);
             this.LeftMenuPanel.Name = "LeftMenuPanel";
-            this.LeftMenuPanel.Size = new System.Drawing.Size(128, 386);
+            this.LeftMenuPanel.Size = new System.Drawing.Size(128, 437);
             this.LeftMenuPanel.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -238,7 +479,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(128, 290);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(128, 341);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // SaveFileAsButton
@@ -311,16 +552,6 @@
             this.OpenFileButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.OpenFileButton.UseVisualStyleBackColor = true;
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(126, 24);
-            this.toolStripButton1.Text = "Добавить вопрос";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
             // BackButton
             // 
             this.BackButton.BackgroundImage = global::IsputCSharpWinFormsV2.Properties.Resources.Back_Arrow_64px;
@@ -338,75 +569,12 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.ButtonBack_Click);
             // 
-            // ButtonMaximizeWindow
-            // 
-            this.ButtonMaximizeWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonMaximizeWindow.BackgroundImage = global::IsputCSharpWinFormsV2.Properties.Resources.Maximize_Window_32px;
-            this.ButtonMaximizeWindow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ButtonMaximizeWindow.FlatAppearance.BorderSize = 0;
-            this.ButtonMaximizeWindow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
-            this.ButtonMaximizeWindow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
-            this.ButtonMaximizeWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonMaximizeWindow.Location = new System.Drawing.Point(728, 0);
-            this.ButtonMaximizeWindow.Margin = new System.Windows.Forms.Padding(0);
-            this.ButtonMaximizeWindow.Name = "ButtonMaximizeWindow";
-            this.ButtonMaximizeWindow.Size = new System.Drawing.Size(36, 32);
-            this.ButtonMaximizeWindow.TabIndex = 2;
-            this.ButtonMaximizeWindow.UseVisualStyleBackColor = true;
-            this.ButtonMaximizeWindow.Click += new System.EventHandler(this.RestoreWindowButton_Click);
-            // 
-            // ButtonMinimizeWindow
-            // 
-            this.ButtonMinimizeWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonMinimizeWindow.BackgroundImage = global::IsputCSharpWinFormsV2.Properties.Resources.Minimize_Window_32px;
-            this.ButtonMinimizeWindow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ButtonMinimizeWindow.FlatAppearance.BorderSize = 0;
-            this.ButtonMinimizeWindow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
-            this.ButtonMinimizeWindow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
-            this.ButtonMinimizeWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonMinimizeWindow.Location = new System.Drawing.Point(692, 0);
-            this.ButtonMinimizeWindow.Margin = new System.Windows.Forms.Padding(0);
-            this.ButtonMinimizeWindow.Name = "ButtonMinimizeWindow";
-            this.ButtonMinimizeWindow.Size = new System.Drawing.Size(36, 32);
-            this.ButtonMinimizeWindow.TabIndex = 1;
-            this.ButtonMinimizeWindow.UseVisualStyleBackColor = true;
-            this.ButtonMinimizeWindow.Click += new System.EventHandler(this.MinimizeWindowButton_Click);
-            // 
-            // ButtonCloseWindow
-            // 
-            this.ButtonCloseWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonCloseWindow.BackgroundImage = global::IsputCSharpWinFormsV2.Properties.Resources.Close_Window_32px;
-            this.ButtonCloseWindow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ButtonCloseWindow.FlatAppearance.BorderSize = 0;
-            this.ButtonCloseWindow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(59)))), ((int)(((byte)(36)))));
-            this.ButtonCloseWindow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
-            this.ButtonCloseWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonCloseWindow.Location = new System.Drawing.Point(764, 0);
-            this.ButtonCloseWindow.Margin = new System.Windows.Forms.Padding(0);
-            this.ButtonCloseWindow.Name = "ButtonCloseWindow";
-            this.ButtonCloseWindow.Size = new System.Drawing.Size(36, 32);
-            this.ButtonCloseWindow.TabIndex = 0;
-            this.ButtonCloseWindow.UseVisualStyleBackColor = true;
-            this.ButtonCloseWindow.Click += new System.EventHandler(this.CloseWindowButton_Click);
-            // 
-            // ResizePictureBox
-            // 
-            this.ResizePictureBox.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ResizePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ResizePictureBox.Image")));
-            this.ResizePictureBox.Location = new System.Drawing.Point(768, 0);
-            this.ResizePictureBox.Margin = new System.Windows.Forms.Padding(0);
-            this.ResizePictureBox.Name = "ResizePictureBox";
-            this.ResizePictureBox.Size = new System.Drawing.Size(32, 32);
-            this.ResizePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.ResizePictureBox.TabIndex = 1;
-            this.ResizePictureBox.TabStop = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(818, 501);
             this.Controls.Add(this.MainWorkSpacePanel);
             this.Controls.Add(this.LeftMenuAndInfPanel);
             this.Controls.Add(this.Header);
@@ -417,16 +585,23 @@
             this.Text = "Form1";
             this.MainWorkSpacePanel.ResumeLayout(false);
             this.MainWorkSpacePanel.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.QuestionTextGroupBox.ResumeLayout(false);
+            this.QuestionTextGroupBox.PerformLayout();
+            this.AnswersGroupBox.ResumeLayout(false);
             this.ToolStripMain.ResumeLayout(false);
             this.ToolStripMain.PerformLayout();
             this.TabsLayoutPanel.ResumeLayout(false);
             this.Header.ResumeLayout(false);
             this.BottomPanel.ResumeLayout(false);
             this.BottomPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ResizePictureBox)).EndInit();
             this.LeftMenuAndInfPanel.ResumeLayout(false);
             this.LeftMenuPanel.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ResizePictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -455,6 +630,17 @@
         private System.Windows.Forms.Button SaveFileAsButton;
         private System.Windows.Forms.Button SaveFileButton;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox QuestionTextGroupBox;
+        private System.Windows.Forms.Label QuestionTextLabel;
+        private System.Windows.Forms.TextBox QuestionTextBox;
+        private System.Windows.Forms.GroupBox AnswersGroupBox;
+        private System.Windows.Forms.Label AnswerTextLabel;
+        private System.Windows.Forms.Button AddAnswerButton;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
     }
 }
 
