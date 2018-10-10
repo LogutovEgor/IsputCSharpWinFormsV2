@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MainWorkSpacePanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.SlidesPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.QuestionTextGroupBox = new System.Windows.Forms.GroupBox();
@@ -97,7 +97,7 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel3.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.SlidesPanel, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 30);
@@ -107,17 +107,17 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(818, 407);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
-            // panel1
+            // SlidesPanel
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(118)))), ((int)(((byte)(171)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(157, 401);
-            this.panel1.TabIndex = 4;
-            this.panel1.SizeChanged += new System.EventHandler(this.panel1_SizeChanged);
+            this.SlidesPanel.AutoScroll = true;
+            this.SlidesPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(118)))), ((int)(((byte)(171)))));
+            this.SlidesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SlidesPanel.Location = new System.Drawing.Point(3, 3);
+            this.SlidesPanel.Name = "SlidesPanel";
+            this.SlidesPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.SlidesPanel.Size = new System.Drawing.Size(157, 401);
+            this.SlidesPanel.TabIndex = 4;
+            this.SlidesPanel.SizeChanged += new System.EventHandler(this.panel1_SizeChanged);
             // 
             // panel2
             // 
@@ -631,7 +631,7 @@
         private System.Windows.Forms.Button SaveFileButton;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel SlidesPanel;
         private System.Windows.Forms.GroupBox QuestionTextGroupBox;
         private System.Windows.Forms.Label QuestionTextLabel;
         private System.Windows.Forms.TextBox QuestionTextBox;
