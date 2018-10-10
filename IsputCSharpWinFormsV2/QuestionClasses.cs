@@ -11,7 +11,7 @@ namespace IsputCSharpWinFormsV2
         //Right answers
         List<int> rightAnswers;
         public string questiontext { get; set; }
-        public List<Answer> Answers { get; }
+        public List<string> Answers { get; }
         public List<int> RightAnswer { get { return rightAnswers; } set { value = rightAnswers; } }
         public void AddTextAnswer(string answer)
         {
