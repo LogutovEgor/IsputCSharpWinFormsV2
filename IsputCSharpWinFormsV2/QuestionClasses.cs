@@ -18,11 +18,11 @@ namespace IsputCSharpWinFormsV2
         { }
         public void AddTextAnswer(string answer)
         {
-            Answers.Add(new TextAnswer(answer));
+            //Answers.Add(new TextAnswer(answer));
         }
         public void AddImageAnswer(string path)
         {
-            Answers.Add(new ImageAnswer(path));
+            //Answers.Add(new ImageAnswer(path));
         }
         public void AddRightAnswer(int index)
         {
