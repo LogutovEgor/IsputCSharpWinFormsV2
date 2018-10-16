@@ -252,6 +252,7 @@
             this.ToolStripMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.ToolStripMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ToolStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+
             this.toolStripButtonAddQuestion,
             this.toolStripButtonSettings});
             this.ToolStripMain.Location = new System.Drawing.Point(0, 30);
@@ -266,6 +267,7 @@
             // 
             // toolStripButtonAddQuestion
             // 
+
             this.toolStripButtonAddQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
             this.toolStripButtonAddQuestion.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAddQuestion.Image")));
             this.toolStripButtonAddQuestion.ImageTransparentColor = System.Drawing.Color.Magenta;
