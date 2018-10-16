@@ -8,6 +8,9 @@ namespace IsputCSharpWinFormsV2
     {
         private static Manager Instance;
         private List<Question> questions;
+
+        private Test currentTest;
+
         Manager()
         {
             questions = new List<Question>();
@@ -27,6 +30,7 @@ namespace IsputCSharpWinFormsV2
         }
         public List<Question> Questions { get { return questions; } } 
         public int ActiveQuestion { get; set; }
+        public Test CurrentTest { get { return currentTest; } set { currentTest = value; } }
     }
 
 }

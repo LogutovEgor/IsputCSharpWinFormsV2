@@ -44,7 +44,8 @@
             this.AddAnswerButton = new System.Windows.Forms.Button();
 
             this.ToolStripMain = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonAddQuestion = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonSettings = new System.Windows.Forms.ToolStripButton();
             this.ToolStripInsert = new System.Windows.Forms.ToolStrip();
             this.TabsLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.InsertTabButton = new System.Windows.Forms.Button();
@@ -251,8 +252,11 @@
             this.ToolStripMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.ToolStripMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ToolStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
-            this.ToolStripMain.Location = new System.Drawing.Point(0, 37);
+
+            this.toolStripButtonAddQuestion,
+            this.toolStripButtonSettings});
+            this.ToolStripMain.Location = new System.Drawing.Point(0, 30);
+
             this.ToolStripMain.Name = "ToolStripMain";
 
             this.ToolStripMain.Size = new System.Drawing.Size(818, 27);
@@ -261,17 +265,28 @@
             this.ToolStripMain.Text = "toolStrip1";
             this.ToolStripMain.Visible = false;
             // 
-            // toolStripButton1
+            // toolStripButtonAddQuestion
             // 
-            this.toolStripButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
 
-            this.toolStripButton1.Size = new System.Drawing.Size(126, 24);
+            this.toolStripButtonAddQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
+            this.toolStripButtonAddQuestion.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAddQuestion.Image")));
+            this.toolStripButtonAddQuestion.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonAddQuestion.Name = "toolStripButtonAddQuestion";
+            this.toolStripButtonAddQuestion.Size = new System.Drawing.Size(126, 24);
+            this.toolStripButtonAddQuestion.Text = "Добавить вопрос";
+            this.toolStripButtonAddQuestion.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButtonSettings
+            // 
+            this.toolStripButtonSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
+            this.toolStripButtonSettings.Image = global::IsputCSharpWinFormsV2.Properties.Resources.icons8_settings_32__1_;
+            this.toolStripButtonSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSettings.Name = "toolStripButtonSettings";
+            this.toolStripButtonSettings.Size = new System.Drawing.Size(91, 24);
+            this.toolStripButtonSettings.Text = "Настройки";
+            this.toolStripButtonSettings.ToolTipText = "Настройки";
+            this.toolStripButtonSettings.Click += new System.EventHandler(this.toolStripButtonSettings_Click);
 
-            this.toolStripButton1.Text = "Добавить вопрос";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // ToolStripInsert
             // 
@@ -280,7 +295,8 @@
 
             this.ToolStripInsert.Location = new System.Drawing.Point(0, 30);
             this.ToolStripInsert.Name = "ToolStripInsert";
-            this.ToolStripInsert.Size = new System.Drawing.Size(800, 25);
+
+            this.ToolStripInsert.Size = new System.Drawing.Size(818, 25);
 
             this.ToolStripInsert.TabIndex = 3;
             this.ToolStripInsert.Text = "toolStrip1";
@@ -587,6 +603,7 @@
             this.OpenFileButton.Text = "Открыть";
             this.OpenFileButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.OpenFileButton.UseVisualStyleBackColor = true;
+            this.OpenFileButton.Click += new System.EventHandler(this.OpenFileButton_Click);
             // 
             // BackButton
             // 
@@ -668,7 +685,7 @@
         private System.Windows.Forms.Button OpenFileButton;
         private System.Windows.Forms.Button SaveFileAsButton;
         private System.Windows.Forms.Button SaveFileButton;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonAddQuestion;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel SlidesPanel;
         private System.Windows.Forms.GroupBox QuestionTextGroupBox;
@@ -680,6 +697,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.ToolStripButton toolStripButtonSettings;
     }
 }
 

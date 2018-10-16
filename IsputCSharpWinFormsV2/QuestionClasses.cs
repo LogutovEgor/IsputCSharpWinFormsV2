@@ -6,10 +6,11 @@ using System.Text;
 //Kiyashko
 namespace IsputCSharpWinFormsV2
 {
-    class Question
+    [Serializable]
+    public class Question
     {
         //Right answers
-        List<int> rightAnswers;
+        public List<int> rightAnswers;
         public string questiontext { get; set; }
         public List<string> Answers { get; }
         public List<int> RightAnswer { get { return rightAnswers; } set { value = rightAnswers; } }

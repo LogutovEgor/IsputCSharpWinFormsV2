@@ -28,6 +28,11 @@ namespace IsputCSharpWinFormsV2
 
             LeftMenuAndInfPanel.Visible = true;
             MainWorkSpacePanel.Visible = false;
+            ////udalit!!!
+            MainTestForm form = new MainTestForm();
+            form.Show();
+
+            ReadWriteTest.GetInstance().WriteTest();
         }
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -61,7 +66,6 @@ namespace IsputCSharpWinFormsV2
             lastCursor = Cursor.Position;
             lastForm = Location;
         }
-
         private void Header_MouseMove(object sender, MouseEventArgs e)
         {
             if (isDragging)
@@ -74,17 +78,14 @@ namespace IsputCSharpWinFormsV2
         {
             isDragging = false;
         }
-
         private void CloseWindowButton_Click(object sender, EventArgs e)
         {
             Close();
         }
-
         private void MinimizeWindowButton_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
-
         private void RestoreWindowButton_Click(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Maximized)
@@ -126,8 +127,7 @@ namespace IsputCSharpWinFormsV2
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            AddQuestionForm newAddQuestionForm = new AddQuestionForm();
-            newAddQuestionForm.ShowDialog();
+            
             
         }
 
@@ -247,6 +247,29 @@ namespace IsputCSharpWinFormsV2
                 c.Size = new Size(c.Size.Width, (int)(c.Size.Width * 0.75f));
             }
             
+        }
+
+        private void toolStripButtonSettings_Click(object sender, EventArgs e)
+        {
+            SettingsForm settingsForm = new SettingsForm();
+            settingsForm.ShowDialog();
+        }
+
+        private void OpenFileButton_Click(object sender, EventArgs e)
+        {
+            // Displays an OpenFileDialog so the user can select a Cursor.  
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Cursor Files|*.tst";
+            openFileDialog.Title = "Select a Cursor File";
+
+            // Show the Dialog.  
+            // If the user clicked OK in the dialog and  
+            // a .CUR file was selected, open it.  
+            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string f = openFileDialog.FileName;
+                ReadWriteTest.GetInstance().ReadTest(f);
+            }
         }
     }
 }
