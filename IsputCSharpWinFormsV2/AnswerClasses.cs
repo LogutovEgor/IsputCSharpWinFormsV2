@@ -41,4 +41,5 @@ namespace IsputCSharpWinFormsV2
         }
         public ImageAnswer() { }
     }
+
 }
