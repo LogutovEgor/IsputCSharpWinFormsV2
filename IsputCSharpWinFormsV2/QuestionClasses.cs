@@ -9,25 +9,52 @@ namespace IsputCSharpWinFormsV2
     [Serializable]
     public class Question
     {
-        //Right answers
-        public List<int> rightAnswers;
-        public string questiontext { get; set; }
-        public List<Answer> Answers { get; }
-        public List<int> RightAnswer { get { return rightAnswers; } set { value = rightAnswers; } }
+        public List<string> Text { get; set; }
+        public List<Answer> Answers { get; set; }
+        public bool graphicInQuestion { get; set; }
         public Question()
-        { }
-        public void AddTextAnswer(string answer)
         {
-            Answers.Add(new TextAnswer(answer));
+            Text = new List<string>();
+            Answers = new List<Answer>();
         }
-        public void AddImageAnswer(string path)
+        public int AnswersCount
         {
-            Answers.Add(new ImageAnswer(path));
-        }
-        public void AddRightAnswer(int index)
-        {
-            rightAnswers.Add(index + 1);
+            get { return Answers.Count; }
         }
     }
 
+    [Serializable]
+    public abstract class Answer {
+        public abstract string Show();
+    }
+    [Serializable]
+    public class AnswerText:Answer
+    {
+        public bool Right { get; set; }
+        public string Text { get; set; }
+        public AnswerText() { }
+
+        public override string Show()
+        {
+            return "Right " + Right + " Text " + Text + Environment.NewLine;
+        }
+
+    }
+    [Serializable]
+    public class AnswerMatch:Answer
+    { 
+        public int Number { get; set; }
+        public char Variant { get; set; }
+        public KeyValuePair<string, string> Text { get; set; }
+        public char RightVariant { get; set; }
+        public AnswerMatch()
+        {
+            Text = new KeyValuePair<string, string>();
+        }
+        public override string Show()
+        {
+            return "Number " + Number + " Variant " + Variant + " Text " + Text.Key + "," + Text.Value + 
+                " RightVariant " + RightVariant + Environment.NewLine;
+        }
+    }
 }

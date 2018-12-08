@@ -7,10 +7,10 @@ namespace IsputCSharpWinFormsV2
     [Serializable]
     public class Test
     {
-        public List<Question> questions;
+        public List<Question> Questions { get; set; }
         public Test()
         {
-            questions = new List<Question>();
+            Questions = new List<Question>();
         }
         
     }

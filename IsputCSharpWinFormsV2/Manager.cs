@@ -6,31 +6,26 @@ namespace IsputCSharpWinFormsV2
 {
     class Manager
     {
-        private static Manager Instance;
-        private List<Question> questions;
+        private static Manager InstanceVar;
 
-        private Test currentTest;
+        public Test CurrentTest { get; set; }
 
         Manager()
         {
-            questions = new List<Question>();
+            CurrentTest = new Test();
         }
+
+        public static Manager Instance
+        {
+            get
+            {
+                if (InstanceVar == null)
+                    InstanceVar = new Manager();
+                return InstanceVar;
+            }
+        }
+
         
-        public void AddQuestion()
-        {
-            Question question = new Question();
-            
-            questions.Add(question);
-        }
-        public static Manager GetInstance()
-        {
-            if (Instance == null)
-                Instance = new Manager();
-            return Instance;
-        }
-        public List<Question> Questions { get { return questions; } } 
-        public int ActiveQuestion { get; set; }
-        public Test CurrentTest { get { return currentTest; } set { currentTest = value; } }
     }
 
 }

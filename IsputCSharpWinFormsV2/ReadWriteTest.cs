@@ -28,7 +28,7 @@ namespace IsputCSharpWinFormsV2
             BinaryFormatter binaryFormatter = new BinaryFormatter();
             using (FileStream fs = new FileStream("myFile.tst", FileMode.OpenOrCreate))
             {
-                Manager.GetInstance().CurrentTest = (Test)binaryFormatter.Deserialize(fs);
+                Manager.Instance.CurrentTest = (Test)binaryFormatter.Deserialize(fs);
             }
 
         }
@@ -48,9 +48,10 @@ namespace IsputCSharpWinFormsV2
             // создаем объект BinaryFormatter
             BinaryFormatter formatter = new BinaryFormatter();
             // получаем поток, куда будем записывать сериализованный объект
+
             using (FileStream fs = new FileStream("myFile.tst", FileMode.OpenOrCreate))
             {
-                formatter.Serialize(fs, Manager.GetInstance().CurrentTest);
+                formatter.Serialize(fs, Manager.Instance.CurrentTest);
             }
            
         }
