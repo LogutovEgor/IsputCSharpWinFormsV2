@@ -10,9 +10,24 @@ namespace IsputCSharpWinFormsV2
 
         public Test CurrentTest { get; set; }
 
+        public GoTest goTest;
+
         Manager()
         {
             CurrentTest = new Test();
+            goTest = new GoTest();
+        }
+
+        public void SetQuestionsForTest(int variant)
+        {
+            goTest.variant = variant;
+            for (int i = 0; i < CurrentTest.Questions.Count; i++)
+            {
+                if (CurrentTest.Questions[i].InVariant[goTest.variant - 1])
+                {
+                    goTest.questions.Add(CurrentTest.Questions[i]);
+                }
+            }
         }
 
         public static Manager Instance
@@ -24,8 +39,17 @@ namespace IsputCSharpWinFormsV2
                 return InstanceVar;
             }
         }
+        public class GoTest
+        {
+            public int variant;
+            public List<Question> questions;
+            public GoTest()
+            {
+                questions = new List<Question>();
+                variant = 0;
+            }
+        }
 
-        
     }
 
 }

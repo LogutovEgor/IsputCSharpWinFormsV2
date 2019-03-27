@@ -44,6 +44,8 @@ namespace IsputCSharpWinFormsV2
 
         private void AddAnswerButton_Click(object sender, EventArgs e)
         {
+            Manager.Instance.CurrentTest.password = textBoxPassword.Text;
+            MessageBox.Show("Успішно", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
         }
     }

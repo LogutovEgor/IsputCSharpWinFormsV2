@@ -8,9 +8,13 @@ namespace IsputCSharpWinFormsV2
     public class Test
     {
         public List<Question> Questions { get; set; }
+        public int variantCount;
+        public string password;
         public Test()
         {
             Questions = new List<Question>();
+            variantCount = 1;
+            password = "1234";
         }
         
     }

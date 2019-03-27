@@ -28,16 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MainWorkSpacePanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.SlidesPanel = new System.Windows.Forms.Panel();
-            this.buttonUpdate = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.QuestionTextGroupBox = new System.Windows.Forms.GroupBox();
+            this.QuestionGroupBox = new System.Windows.Forms.GroupBox();
             this.AnswersGroupBox = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.VersionGroupBox = new System.Windows.Forms.GroupBox();
+            this.panelCheckBoxVariant = new System.Windows.Forms.Panel();
+            this.VariantCheckbox_0 = new System.Windows.Forms.CheckBox();
+            this.panelNumberOfVariant = new System.Windows.Forms.Panel();
+            this.numericUpDownVariantCount = new System.Windows.Forms.NumericUpDown();
+            this.labrlVarcount = new System.Windows.Forms.Label();
+            this.ToolStripMain = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonSettings = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCreateQuestion = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
             this.ToolStripInsert = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButtonAddQuestion = new System.Windows.Forms.ToolStripDropDownButton();
             this.textToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,14 +55,8 @@
             this.toolStripDropDownButtonAnswer = new System.Windows.Forms.ToolStripDropDownButton();
             this.variantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripDropDownButtonDelete = new System.Windows.Forms.ToolStripDropDownButton();
-            this.questionDeleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.answerDeleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMain = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonSettings = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonCreateQuestion = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
             this.TabsLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonUpdate = new System.Windows.Forms.Button();
             this.InsertTabButton = new System.Windows.Forms.Button();
             this.FileTabButton = new System.Windows.Forms.Button();
             this.MainTabButton = new System.Windows.Forms.Button();
@@ -64,40 +68,86 @@
             this.ResizePictureBox = new System.Windows.Forms.PictureBox();
             this.LeftMenuAndInfPanel = new System.Windows.Forms.Panel();
             this.LeftMenuPanel = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.FileControlPanel = new System.Windows.Forms.TableLayoutPanel();
             this.SaveFileAsButton = new System.Windows.Forms.Button();
             this.CreateFileButton = new System.Windows.Forms.Button();
             this.SaveFileButton = new System.Windows.Forms.Button();
             this.OpenFileButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
+            this.contextMenuStripAnswers = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.видалитиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStripAnsMatch = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deletetoolStripMenuItemMatchAns = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStripQuesDel = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.delQuestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timerUpdateElements = new System.Windows.Forms.Timer(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.contextMenuStripSlideDel = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.slidedelToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelStart = new System.Windows.Forms.Panel();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.buttonEdittest = new System.Windows.Forms.Button();
+            this.buttonGoTest = new System.Windows.Forms.Button();
+            this.panelSetting = new System.Windows.Forms.Panel();
+            this.SavePassswordBut = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxChangePass = new System.Windows.Forms.TextBox();
+            this.panelTestRun = new System.Windows.Forms.Panel();
+            this.TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.SlidesPanelInTest = new System.Windows.Forms.Panel();
+            this.ControlPanel = new System.Windows.Forms.Panel();
+            this.SwitchQuestionButton = new System.Windows.Forms.Button();
+            this.QuestionComboBox = new System.Windows.Forms.ComboBox();
+            this.PreviousQuestionButton = new System.Windows.Forms.Button();
+            this.NextQuestionButton = new System.Windows.Forms.Button();
+            this.panelStartGoTest = new System.Windows.Forms.Panel();
+            this.buttonStartGoTest = new System.Windows.Forms.Button();
+            this.textBoxPIB = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBoxVariant = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.MainWorkSpacePanel.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.AnswersGroupBox.SuspendLayout();
-            this.ToolStripInsert.SuspendLayout();
+            this.VersionGroupBox.SuspendLayout();
+            this.panelCheckBoxVariant.SuspendLayout();
+            this.panelNumberOfVariant.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVariantCount)).BeginInit();
             this.ToolStripMain.SuspendLayout();
+            this.ToolStripInsert.SuspendLayout();
             this.TabsLayoutPanel.SuspendLayout();
             this.Header.SuspendLayout();
             this.BottomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResizePictureBox)).BeginInit();
             this.LeftMenuAndInfPanel.SuspendLayout();
             this.LeftMenuPanel.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.FileControlPanel.SuspendLayout();
+            this.contextMenuStripAnswers.SuspendLayout();
+            this.contextMenuStripAnsMatch.SuspendLayout();
+            this.contextMenuStripQuesDel.SuspendLayout();
+            this.contextMenuStripSlideDel.SuspendLayout();
+            this.panelStart.SuspendLayout();
+            this.panelSetting.SuspendLayout();
+            this.panelTestRun.SuspendLayout();
+            this.TableLayoutPanel.SuspendLayout();
+            this.ControlPanel.SuspendLayout();
+            this.panelStartGoTest.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainWorkSpacePanel
             // 
             this.MainWorkSpacePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(73)))), ((int)(((byte)(107)))));
             this.MainWorkSpacePanel.Controls.Add(this.tableLayoutPanel3);
-            this.MainWorkSpacePanel.Controls.Add(this.ToolStripInsert);
             this.MainWorkSpacePanel.Controls.Add(this.ToolStripMain);
+            this.MainWorkSpacePanel.Controls.Add(this.ToolStripInsert);
             this.MainWorkSpacePanel.Controls.Add(this.TabsLayoutPanel);
             this.MainWorkSpacePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainWorkSpacePanel.Location = new System.Drawing.Point(0, 39);
             this.MainWorkSpacePanel.Margin = new System.Windows.Forms.Padding(0);
             this.MainWorkSpacePanel.Name = "MainWorkSpacePanel";
-            this.MainWorkSpacePanel.Size = new System.Drawing.Size(1091, 539);
+            this.MainWorkSpacePanel.Size = new System.Drawing.Size(1000, 522);
             this.MainWorkSpacePanel.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -113,7 +163,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1091, 502);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1000, 485);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // SlidesPanel
@@ -125,63 +175,55 @@
             this.SlidesPanel.Margin = new System.Windows.Forms.Padding(4);
             this.SlidesPanel.Name = "SlidesPanel";
             this.SlidesPanel.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.SlidesPanel.Size = new System.Drawing.Size(210, 494);
+            this.SlidesPanel.Size = new System.Drawing.Size(192, 477);
             this.SlidesPanel.TabIndex = 4;
             this.SlidesPanel.SizeChanged += new System.EventHandler(this.panel1_SizeChanged);
-            // 
-            // buttonUpdate
-            // 
-            this.buttonUpdate.Location = new System.Drawing.Point(324, 3);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(192, 31);
-            this.buttonUpdate.TabIndex = 0;
-            this.buttonUpdate.Text = "Обновить";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
-            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.tableLayoutPanel2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(222, 4);
+            this.panel2.Location = new System.Drawing.Point(204, 4);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(865, 494);
+            this.panel2.Size = new System.Drawing.Size(792, 477);
             this.panel2.TabIndex = 5;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.QuestionTextGroupBox, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.AnswersGroupBox, 0, 1);
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.QuestionGroupBox, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.AnswersGroupBox, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.VersionGroupBox, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(865, 494);
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(792, 477);
             this.tableLayoutPanel2.TabIndex = 15;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
-            // QuestionTextGroupBox
+            // QuestionGroupBox
             // 
-            this.QuestionTextGroupBox.AutoSize = true;
-            this.QuestionTextGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.QuestionTextGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.QuestionTextGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.QuestionTextGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.QuestionTextGroupBox.ForeColor = System.Drawing.Color.White;
-            this.QuestionTextGroupBox.Location = new System.Drawing.Point(13, 12);
-            this.QuestionTextGroupBox.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.QuestionTextGroupBox.Name = "QuestionTextGroupBox";
-            this.QuestionTextGroupBox.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.QuestionTextGroupBox.Size = new System.Drawing.Size(839, 139);
-            this.QuestionTextGroupBox.TabIndex = 9;
-            this.QuestionTextGroupBox.TabStop = false;
-            this.QuestionTextGroupBox.Text = "Питання";
+            this.QuestionGroupBox.AutoSize = true;
+            this.QuestionGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.QuestionGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.QuestionGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.QuestionGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.QuestionGroupBox.ForeColor = System.Drawing.Color.White;
+            this.QuestionGroupBox.Location = new System.Drawing.Point(0, 71);
+            this.QuestionGroupBox.Margin = new System.Windows.Forms.Padding(0);
+            this.QuestionGroupBox.Name = "QuestionGroupBox";
+            this.QuestionGroupBox.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.QuestionGroupBox.Size = new System.Drawing.Size(792, 119);
+            this.QuestionGroupBox.TabIndex = 9;
+            this.QuestionGroupBox.TabStop = false;
+            this.QuestionGroupBox.Text = "Питання";
             // 
             // AnswersGroupBox
             // 
@@ -190,11 +232,11 @@
             this.AnswersGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AnswersGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AnswersGroupBox.ForeColor = System.Drawing.Color.White;
-            this.AnswersGroupBox.Location = new System.Drawing.Point(13, 175);
-            this.AnswersGroupBox.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.AnswersGroupBox.Location = new System.Drawing.Point(0, 190);
+            this.AnswersGroupBox.Margin = new System.Windows.Forms.Padding(0);
             this.AnswersGroupBox.Name = "AnswersGroupBox";
             this.AnswersGroupBox.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.AnswersGroupBox.Size = new System.Drawing.Size(839, 307);
+            this.AnswersGroupBox.Size = new System.Drawing.Size(792, 287);
             this.AnswersGroupBox.TabIndex = 13;
             this.AnswersGroupBox.TabStop = false;
             this.AnswersGroupBox.Text = "Відповіді";
@@ -206,101 +248,85 @@
             this.panel3.Location = new System.Drawing.Point(13, 31);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(813, 264);
+            this.panel3.Size = new System.Drawing.Size(766, 244);
             this.panel3.TabIndex = 6;
             // 
-            // ToolStripInsert
+            // VersionGroupBox
             // 
-            this.ToolStripInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.ToolStripInsert.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ToolStripInsert.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButtonAddQuestion,
-            this.toolStripDropDownButtonAnswer,
-            this.toolStripDropDownButtonDelete});
-            this.ToolStripInsert.Location = new System.Drawing.Point(0, 37);
-            this.ToolStripInsert.Name = "ToolStripInsert";
-            this.ToolStripInsert.Size = new System.Drawing.Size(1091, 27);
-            this.ToolStripInsert.TabIndex = 3;
-            this.ToolStripInsert.Text = "toolStrip1";
-            this.ToolStripInsert.Visible = false;
+            this.VersionGroupBox.Controls.Add(this.panelCheckBoxVariant);
+            this.VersionGroupBox.Controls.Add(this.panelNumberOfVariant);
+            this.VersionGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.VersionGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.VersionGroupBox.ForeColor = System.Drawing.Color.White;
+            this.VersionGroupBox.Location = new System.Drawing.Point(0, 0);
+            this.VersionGroupBox.Margin = new System.Windows.Forms.Padding(0);
+            this.VersionGroupBox.Name = "VersionGroupBox";
+            this.VersionGroupBox.Size = new System.Drawing.Size(792, 71);
+            this.VersionGroupBox.TabIndex = 14;
+            this.VersionGroupBox.TabStop = false;
+            this.VersionGroupBox.Text = "Варіант";
             // 
-            // toolStripDropDownButtonAddQuestion
+            // panelCheckBoxVariant
             // 
-            this.toolStripDropDownButtonAddQuestion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButtonAddQuestion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.textToolStripMenuItem,
-            this.imageToolStripMenuItem});
-            this.toolStripDropDownButtonAddQuestion.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButtonAddQuestion.Image")));
-            this.toolStripDropDownButtonAddQuestion.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButtonAddQuestion.Name = "toolStripDropDownButtonAddQuestion";
-            this.toolStripDropDownButtonAddQuestion.Size = new System.Drawing.Size(135, 24);
-            this.toolStripDropDownButtonAddQuestion.Text = "Додати питання";
+            this.panelCheckBoxVariant.AutoScroll = true;
+            this.panelCheckBoxVariant.Controls.Add(this.VariantCheckbox_0);
+            this.panelCheckBoxVariant.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelCheckBoxVariant.Location = new System.Drawing.Point(3, 49);
+            this.panelCheckBoxVariant.Name = "panelCheckBoxVariant";
+            this.panelCheckBoxVariant.Size = new System.Drawing.Size(786, 53);
+            this.panelCheckBoxVariant.TabIndex = 3;
             // 
-            // textToolStripMenuItem
+            // VariantCheckbox_0
             // 
-            this.textToolStripMenuItem.Name = "textToolStripMenuItem";
-            this.textToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
-            this.textToolStripMenuItem.Text = "Текст";
-            this.textToolStripMenuItem.Click += new System.EventHandler(this.textToolStripMenuItem_Click);
+            this.VariantCheckbox_0.AutoSize = true;
+            this.VariantCheckbox_0.Dock = System.Windows.Forms.DockStyle.Left;
+            this.VariantCheckbox_0.Location = new System.Drawing.Point(0, 0);
+            this.VariantCheckbox_0.Name = "VariantCheckbox_0";
+            this.VariantCheckbox_0.Size = new System.Drawing.Size(40, 53);
+            this.VariantCheckbox_0.TabIndex = 0;
+            this.VariantCheckbox_0.Text = "1";
+            this.VariantCheckbox_0.UseVisualStyleBackColor = true;
+            this.VariantCheckbox_0.CheckedChanged += new System.EventHandler(this.Variant_CheckedChanged);
             // 
-            // imageToolStripMenuItem
+            // panelNumberOfVariant
             // 
-            this.imageToolStripMenuItem.Name = "imageToolStripMenuItem";
-            this.imageToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
-            this.imageToolStripMenuItem.Text = "Рисунок";
-            this.imageToolStripMenuItem.Click += new System.EventHandler(this.imageToolStripMenuItem_Click);
+            this.panelNumberOfVariant.Controls.Add(this.numericUpDownVariantCount);
+            this.panelNumberOfVariant.Controls.Add(this.labrlVarcount);
+            this.panelNumberOfVariant.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelNumberOfVariant.Location = new System.Drawing.Point(3, 22);
+            this.panelNumberOfVariant.Name = "panelNumberOfVariant";
+            this.panelNumberOfVariant.Size = new System.Drawing.Size(786, 27);
+            this.panelNumberOfVariant.TabIndex = 2;
             // 
-            // toolStripDropDownButtonAnswer
+            // numericUpDownVariantCount
             // 
-            this.toolStripDropDownButtonAnswer.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButtonAnswer.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.variantToolStripMenuItem,
-            this.matchToolStripMenuItem});
-            this.toolStripDropDownButtonAnswer.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButtonAnswer.Image")));
-            this.toolStripDropDownButtonAnswer.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButtonAnswer.Name = "toolStripDropDownButtonAnswer";
-            this.toolStripDropDownButtonAnswer.Size = new System.Drawing.Size(143, 24);
-            this.toolStripDropDownButtonAnswer.Text = "Додати відповідь";
+            this.numericUpDownVariantCount.Dock = System.Windows.Forms.DockStyle.Left;
+            this.numericUpDownVariantCount.Location = new System.Drawing.Point(91, 0);
+            this.numericUpDownVariantCount.Margin = new System.Windows.Forms.Padding(3, 10, 10, 3);
+            this.numericUpDownVariantCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownVariantCount.Name = "numericUpDownVariantCount";
+            this.numericUpDownVariantCount.Size = new System.Drawing.Size(66, 26);
+            this.numericUpDownVariantCount.TabIndex = 0;
+            this.numericUpDownVariantCount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownVariantCount.ValueChanged += new System.EventHandler(this.numericUpDownVariantCount_ValueChanged);
             // 
-            // variantToolStripMenuItem
+            // labrlVarcount
             // 
-            this.variantToolStripMenuItem.Name = "variantToolStripMenuItem";
-            this.variantToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
-            this.variantToolStripMenuItem.Text = "Варіант";
-            this.variantToolStripMenuItem.Click += new System.EventHandler(this.варіантToolStripMenuItem_Click);
-            // 
-            // matchToolStripMenuItem
-            // 
-            this.matchToolStripMenuItem.Name = "matchToolStripMenuItem";
-            this.matchToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
-            this.matchToolStripMenuItem.Text = "З\'єднання";
-            this.matchToolStripMenuItem.Click += new System.EventHandler(this.зєднанняToolStripMenuItem_Click);
-            // 
-            // toolStripDropDownButtonDelete
-            // 
-            this.toolStripDropDownButtonDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButtonDelete.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.questionDeleteToolStripMenuItem,
-            this.answerDeleteToolStripMenuItem});
-            this.toolStripDropDownButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButtonDelete.Image")));
-            this.toolStripDropDownButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButtonDelete.Name = "toolStripDropDownButtonDelete";
-            this.toolStripDropDownButtonDelete.Size = new System.Drawing.Size(89, 24);
-            this.toolStripDropDownButtonDelete.Text = "Видалити";
-            // 
-            // questionDeleteToolStripMenuItem
-            // 
-            this.questionDeleteToolStripMenuItem.Name = "questionDeleteToolStripMenuItem";
-            this.questionDeleteToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
-            this.questionDeleteToolStripMenuItem.Text = "Питання";
-            this.questionDeleteToolStripMenuItem.Click += new System.EventHandler(this.questionToolStripMenuItem_Click);
-            // 
-            // answerDeleteToolStripMenuItem
-            // 
-            this.answerDeleteToolStripMenuItem.Name = "answerDeleteToolStripMenuItem";
-            this.answerDeleteToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
-            this.answerDeleteToolStripMenuItem.Text = "Відповідь";
-            this.answerDeleteToolStripMenuItem.Click += new System.EventHandler(this.answerDeleteToolStripMenuItem_Click);
+            this.labrlVarcount.AutoSize = true;
+            this.labrlVarcount.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labrlVarcount.Location = new System.Drawing.Point(0, 0);
+            this.labrlVarcount.Name = "labrlVarcount";
+            this.labrlVarcount.Size = new System.Drawing.Size(91, 20);
+            this.labrlVarcount.TabIndex = 0;
+            this.labrlVarcount.Text = "Кількість:";
             // 
             // ToolStripMain
             // 
@@ -312,7 +338,7 @@
             this.toolStripButtonSave});
             this.ToolStripMain.Location = new System.Drawing.Point(0, 37);
             this.ToolStripMain.Name = "ToolStripMain";
-            this.ToolStripMain.Size = new System.Drawing.Size(1091, 27);
+            this.ToolStripMain.Size = new System.Drawing.Size(1000, 27);
             this.ToolStripMain.TabIndex = 2;
             this.ToolStripMain.Text = "toolStrip1";
             this.ToolStripMain.Visible = false;
@@ -348,6 +374,76 @@
             this.toolStripButtonSave.Text = "Зберегти";
             this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
             // 
+            // ToolStripInsert
+            // 
+            this.ToolStripInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ToolStripInsert.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.ToolStripInsert.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButtonAddQuestion,
+            this.toolStripDropDownButtonAnswer});
+            this.ToolStripInsert.Location = new System.Drawing.Point(0, 37);
+            this.ToolStripInsert.Name = "ToolStripInsert";
+            this.ToolStripInsert.Size = new System.Drawing.Size(1000, 27);
+            this.ToolStripInsert.TabIndex = 3;
+            this.ToolStripInsert.Text = "toolStrip1";
+            this.ToolStripInsert.Visible = false;
+            // 
+            // toolStripDropDownButtonAddQuestion
+            // 
+            this.toolStripDropDownButtonAddQuestion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButtonAddQuestion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.textToolStripMenuItem,
+            this.imageToolStripMenuItem});
+            this.toolStripDropDownButtonAddQuestion.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButtonAddQuestion.Image")));
+            this.toolStripDropDownButtonAddQuestion.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButtonAddQuestion.Name = "toolStripDropDownButtonAddQuestion";
+            this.toolStripDropDownButtonAddQuestion.Size = new System.Drawing.Size(135, 24);
+            this.toolStripDropDownButtonAddQuestion.Text = "Додати питання";
+            // 
+            // textToolStripMenuItem
+            // 
+            this.textToolStripMenuItem.Name = "textToolStripMenuItem";
+            this.textToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
+            this.textToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.textToolStripMenuItem.Text = "Текст";
+            this.textToolStripMenuItem.Click += new System.EventHandler(this.textToolStripMenuItem_Click);
+            // 
+            // imageToolStripMenuItem
+            // 
+            this.imageToolStripMenuItem.Name = "imageToolStripMenuItem";
+            this.imageToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.imageToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.imageToolStripMenuItem.Text = "Рисунок";
+            this.imageToolStripMenuItem.Click += new System.EventHandler(this.imageToolStripMenuItem_Click);
+            // 
+            // toolStripDropDownButtonAnswer
+            // 
+            this.toolStripDropDownButtonAnswer.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButtonAnswer.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.variantToolStripMenuItem,
+            this.matchToolStripMenuItem});
+            this.toolStripDropDownButtonAnswer.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButtonAnswer.Image")));
+            this.toolStripDropDownButtonAnswer.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButtonAnswer.Name = "toolStripDropDownButtonAnswer";
+            this.toolStripDropDownButtonAnswer.Size = new System.Drawing.Size(143, 24);
+            this.toolStripDropDownButtonAnswer.Text = "Додати відповідь";
+            // 
+            // variantToolStripMenuItem
+            // 
+            this.variantToolStripMenuItem.Name = "variantToolStripMenuItem";
+            this.variantToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.variantToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this.variantToolStripMenuItem.Text = "Варіант";
+            this.variantToolStripMenuItem.Click += new System.EventHandler(this.варіантToolStripMenuItem_Click);
+            // 
+            // matchToolStripMenuItem
+            // 
+            this.matchToolStripMenuItem.Name = "matchToolStripMenuItem";
+            this.matchToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
+            this.matchToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this.matchToolStripMenuItem.Text = "З\'єднання";
+            this.matchToolStripMenuItem.Click += new System.EventHandler(this.зєднанняToolStripMenuItem_Click);
+            // 
             // TabsLayoutPanel
             // 
             this.TabsLayoutPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
@@ -366,8 +462,18 @@
             this.TabsLayoutPanel.Name = "TabsLayoutPanel";
             this.TabsLayoutPanel.RowCount = 1;
             this.TabsLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TabsLayoutPanel.Size = new System.Drawing.Size(1091, 37);
+            this.TabsLayoutPanel.Size = new System.Drawing.Size(1000, 37);
             this.TabsLayoutPanel.TabIndex = 1;
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.Location = new System.Drawing.Point(324, 3);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(192, 31);
+            this.buttonUpdate.TabIndex = 0;
+            this.buttonUpdate.Text = "Обновить";
+            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // InsertTabButton
             // 
@@ -433,7 +539,7 @@
             this.Header.Location = new System.Drawing.Point(0, 0);
             this.Header.Margin = new System.Windows.Forms.Padding(4);
             this.Header.Name = "Header";
-            this.Header.Size = new System.Drawing.Size(1091, 39);
+            this.Header.Size = new System.Drawing.Size(1000, 39);
             this.Header.TabIndex = 0;
             this.Header.DoubleClick += new System.EventHandler(this.Header_DoubleClick);
             this.Header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Header_MouseDown);
@@ -449,7 +555,7 @@
             this.ButtonMaximizeWindow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
             this.ButtonMaximizeWindow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
             this.ButtonMaximizeWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonMaximizeWindow.Location = new System.Drawing.Point(995, 0);
+            this.ButtonMaximizeWindow.Location = new System.Drawing.Point(904, 0);
             this.ButtonMaximizeWindow.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonMaximizeWindow.Name = "ButtonMaximizeWindow";
             this.ButtonMaximizeWindow.Size = new System.Drawing.Size(48, 39);
@@ -466,7 +572,7 @@
             this.ButtonMinimizeWindow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
             this.ButtonMinimizeWindow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
             this.ButtonMinimizeWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonMinimizeWindow.Location = new System.Drawing.Point(947, 0);
+            this.ButtonMinimizeWindow.Location = new System.Drawing.Point(856, 0);
             this.ButtonMinimizeWindow.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonMinimizeWindow.Name = "ButtonMinimizeWindow";
             this.ButtonMinimizeWindow.Size = new System.Drawing.Size(48, 39);
@@ -483,7 +589,7 @@
             this.ButtonCloseWindow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(59)))), ((int)(((byte)(36)))));
             this.ButtonCloseWindow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
             this.ButtonCloseWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonCloseWindow.Location = new System.Drawing.Point(1043, 0);
+            this.ButtonCloseWindow.Location = new System.Drawing.Point(952, 0);
             this.ButtonCloseWindow.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonCloseWindow.Name = "ButtonCloseWindow";
             this.ButtonCloseWindow.Size = new System.Drawing.Size(48, 39);
@@ -496,10 +602,10 @@
             this.BottomPanel.Controls.Add(this.ResizePictureBox);
             this.BottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BottomPanel.Enabled = false;
-            this.BottomPanel.Location = new System.Drawing.Point(0, 578);
+            this.BottomPanel.Location = new System.Drawing.Point(0, 561);
             this.BottomPanel.Margin = new System.Windows.Forms.Padding(4);
             this.BottomPanel.Name = "BottomPanel";
-            this.BottomPanel.Size = new System.Drawing.Size(1091, 39);
+            this.BottomPanel.Size = new System.Drawing.Size(1000, 39);
             this.BottomPanel.TabIndex = 1;
             this.BottomPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Header_MouseDown);
             this.BottomPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Header_MouseMove);
@@ -509,7 +615,7 @@
             // 
             this.ResizePictureBox.Dock = System.Windows.Forms.DockStyle.Right;
             this.ResizePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ResizePictureBox.Image")));
-            this.ResizePictureBox.Location = new System.Drawing.Point(1059, 0);
+            this.ResizePictureBox.Location = new System.Drawing.Point(968, 0);
             this.ResizePictureBox.Margin = new System.Windows.Forms.Padding(0);
             this.ResizePictureBox.Name = "ResizePictureBox";
             this.ResizePictureBox.Size = new System.Drawing.Size(32, 39);
@@ -525,41 +631,41 @@
             this.LeftMenuAndInfPanel.Location = new System.Drawing.Point(0, 39);
             this.LeftMenuAndInfPanel.Margin = new System.Windows.Forms.Padding(4);
             this.LeftMenuAndInfPanel.Name = "LeftMenuAndInfPanel";
-            this.LeftMenuAndInfPanel.Size = new System.Drawing.Size(1091, 539);
+            this.LeftMenuAndInfPanel.Size = new System.Drawing.Size(1000, 522);
             this.LeftMenuAndInfPanel.TabIndex = 5;
             // 
             // LeftMenuPanel
             // 
             this.LeftMenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(118)))), ((int)(((byte)(171)))));
-            this.LeftMenuPanel.Controls.Add(this.tableLayoutPanel1);
+            this.LeftMenuPanel.Controls.Add(this.FileControlPanel);
             this.LeftMenuPanel.Controls.Add(this.BackButton);
             this.LeftMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LeftMenuPanel.Location = new System.Drawing.Point(0, 0);
             this.LeftMenuPanel.Margin = new System.Windows.Forms.Padding(4);
             this.LeftMenuPanel.Name = "LeftMenuPanel";
-            this.LeftMenuPanel.Size = new System.Drawing.Size(171, 539);
+            this.LeftMenuPanel.Size = new System.Drawing.Size(171, 522);
             this.LeftMenuPanel.TabIndex = 0;
             // 
-            // tableLayoutPanel1
+            // FileControlPanel
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.SaveFileAsButton, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.CreateFileButton, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.SaveFileButton, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.OpenFileButton, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 118);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(171, 421);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.FileControlPanel.ColumnCount = 1;
+            this.FileControlPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.FileControlPanel.Controls.Add(this.SaveFileAsButton, 0, 3);
+            this.FileControlPanel.Controls.Add(this.CreateFileButton, 0, 0);
+            this.FileControlPanel.Controls.Add(this.SaveFileButton, 0, 2);
+            this.FileControlPanel.Controls.Add(this.OpenFileButton, 0, 1);
+            this.FileControlPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FileControlPanel.Location = new System.Drawing.Point(0, 118);
+            this.FileControlPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.FileControlPanel.Name = "FileControlPanel";
+            this.FileControlPanel.RowCount = 5;
+            this.FileControlPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.FileControlPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.FileControlPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.FileControlPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.FileControlPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.FileControlPanel.Size = new System.Drawing.Size(171, 404);
+            this.FileControlPanel.TabIndex = 1;
             // 
             // SaveFileAsButton
             // 
@@ -577,6 +683,7 @@
             this.SaveFileAsButton.Text = "Сохранить как";
             this.SaveFileAsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SaveFileAsButton.UseVisualStyleBackColor = true;
+            this.SaveFileAsButton.Click += new System.EventHandler(this.SaveFileAsButton_Click);
             // 
             // CreateFileButton
             // 
@@ -595,6 +702,7 @@
             this.CreateFileButton.Text = "Создать";
             this.CreateFileButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CreateFileButton.UseVisualStyleBackColor = true;
+            this.CreateFileButton.Click += new System.EventHandler(this.CreateFileButton_Click);
             // 
             // SaveFileButton
             // 
@@ -612,6 +720,7 @@
             this.SaveFileButton.Text = "Сохранить";
             this.SaveFileButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SaveFileButton.UseVisualStyleBackColor = true;
+            this.SaveFileButton.Click += new System.EventHandler(this.SaveFileButton_Click);
             // 
             // OpenFileButton
             // 
@@ -649,12 +758,379 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.ButtonBack_Click);
             // 
+            // contextMenuStripAnswers
+            // 
+            this.contextMenuStripAnswers.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripAnswers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.видалитиToolStripMenuItem});
+            this.contextMenuStripAnswers.Name = "contextMenuStripAnswers";
+            this.contextMenuStripAnswers.Size = new System.Drawing.Size(198, 28);
+            this.contextMenuStripAnswers.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripAnswers_Opening);
+            // 
+            // видалитиToolStripMenuItem
+            // 
+            this.видалитиToolStripMenuItem.Name = "видалитиToolStripMenuItem";
+            this.видалитиToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.видалитиToolStripMenuItem.Size = new System.Drawing.Size(197, 24);
+            this.видалитиToolStripMenuItem.Text = "Видалити";
+            this.видалитиToolStripMenuItem.Click += new System.EventHandler(this.видалитиToolStripMenuItem_Click);
+            // 
+            // contextMenuStripAnsMatch
+            // 
+            this.contextMenuStripAnsMatch.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripAnsMatch.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deletetoolStripMenuItemMatchAns});
+            this.contextMenuStripAnsMatch.Name = "contextMenuStrip1";
+            this.contextMenuStripAnsMatch.Size = new System.Drawing.Size(198, 28);
+            // 
+            // deletetoolStripMenuItemMatchAns
+            // 
+            this.deletetoolStripMenuItemMatchAns.Name = "deletetoolStripMenuItemMatchAns";
+            this.deletetoolStripMenuItemMatchAns.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.deletetoolStripMenuItemMatchAns.Size = new System.Drawing.Size(197, 24);
+            this.deletetoolStripMenuItemMatchAns.Text = "Видалити";
+            this.deletetoolStripMenuItemMatchAns.Click += new System.EventHandler(this.deletetoolStripMenuItemMatchAns_Click);
+            // 
+            // contextMenuStripQuesDel
+            // 
+            this.contextMenuStripQuesDel.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripQuesDel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.delQuestionToolStripMenuItem});
+            this.contextMenuStripQuesDel.Name = "contextMenuStripQuesDel";
+            this.contextMenuStripQuesDel.Size = new System.Drawing.Size(198, 28);
+            // 
+            // delQuestionToolStripMenuItem
+            // 
+            this.delQuestionToolStripMenuItem.Name = "delQuestionToolStripMenuItem";
+            this.delQuestionToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.delQuestionToolStripMenuItem.Size = new System.Drawing.Size(197, 24);
+            this.delQuestionToolStripMenuItem.Text = "Видалити";
+            this.delQuestionToolStripMenuItem.Click += new System.EventHandler(this.delQuestionToolStripMenuItem_Click);
+            // 
+            // timerUpdateElements
+            // 
+            this.timerUpdateElements.Interval = 1;
+            this.timerUpdateElements.Tick += new System.EventHandler(this.timerUpdateElements_Tick);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(278, 401);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // contextMenuStripSlideDel
+            // 
+            this.contextMenuStripSlideDel.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripSlideDel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.slidedelToolStripMenuItem1});
+            this.contextMenuStripSlideDel.Name = "contextMenuStripSlideDel";
+            this.contextMenuStripSlideDel.Size = new System.Drawing.Size(198, 28);
+            // 
+            // slidedelToolStripMenuItem1
+            // 
+            this.slidedelToolStripMenuItem1.Name = "slidedelToolStripMenuItem1";
+            this.slidedelToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.slidedelToolStripMenuItem1.Size = new System.Drawing.Size(197, 24);
+            this.slidedelToolStripMenuItem1.Text = "Видалити";
+            this.slidedelToolStripMenuItem1.Click += new System.EventHandler(this.slidedelToolStripMenuItem1_Click);
+            // 
+            // panelStart
+            // 
+            this.panelStart.Controls.Add(this.textBoxPassword);
+            this.panelStart.Controls.Add(this.buttonEdittest);
+            this.panelStart.Controls.Add(this.buttonGoTest);
+            this.panelStart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelStart.Location = new System.Drawing.Point(0, 39);
+            this.panelStart.Name = "panelStart";
+            this.panelStart.Size = new System.Drawing.Size(1000, 522);
+            this.panelStart.TabIndex = 3;
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPassword.ForeColor = System.Drawing.Color.Black;
+            this.textBoxPassword.Location = new System.Drawing.Point(388, 415);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(218, 38);
+            this.textBoxPassword.TabIndex = 2;
+            // 
+            // buttonEdittest
+            // 
+            this.buttonEdittest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.buttonEdittest.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonEdittest.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonEdittest.ForeColor = System.Drawing.Color.White;
+            this.buttonEdittest.Location = new System.Drawing.Point(0, 260);
+            this.buttonEdittest.Name = "buttonEdittest";
+            this.buttonEdittest.Size = new System.Drawing.Size(1000, 260);
+            this.buttonEdittest.TabIndex = 1;
+            this.buttonEdittest.Text = "Редагувати тест";
+            this.buttonEdittest.UseVisualStyleBackColor = false;
+            this.buttonEdittest.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // buttonGoTest
+            // 
+            this.buttonGoTest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.buttonGoTest.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonGoTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonGoTest.ForeColor = System.Drawing.Color.White;
+            this.buttonGoTest.Location = new System.Drawing.Point(0, 0);
+            this.buttonGoTest.Name = "buttonGoTest";
+            this.buttonGoTest.Size = new System.Drawing.Size(1000, 260);
+            this.buttonGoTest.TabIndex = 0;
+            this.buttonGoTest.Text = "Пройти тест";
+            this.buttonGoTest.UseVisualStyleBackColor = false;
+            this.buttonGoTest.Click += new System.EventHandler(this.buttonGoTest_Click);
+            // 
+            // panelSetting
+            // 
+            this.panelSetting.Controls.Add(this.SavePassswordBut);
+            this.panelSetting.Controls.Add(this.label1);
+            this.panelSetting.Controls.Add(this.textBoxChangePass);
+            this.panelSetting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelSetting.Location = new System.Drawing.Point(0, 39);
+            this.panelSetting.Name = "panelSetting";
+            this.panelSetting.Size = new System.Drawing.Size(1000, 522);
+            this.panelSetting.TabIndex = 3;
+            this.panelSetting.Visible = false;
+            // 
+            // SavePassswordBut
+            // 
+            this.SavePassswordBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
+            this.SavePassswordBut.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.SavePassswordBut.FlatAppearance.BorderSize = 0;
+            this.SavePassswordBut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
+            this.SavePassswordBut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
+            this.SavePassswordBut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SavePassswordBut.ForeColor = System.Drawing.Color.White;
+            this.SavePassswordBut.Location = new System.Drawing.Point(0, 485);
+            this.SavePassswordBut.Margin = new System.Windows.Forms.Padding(7, 12, 7, 12);
+            this.SavePassswordBut.Name = "SavePassswordBut";
+            this.SavePassswordBut.Size = new System.Drawing.Size(1000, 37);
+            this.SavePassswordBut.TabIndex = 7;
+            this.SavePassswordBut.Text = "Сохранить";
+            this.SavePassswordBut.UseVisualStyleBackColor = false;
+            this.SavePassswordBut.Click += new System.EventHandler(this.SavePassswordBut_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(174, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Пароль";
+            // 
+            // textBoxChangePass
+            // 
+            this.textBoxChangePass.Location = new System.Drawing.Point(177, 72);
+            this.textBoxChangePass.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxChangePass.Name = "textBoxChangePass";
+            this.textBoxChangePass.Size = new System.Drawing.Size(132, 22);
+            this.textBoxChangePass.TabIndex = 3;
+            // 
+            // panelTestRun
+            // 
+            this.panelTestRun.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(73)))), ((int)(((byte)(107)))));
+            this.panelTestRun.Controls.Add(this.TableLayoutPanel);
+            this.panelTestRun.Controls.Add(this.ControlPanel);
+            this.panelTestRun.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTestRun.Location = new System.Drawing.Point(0, 39);
+            this.panelTestRun.Margin = new System.Windows.Forms.Padding(4);
+            this.panelTestRun.Name = "panelTestRun";
+            this.panelTestRun.Size = new System.Drawing.Size(1000, 522);
+            this.panelTestRun.TabIndex = 6;
+            this.panelTestRun.Visible = false;
+            // 
+            // TableLayoutPanel
+            // 
+            this.TableLayoutPanel.ColumnCount = 1;
+            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TableLayoutPanel.Controls.Add(this.SlidesPanelInTest, 0, 0);
+            this.TableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.TableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.TableLayoutPanel.Name = "TableLayoutPanel";
+            this.TableLayoutPanel.RowCount = 2;
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            this.TableLayoutPanel.Size = new System.Drawing.Size(829, 522);
+            this.TableLayoutPanel.TabIndex = 2;
+            // 
+            // SlidesPanelInTest
+            // 
+            this.SlidesPanelInTest.AutoScroll = true;
+            this.SlidesPanelInTest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(118)))), ((int)(((byte)(171)))));
+            this.SlidesPanelInTest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SlidesPanelInTest.Location = new System.Drawing.Point(0, 0);
+            this.SlidesPanelInTest.Margin = new System.Windows.Forms.Padding(0);
+            this.SlidesPanelInTest.Name = "SlidesPanelInTest";
+            this.SlidesPanelInTest.Size = new System.Drawing.Size(829, 78);
+            this.SlidesPanelInTest.TabIndex = 0;
+            // 
+            // ControlPanel
+            // 
+            this.ControlPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(118)))), ((int)(((byte)(171)))));
+            this.ControlPanel.Controls.Add(this.SwitchQuestionButton);
+            this.ControlPanel.Controls.Add(this.QuestionComboBox);
+            this.ControlPanel.Controls.Add(this.PreviousQuestionButton);
+            this.ControlPanel.Controls.Add(this.NextQuestionButton);
+            this.ControlPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ControlPanel.Location = new System.Drawing.Point(829, 0);
+            this.ControlPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.ControlPanel.Name = "ControlPanel";
+            this.ControlPanel.Size = new System.Drawing.Size(171, 522);
+            this.ControlPanel.TabIndex = 1;
+            // 
+            // SwitchQuestionButton
+            // 
+            this.SwitchQuestionButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
+            this.SwitchQuestionButton.FlatAppearance.BorderSize = 0;
+            this.SwitchQuestionButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
+            this.SwitchQuestionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
+            this.SwitchQuestionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SwitchQuestionButton.ForeColor = System.Drawing.Color.White;
+            this.SwitchQuestionButton.Location = new System.Drawing.Point(11, 57);
+            this.SwitchQuestionButton.Margin = new System.Windows.Forms.Padding(0);
+            this.SwitchQuestionButton.Name = "SwitchQuestionButton";
+            this.SwitchQuestionButton.Size = new System.Drawing.Size(149, 37);
+            this.SwitchQuestionButton.TabIndex = 6;
+            this.SwitchQuestionButton.Text = "Перейти";
+            this.SwitchQuestionButton.UseVisualStyleBackColor = false;
+            // 
+            // QuestionComboBox
+            // 
+            this.QuestionComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
+            this.QuestionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.QuestionComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.QuestionComboBox.ForeColor = System.Drawing.Color.White;
+            this.QuestionComboBox.FormattingEnabled = true;
+            this.QuestionComboBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.QuestionComboBox.Location = new System.Drawing.Point(11, 10);
+            this.QuestionComboBox.Margin = new System.Windows.Forms.Padding(0);
+            this.QuestionComboBox.Name = "QuestionComboBox";
+            this.QuestionComboBox.Size = new System.Drawing.Size(148, 33);
+            this.QuestionComboBox.TabIndex = 3;
+            // 
+            // PreviousQuestionButton
+            // 
+            this.PreviousQuestionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.PreviousQuestionButton.BackgroundImage = global::IsputCSharpWinFormsV2.Properties.Resources.Back_Arrow_64px;
+            this.PreviousQuestionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PreviousQuestionButton.FlatAppearance.BorderSize = 0;
+            this.PreviousQuestionButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
+            this.PreviousQuestionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
+            this.PreviousQuestionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PreviousQuestionButton.Location = new System.Drawing.Point(0, 919);
+            this.PreviousQuestionButton.Margin = new System.Windows.Forms.Padding(0);
+            this.PreviousQuestionButton.Name = "PreviousQuestionButton";
+            this.PreviousQuestionButton.Size = new System.Drawing.Size(85, 79);
+            this.PreviousQuestionButton.TabIndex = 1;
+            this.PreviousQuestionButton.UseVisualStyleBackColor = true;
+            // 
+            // NextQuestionButton
+            // 
+            this.NextQuestionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.NextQuestionButton.BackgroundImage = global::IsputCSharpWinFormsV2.Properties.Resources.icons8_forward_button_64;
+            this.NextQuestionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.NextQuestionButton.FlatAppearance.BorderSize = 0;
+            this.NextQuestionButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
+            this.NextQuestionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
+            this.NextQuestionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NextQuestionButton.Location = new System.Drawing.Point(85, 919);
+            this.NextQuestionButton.Margin = new System.Windows.Forms.Padding(0);
+            this.NextQuestionButton.Name = "NextQuestionButton";
+            this.NextQuestionButton.Size = new System.Drawing.Size(85, 79);
+            this.NextQuestionButton.TabIndex = 2;
+            this.NextQuestionButton.UseVisualStyleBackColor = true;
+            // 
+            // panelStartGoTest
+            // 
+            this.panelStartGoTest.Controls.Add(this.buttonStartGoTest);
+            this.panelStartGoTest.Controls.Add(this.textBoxPIB);
+            this.panelStartGoTest.Controls.Add(this.label3);
+            this.panelStartGoTest.Controls.Add(this.comboBoxVariant);
+            this.panelStartGoTest.Controls.Add(this.label2);
+            this.panelStartGoTest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelStartGoTest.Location = new System.Drawing.Point(0, 39);
+            this.panelStartGoTest.Name = "panelStartGoTest";
+            this.panelStartGoTest.Size = new System.Drawing.Size(1000, 522);
+            this.panelStartGoTest.TabIndex = 1;
+            this.panelStartGoTest.Visible = false;
+            // 
+            // buttonStartGoTest
+            // 
+            this.buttonStartGoTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonStartGoTest.Location = new System.Drawing.Point(364, 266);
+            this.buttonStartGoTest.Name = "buttonStartGoTest";
+            this.buttonStartGoTest.Size = new System.Drawing.Size(131, 43);
+            this.buttonStartGoTest.TabIndex = 4;
+            this.buttonStartGoTest.Text = "Старт";
+            this.buttonStartGoTest.UseVisualStyleBackColor = true;
+            this.buttonStartGoTest.Click += new System.EventHandler(this.buttonStartGoTest_Click);
+            // 
+            // textBoxPIB
+            // 
+            this.textBoxPIB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPIB.Location = new System.Drawing.Point(408, 152);
+            this.textBoxPIB.Name = "textBoxPIB";
+            this.textBoxPIB.Size = new System.Drawing.Size(558, 38);
+            this.textBoxPIB.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(242, 159);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 31);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "ПІБ";
+            // 
+            // comboBoxVariant
+            // 
+            this.comboBoxVariant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxVariant.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxVariant.FormattingEnabled = true;
+            this.comboBoxVariant.Location = new System.Drawing.Point(408, 80);
+            this.comboBoxVariant.Name = "comboBoxVariant";
+            this.comboBoxVariant.Size = new System.Drawing.Size(121, 39);
+            this.comboBoxVariant.TabIndex = 1;
+            this.comboBoxVariant.SelectedIndexChanged += new System.EventHandler(this.comboBoxVariant_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(236, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(110, 31);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Варіант";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
-            this.ClientSize = new System.Drawing.Size(1091, 617);
+            this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.panelStartGoTest);
+            this.Controls.Add(this.panelTestRun);
+            this.Controls.Add(this.panelStart);
+            this.Controls.Add(this.panelSetting);
             this.Controls.Add(this.MainWorkSpacePanel);
             this.Controls.Add(this.LeftMenuAndInfPanel);
             this.Controls.Add(this.Header);
@@ -662,6 +1138,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.MainWorkSpacePanel.ResumeLayout(false);
@@ -671,10 +1148,16 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.AnswersGroupBox.ResumeLayout(false);
-            this.ToolStripInsert.ResumeLayout(false);
-            this.ToolStripInsert.PerformLayout();
+            this.VersionGroupBox.ResumeLayout(false);
+            this.panelCheckBoxVariant.ResumeLayout(false);
+            this.panelCheckBoxVariant.PerformLayout();
+            this.panelNumberOfVariant.ResumeLayout(false);
+            this.panelNumberOfVariant.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVariantCount)).EndInit();
             this.ToolStripMain.ResumeLayout(false);
             this.ToolStripMain.PerformLayout();
+            this.ToolStripInsert.ResumeLayout(false);
+            this.ToolStripInsert.PerformLayout();
             this.TabsLayoutPanel.ResumeLayout(false);
             this.Header.ResumeLayout(false);
             this.BottomPanel.ResumeLayout(false);
@@ -682,7 +1165,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.ResizePictureBox)).EndInit();
             this.LeftMenuAndInfPanel.ResumeLayout(false);
             this.LeftMenuPanel.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.FileControlPanel.ResumeLayout(false);
+            this.contextMenuStripAnswers.ResumeLayout(false);
+            this.contextMenuStripAnsMatch.ResumeLayout(false);
+            this.contextMenuStripQuesDel.ResumeLayout(false);
+            this.contextMenuStripSlideDel.ResumeLayout(false);
+            this.panelStart.ResumeLayout(false);
+            this.panelStart.PerformLayout();
+            this.panelSetting.ResumeLayout(false);
+            this.panelSetting.PerformLayout();
+            this.panelTestRun.ResumeLayout(false);
+            this.TableLayoutPanel.ResumeLayout(false);
+            this.ControlPanel.ResumeLayout(false);
+            this.panelStartGoTest.ResumeLayout(false);
+            this.panelStartGoTest.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -704,7 +1200,6 @@
         private System.Windows.Forms.ToolStrip ToolStripInsert;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel SlidesPanel;
-        private System.Windows.Forms.GroupBox QuestionTextGroupBox;
         private System.Windows.Forms.GroupBox AnswersGroupBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
@@ -715,21 +1210,57 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButtonAnswer;
         private System.Windows.Forms.ToolStripMenuItem variantToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem matchToolStripMenuItem;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButtonDelete;
-        private System.Windows.Forms.ToolStripMenuItem questionDeleteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem answerDeleteToolStripMenuItem;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ToolStripButton toolStripButtonCreateQuestion;
         private System.Windows.Forms.ToolStripButton toolStripButtonSave;
         private System.Windows.Forms.Panel LeftMenuAndInfPanel;
         private System.Windows.Forms.Panel LeftMenuPanel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel FileControlPanel;
         private System.Windows.Forms.Button SaveFileAsButton;
         private System.Windows.Forms.Button CreateFileButton;
         private System.Windows.Forms.Button SaveFileButton;
         private System.Windows.Forms.Button OpenFileButton;
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripAnswers;
+        private System.Windows.Forms.ToolStripMenuItem видалитиToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripAnsMatch;
+        private System.Windows.Forms.ToolStripMenuItem deletetoolStripMenuItemMatchAns;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripQuesDel;
+        private System.Windows.Forms.ToolStripMenuItem delQuestionToolStripMenuItem;
+        private System.Windows.Forms.Timer timerUpdateElements;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox QuestionGroupBox;
+        private System.Windows.Forms.NumericUpDown numericUpDownVariantCount;
+        private System.Windows.Forms.GroupBox VersionGroupBox;
+        private System.Windows.Forms.Label labrlVarcount;
+        private System.Windows.Forms.Panel panelCheckBoxVariant;
+        private System.Windows.Forms.Panel panelNumberOfVariant;
+        private System.Windows.Forms.CheckBox VariantCheckbox_0;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripSlideDel;
+        private System.Windows.Forms.ToolStripMenuItem slidedelToolStripMenuItem1;
+        private System.Windows.Forms.Panel panelStart;
+        private System.Windows.Forms.Button buttonEdittest;
+        private System.Windows.Forms.Button buttonGoTest;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.Panel panelSetting;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxChangePass;
+        private System.Windows.Forms.Button SavePassswordBut;
+        private System.Windows.Forms.Panel panelTestRun;
+        private System.Windows.Forms.TableLayoutPanel TableLayoutPanel;
+        private System.Windows.Forms.Panel SlidesPanelInTest;
+        private System.Windows.Forms.Panel ControlPanel;
+        private System.Windows.Forms.Button SwitchQuestionButton;
+        private System.Windows.Forms.ComboBox QuestionComboBox;
+        private System.Windows.Forms.Button PreviousQuestionButton;
+        private System.Windows.Forms.Button NextQuestionButton;
+        private System.Windows.Forms.Panel panelStartGoTest;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonStartGoTest;
+        private System.Windows.Forms.TextBox textBoxPIB;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBoxVariant;
     }
 }
 

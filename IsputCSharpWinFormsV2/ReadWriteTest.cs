@@ -26,13 +26,14 @@ namespace IsputCSharpWinFormsV2
 
             ///через бинарный форматер
             BinaryFormatter binaryFormatter = new BinaryFormatter();
-            using (FileStream fs = new FileStream("myFile.tst", FileMode.OpenOrCreate))
+            Manager.Instance.CurrentTest.Questions.Clear();
+            using (FileStream fs = new FileStream(filePath, FileMode.Open))
             {
-                Manager.Instance.CurrentTest = (Test)binaryFormatter.Deserialize(fs);
+                Manager.Instance.CurrentTest = (Test)binaryFormatter.Deserialize(fs); 
             }
 
         }
-        public void WriteTest()
+        public void WriteTest(string fileName)
         {
 
             ///Через XML
@@ -49,7 +50,7 @@ namespace IsputCSharpWinFormsV2
             BinaryFormatter formatter = new BinaryFormatter();
             // получаем поток, куда будем записывать сериализованный объект
 
-            using (FileStream fs = new FileStream("myFile.tst", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
             {
                 formatter.Serialize(fs, Manager.Instance.CurrentTest);
             }

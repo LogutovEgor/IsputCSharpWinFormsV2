@@ -4,9 +4,16 @@ using System.Text;
 
 namespace IsputCSharpWinFormsV2
 {
-    enum ControlName
+    //Имена контролов
+    enum VariantCnt
     {
-        matchLayoutPanel, panelMatchRight, panelMatchleft, panelMatchingLines
+         textLeft, labelLeft, textRight, labelRight
+    }
+
+    enum MatchCnt
+    {
+        matchLayoutPanel, panelMatchRight, panelMatchleft, panelMatchingLines, RectMatchLeft, RectMatchRight,
+        groupBoxQuestionLeft, groupBoxQuestionRight, textLeft, labelLeft, textRight, labelRight
     }
 
 }

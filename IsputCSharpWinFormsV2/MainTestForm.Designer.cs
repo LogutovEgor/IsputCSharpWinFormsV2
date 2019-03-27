@@ -37,12 +37,12 @@
             this.TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.SlidesPanelInTest = new System.Windows.Forms.Panel();
             this.ControlPanel = new System.Windows.Forms.Panel();
+            this.SwitchQuestionButton = new System.Windows.Forms.Button();
+            this.QuestionComboBox = new System.Windows.Forms.ComboBox();
             this.PreviousQuestionButton = new System.Windows.Forms.Button();
             this.NextQuestionButton = new System.Windows.Forms.Button();
             this.BottomPanel = new System.Windows.Forms.Panel();
             this.ResizePictureBox = new System.Windows.Forms.PictureBox();
-            this.QuestionComboBox = new System.Windows.Forms.ComboBox();
-            this.SwitchQuestionButton = new System.Windows.Forms.Button();
             this.Header.SuspendLayout();
             this.MainWorkSpacePanel.SuspendLayout();
             this.TableLayoutPanel.SuspendLayout();
@@ -59,8 +59,9 @@
             this.Header.Controls.Add(this.ButtonCloseWindow);
             this.Header.Dock = System.Windows.Forms.DockStyle.Top;
             this.Header.Location = new System.Drawing.Point(0, 0);
+            this.Header.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Header.Name = "Header";
-            this.Header.Size = new System.Drawing.Size(800, 32);
+            this.Header.Size = new System.Drawing.Size(1067, 36);
             this.Header.TabIndex = 1;
             this.Header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Header_MouseDown);
             this.Header.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Header_MouseMove);
@@ -75,10 +76,10 @@
             this.ButtonMaximizeWindow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
             this.ButtonMaximizeWindow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
             this.ButtonMaximizeWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonMaximizeWindow.Location = new System.Drawing.Point(728, 0);
+            this.ButtonMaximizeWindow.Location = new System.Drawing.Point(971, 0);
             this.ButtonMaximizeWindow.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonMaximizeWindow.Name = "ButtonMaximizeWindow";
-            this.ButtonMaximizeWindow.Size = new System.Drawing.Size(36, 32);
+            this.ButtonMaximizeWindow.Size = new System.Drawing.Size(48, 39);
             this.ButtonMaximizeWindow.TabIndex = 2;
             this.ButtonMaximizeWindow.UseVisualStyleBackColor = true;
             this.ButtonMaximizeWindow.Click += new System.EventHandler(this.RestoreWindowButton_Click);
@@ -92,10 +93,10 @@
             this.ButtonMinimizeWindow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
             this.ButtonMinimizeWindow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
             this.ButtonMinimizeWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonMinimizeWindow.Location = new System.Drawing.Point(692, 0);
+            this.ButtonMinimizeWindow.Location = new System.Drawing.Point(923, 0);
             this.ButtonMinimizeWindow.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonMinimizeWindow.Name = "ButtonMinimizeWindow";
-            this.ButtonMinimizeWindow.Size = new System.Drawing.Size(36, 32);
+            this.ButtonMinimizeWindow.Size = new System.Drawing.Size(48, 39);
             this.ButtonMinimizeWindow.TabIndex = 1;
             this.ButtonMinimizeWindow.UseVisualStyleBackColor = true;
             this.ButtonMinimizeWindow.Click += new System.EventHandler(this.MinimizeWindowButton_Click);
@@ -109,10 +110,10 @@
             this.ButtonCloseWindow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(59)))), ((int)(((byte)(36)))));
             this.ButtonCloseWindow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
             this.ButtonCloseWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonCloseWindow.Location = new System.Drawing.Point(764, 0);
+            this.ButtonCloseWindow.Location = new System.Drawing.Point(1019, 0);
             this.ButtonCloseWindow.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonCloseWindow.Name = "ButtonCloseWindow";
-            this.ButtonCloseWindow.Size = new System.Drawing.Size(36, 32);
+            this.ButtonCloseWindow.Size = new System.Drawing.Size(48, 39);
             this.ButtonCloseWindow.TabIndex = 0;
             this.ButtonCloseWindow.UseVisualStyleBackColor = true;
             this.ButtonCloseWindow.Click += new System.EventHandler(this.CloseWindowButton_Click);
@@ -123,9 +124,10 @@
             this.MainWorkSpacePanel.Controls.Add(this.TableLayoutPanel);
             this.MainWorkSpacePanel.Controls.Add(this.ControlPanel);
             this.MainWorkSpacePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainWorkSpacePanel.Location = new System.Drawing.Point(0, 32);
+            this.MainWorkSpacePanel.Location = new System.Drawing.Point(0, 36);
+            this.MainWorkSpacePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MainWorkSpacePanel.Name = "MainWorkSpacePanel";
-            this.MainWorkSpacePanel.Size = new System.Drawing.Size(800, 386);
+            this.MainWorkSpacePanel.Size = new System.Drawing.Size(1067, 479);
             this.MainWorkSpacePanel.TabIndex = 2;
             // 
             // TableLayoutPanel
@@ -140,7 +142,7 @@
             this.TableLayoutPanel.RowCount = 2;
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.TableLayoutPanel.Size = new System.Drawing.Size(672, 386);
+            this.TableLayoutPanel.Size = new System.Drawing.Size(896, 479);
             this.TableLayoutPanel.TabIndex = 2;
             // 
             // SlidesPanelInTest
@@ -151,7 +153,7 @@
             this.SlidesPanelInTest.Location = new System.Drawing.Point(0, 0);
             this.SlidesPanelInTest.Margin = new System.Windows.Forms.Padding(0);
             this.SlidesPanelInTest.Name = "SlidesPanelInTest";
-            this.SlidesPanelInTest.Size = new System.Drawing.Size(672, 96);
+            this.SlidesPanelInTest.Size = new System.Drawing.Size(896, 71);
             this.SlidesPanelInTest.TabIndex = 0;
             this.SlidesPanelInTest.Resize += new System.EventHandler(this.SlidesPanelInTest_SizeChanged);
             // 
@@ -163,65 +165,27 @@
             this.ControlPanel.Controls.Add(this.PreviousQuestionButton);
             this.ControlPanel.Controls.Add(this.NextQuestionButton);
             this.ControlPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ControlPanel.Location = new System.Drawing.Point(672, 0);
+            this.ControlPanel.Location = new System.Drawing.Point(896, 0);
             this.ControlPanel.Margin = new System.Windows.Forms.Padding(0);
             this.ControlPanel.Name = "ControlPanel";
-            this.ControlPanel.Size = new System.Drawing.Size(128, 386);
+            this.ControlPanel.Size = new System.Drawing.Size(171, 479);
             this.ControlPanel.TabIndex = 1;
             // 
-            // PreviousQuestionButton
+            // SwitchQuestionButton
             // 
-            this.PreviousQuestionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.PreviousQuestionButton.BackgroundImage = global::IsputCSharpWinFormsV2.Properties.Resources.Back_Arrow_64px;
-            this.PreviousQuestionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.PreviousQuestionButton.FlatAppearance.BorderSize = 0;
-            this.PreviousQuestionButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
-            this.PreviousQuestionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
-            this.PreviousQuestionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PreviousQuestionButton.Location = new System.Drawing.Point(0, 322);
-            this.PreviousQuestionButton.Margin = new System.Windows.Forms.Padding(0);
-            this.PreviousQuestionButton.Name = "PreviousQuestionButton";
-            this.PreviousQuestionButton.Size = new System.Drawing.Size(64, 64);
-            this.PreviousQuestionButton.TabIndex = 1;
-            this.PreviousQuestionButton.UseVisualStyleBackColor = true;
-            // 
-            // NextQuestionButton
-            // 
-            this.NextQuestionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.NextQuestionButton.BackgroundImage = global::IsputCSharpWinFormsV2.Properties.Resources.icons8_forward_button_64;
-            this.NextQuestionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.NextQuestionButton.FlatAppearance.BorderSize = 0;
-            this.NextQuestionButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
-            this.NextQuestionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
-            this.NextQuestionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NextQuestionButton.Location = new System.Drawing.Point(64, 322);
-            this.NextQuestionButton.Margin = new System.Windows.Forms.Padding(0);
-            this.NextQuestionButton.Name = "NextQuestionButton";
-            this.NextQuestionButton.Size = new System.Drawing.Size(64, 64);
-            this.NextQuestionButton.TabIndex = 2;
-            this.NextQuestionButton.UseVisualStyleBackColor = true;
-            // 
-            // BottomPanel
-            // 
-            this.BottomPanel.Controls.Add(this.ResizePictureBox);
-            this.BottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BottomPanel.Enabled = false;
-            this.BottomPanel.Location = new System.Drawing.Point(0, 418);
-            this.BottomPanel.Name = "BottomPanel";
-            this.BottomPanel.Size = new System.Drawing.Size(800, 32);
-            this.BottomPanel.TabIndex = 3;
-            // 
-            // ResizePictureBox
-            // 
-            this.ResizePictureBox.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ResizePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ResizePictureBox.Image")));
-            this.ResizePictureBox.Location = new System.Drawing.Point(768, 0);
-            this.ResizePictureBox.Margin = new System.Windows.Forms.Padding(0);
-            this.ResizePictureBox.Name = "ResizePictureBox";
-            this.ResizePictureBox.Size = new System.Drawing.Size(32, 32);
-            this.ResizePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.ResizePictureBox.TabIndex = 1;
-            this.ResizePictureBox.TabStop = false;
+            this.SwitchQuestionButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
+            this.SwitchQuestionButton.FlatAppearance.BorderSize = 0;
+            this.SwitchQuestionButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
+            this.SwitchQuestionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
+            this.SwitchQuestionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SwitchQuestionButton.ForeColor = System.Drawing.Color.White;
+            this.SwitchQuestionButton.Location = new System.Drawing.Point(11, 57);
+            this.SwitchQuestionButton.Margin = new System.Windows.Forms.Padding(0);
+            this.SwitchQuestionButton.Name = "SwitchQuestionButton";
+            this.SwitchQuestionButton.Size = new System.Drawing.Size(149, 37);
+            this.SwitchQuestionButton.TabIndex = 6;
+            this.SwitchQuestionButton.Text = "Перейти";
+            this.SwitchQuestionButton.UseVisualStyleBackColor = false;
             // 
             // QuestionComboBox
             // 
@@ -236,38 +200,78 @@
             "4",
             "5",
             "6"});
-            this.QuestionComboBox.Location = new System.Drawing.Point(8, 8);
-            this.QuestionComboBox.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.QuestionComboBox.Location = new System.Drawing.Point(11, 10);
+            this.QuestionComboBox.Margin = new System.Windows.Forms.Padding(0);
             this.QuestionComboBox.Name = "QuestionComboBox";
-            this.QuestionComboBox.Size = new System.Drawing.Size(112, 28);
+            this.QuestionComboBox.Size = new System.Drawing.Size(148, 33);
             this.QuestionComboBox.TabIndex = 3;
             // 
-            // SwitchQuestionButton
+            // PreviousQuestionButton
             // 
-            this.SwitchQuestionButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
-            this.SwitchQuestionButton.FlatAppearance.BorderSize = 0;
-            this.SwitchQuestionButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
-            this.SwitchQuestionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
-            this.SwitchQuestionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SwitchQuestionButton.ForeColor = System.Drawing.Color.White;
-            this.SwitchQuestionButton.Location = new System.Drawing.Point(8, 46);
-            this.SwitchQuestionButton.Margin = new System.Windows.Forms.Padding(0);
-            this.SwitchQuestionButton.Name = "SwitchQuestionButton";
-            this.SwitchQuestionButton.Size = new System.Drawing.Size(112, 30);
-            this.SwitchQuestionButton.TabIndex = 6;
-            this.SwitchQuestionButton.Text = "Перейти";
-            this.SwitchQuestionButton.UseVisualStyleBackColor = false;
+            this.PreviousQuestionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.PreviousQuestionButton.BackgroundImage = global::IsputCSharpWinFormsV2.Properties.Resources.Back_Arrow_64px;
+            this.PreviousQuestionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PreviousQuestionButton.FlatAppearance.BorderSize = 0;
+            this.PreviousQuestionButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
+            this.PreviousQuestionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
+            this.PreviousQuestionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PreviousQuestionButton.Location = new System.Drawing.Point(0, 876);
+            this.PreviousQuestionButton.Margin = new System.Windows.Forms.Padding(0);
+            this.PreviousQuestionButton.Name = "PreviousQuestionButton";
+            this.PreviousQuestionButton.Size = new System.Drawing.Size(85, 79);
+            this.PreviousQuestionButton.TabIndex = 1;
+            this.PreviousQuestionButton.UseVisualStyleBackColor = true;
+            // 
+            // NextQuestionButton
+            // 
+            this.NextQuestionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.NextQuestionButton.BackgroundImage = global::IsputCSharpWinFormsV2.Properties.Resources.icons8_forward_button_64;
+            this.NextQuestionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.NextQuestionButton.FlatAppearance.BorderSize = 0;
+            this.NextQuestionButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
+            this.NextQuestionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
+            this.NextQuestionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NextQuestionButton.Location = new System.Drawing.Point(85, 876);
+            this.NextQuestionButton.Margin = new System.Windows.Forms.Padding(0);
+            this.NextQuestionButton.Name = "NextQuestionButton";
+            this.NextQuestionButton.Size = new System.Drawing.Size(85, 79);
+            this.NextQuestionButton.TabIndex = 2;
+            this.NextQuestionButton.UseVisualStyleBackColor = true;
+            // 
+            // BottomPanel
+            // 
+            this.BottomPanel.Controls.Add(this.ResizePictureBox);
+            this.BottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BottomPanel.Enabled = false;
+            this.BottomPanel.Location = new System.Drawing.Point(0, 515);
+            this.BottomPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BottomPanel.Name = "BottomPanel";
+            this.BottomPanel.Size = new System.Drawing.Size(1067, 39);
+            this.BottomPanel.TabIndex = 3;
+            // 
+            // ResizePictureBox
+            // 
+            this.ResizePictureBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ResizePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ResizePictureBox.Image")));
+            this.ResizePictureBox.Location = new System.Drawing.Point(1035, 0);
+            this.ResizePictureBox.Margin = new System.Windows.Forms.Padding(0);
+            this.ResizePictureBox.Name = "ResizePictureBox";
+            this.ResizePictureBox.Size = new System.Drawing.Size(32, 39);
+            this.ResizePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.ResizePictureBox.TabIndex = 1;
+            this.ResizePictureBox.TabStop = false;
             // 
             // MainTestForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.MainWorkSpacePanel);
             this.Controls.Add(this.Header);
             this.Controls.Add(this.BottomPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainTestForm";
             this.Text = "MainTestForm";
             this.Header.ResumeLayout(false);

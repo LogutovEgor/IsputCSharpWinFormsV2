@@ -58,6 +58,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ControlName.cs" />
+    <Compile Include="FileControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormUI.cs">
       <SubType>Form</SubType>
     </Compile>

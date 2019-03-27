@@ -96,6 +96,8 @@ namespace IsputCSharpWinFormsV2
             rc = new Rectangle(0, 0, this.ClientSize.Width, cCaption);
             e.Graphics.FillRectangle(Brushes.DarkBlue, rc);
         }
+
+
         protected override void WndProc(ref Message m)
         {
             if (m.Msg == 0x84)
@@ -113,6 +115,7 @@ namespace IsputCSharpWinFormsV2
                     return;
                 }
             }
+            RedrawMatchingLines(true);
             base.WndProc(ref m);
         }
         private void Header_MouseDown(object sender, MouseEventArgs e)
@@ -135,7 +138,24 @@ namespace IsputCSharpWinFormsV2
         }
         private void CloseWindowButton_Click(object sender, EventArgs e)
         {
-            Close();
+            if (needSave)
+            {
+                DialogResult rezult = MessageBox.Show(
+                    "Зберегти зміни в " + currentFileName + "?",
+                    "ТЕСТ",
+                    MessageBoxButtons.YesNoCancel,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.DefaultDesktopOnly);
+                if (rezult == DialogResult.Yes)
+                    Save();
+                if (rezult != DialogResult.Cancel)
+                    Close();
+                if (rezult == DialogResult.Cancel)
+                    TopMost = true;
+            }
+            else
+                Close();
         }
         private void MinimizeWindowButton_Click(object sender, EventArgs e)
         {
@@ -185,7 +205,8 @@ namespace IsputCSharpWinFormsV2
             //ControlCollection controlCollection = panel1.Controls;
             foreach (Control c in SlidesPanel.Controls)
             {
-                c.Size = new Size(c.Size.Width, (int)(c.Size.Width * 0.75f));
+                if (c is Button)
+                    c.Size = new Size(c.Size.Width, (int)(c.Size.Width * 0.75f));
             }
 
         }
@@ -201,39 +222,16 @@ namespace IsputCSharpWinFormsV2
                 WindowState = FormWindowState.Maximized;
                 ButtonMaximizeWindow.BackgroundImage = IsputCSharpWinFormsV2.Properties.Resources.Restore_Window_32px;
             }
-            
         }
 
-        private void ReDraw()
-        {
+        //private void ReDraw()
+        //{
 
-            if (panel3.Controls[ControlName.matchLayoutPanel.ToString()] != null)
-            {
-                if (panel3.Controls["matchLayoutPanel"].Controls["panelMatchingLines"] != null)
-                {
-                    Graphics g = panel3.Controls["matchLayoutPanel"].Controls["panelMatchingLines"].CreateGraphics();
-                    Control.ControlCollection controls = panel3.Controls[ControlName.matchLayoutPanel.ToString()].
-                        Controls[ControlName.panelMatchingLines.ToString()].Controls;
-                    for (int i = 0; i < controls.Count; i++)
-                    {
-                        try
-                        {
-                            if (controls[Convert.ToInt32((currentQuestion.Answers[i] as AnswerMatch).RightVariant)] != null)
-                                g.DrawLine(new Pen(Brushes.White, 2), controls[i].Location,
-                                    controls[Convert.ToInt32((currentQuestion.Answers[i] as AnswerMatch).RightVariant)].Location);
-                        }
-                        catch (Exception e)
-                        {
-
-                        }
-                        
-                    }
-                }
-            }
-            thread = new System.Threading.Thread(this.ReDraw);
-            thread.Start();
-            System.Threading.Thread.Sleep(0);
-        }
+        //    RedrawMatchingLines();
+        //    thread = new System.Threading.Thread(this.ReDraw);
+        //    thread.Start();
+        //    System.Threading.Thread.Sleep(0);
+        //}
 
     }
 }
