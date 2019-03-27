@@ -42,7 +42,7 @@ namespace IsputCSharpWinFormsV2
             {
                 if (Program.arg[i].Split('.')[Program.arg[i].Split('.').Length - 1] == "tst")
                 {
-                    ReadWriteTest.GetInstance().ReadTest(Program.arg[i]);
+                    //ReadWriteTest.GetInstance().ReadTest(Program.arg[i]);
                     openStartPage = false;
                 }
             }
@@ -58,7 +58,7 @@ namespace IsputCSharpWinFormsV2
             }
             else
             {
-                this.panelStart.Visible = false;
+                this.tableLayoutPanelStart.Visible = false;
                 timerUpdateElements.Start();
                 this.MainWorkSpacePanel.BringToFront();
                 indexAnswer = 0;
@@ -538,7 +538,7 @@ namespace IsputCSharpWinFormsV2
 
         private void buttonGoTest_Click(object sender, EventArgs e)
         {
-            panelStart.Visible = false;
+            tableLayoutPanelStart.Visible = false;
             panelStartGoTest.Visible = true;
             for (int i = 0; i < Manager.Instance.CurrentTest.variantCount; i++)
             {

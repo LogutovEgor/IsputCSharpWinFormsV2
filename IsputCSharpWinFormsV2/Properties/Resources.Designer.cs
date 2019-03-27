@@ -103,6 +103,16 @@ namespace IsputCSharpWinFormsV2.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_edit_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_edit_96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_forward_button_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8_forward_button_64", resourceCulture);
@@ -113,9 +123,39 @@ namespace IsputCSharpWinFormsV2.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_numbered_list_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_numbered_list_96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_running_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_running_96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_settings_32__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8_settings_32__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_user_96", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
