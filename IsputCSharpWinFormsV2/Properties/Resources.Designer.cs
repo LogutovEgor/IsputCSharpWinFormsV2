@@ -103,6 +103,26 @@ namespace IsputCSharpWinFormsV2.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_run_512px {
+            get {
+                object obj = ResourceManager.GetObject("icon_run_512px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconf_edit_48px {
+            get {
+                object obj = ResourceManager.GetObject("iconf_edit_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_edit_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8_edit_96", resourceCulture);

@@ -99,9 +99,9 @@
             this.panelStartGoTest = new System.Windows.Forms.Panel();
             this.buttonStartGoTest = new System.Windows.Forms.Button();
             this.textBoxPIB = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelPIB = new System.Windows.Forms.Label();
             this.comboBoxVariant = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelVariant = new System.Windows.Forms.Label();
             this.tableLayoutPanelStart = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelGoTest = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBoxGoTest = new System.Windows.Forms.PictureBox();
@@ -110,6 +110,10 @@
             this.pictureBoxEditTest = new System.Windows.Forms.PictureBox();
             this.buttonEditTest = new System.Windows.Forms.Button();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanelStartGoTest = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBoxVariant = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPIB = new System.Windows.Forms.PictureBox();
             this.MainWorkSpacePanel.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -142,6 +146,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGoTest)).BeginInit();
             this.tableLayoutPanelEditTest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEditTest)).BeginInit();
+            this.tableLayoutPanelStartGoTest.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVariant)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPIB)).BeginInit();
             this.SuspendLayout();
             // 
             // MainWorkSpacePanel
@@ -1012,14 +1020,10 @@
             // 
             // panelStartGoTest
             // 
-            this.panelStartGoTest.Controls.Add(this.buttonStartGoTest);
-            this.panelStartGoTest.Controls.Add(this.textBoxPIB);
-            this.panelStartGoTest.Controls.Add(this.label3);
-            this.panelStartGoTest.Controls.Add(this.comboBoxVariant);
-            this.panelStartGoTest.Controls.Add(this.label2);
+            this.panelStartGoTest.Controls.Add(this.tableLayoutPanelStartGoTest);
             this.panelStartGoTest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelStartGoTest.Location = new System.Drawing.Point(0, 32);
-            this.panelStartGoTest.Margin = new System.Windows.Forms.Padding(2);
+            this.panelStartGoTest.Margin = new System.Windows.Forms.Padding(0);
             this.panelStartGoTest.Name = "panelStartGoTest";
             this.panelStartGoTest.Size = new System.Drawing.Size(750, 424);
             this.panelStartGoTest.TabIndex = 1;
@@ -1027,60 +1031,78 @@
             // 
             // buttonStartGoTest
             // 
-            this.buttonStartGoTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonStartGoTest.Location = new System.Drawing.Point(273, 216);
-            this.buttonStartGoTest.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonStartGoTest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
+            this.buttonStartGoTest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonStartGoTest.FlatAppearance.BorderSize = 0;
+            this.buttonStartGoTest.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
+            this.buttonStartGoTest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
+            this.buttonStartGoTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonStartGoTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonStartGoTest.ForeColor = System.Drawing.Color.White;
+            this.buttonStartGoTest.Location = new System.Drawing.Point(187, 318);
+            this.buttonStartGoTest.Margin = new System.Windows.Forms.Padding(0);
             this.buttonStartGoTest.Name = "buttonStartGoTest";
-            this.buttonStartGoTest.Size = new System.Drawing.Size(98, 35);
+            this.buttonStartGoTest.Size = new System.Drawing.Size(375, 106);
             this.buttonStartGoTest.TabIndex = 4;
             this.buttonStartGoTest.Text = "Старт";
-            this.buttonStartGoTest.UseVisualStyleBackColor = true;
+            this.buttonStartGoTest.UseVisualStyleBackColor = false;
             this.buttonStartGoTest.Click += new System.EventHandler(this.buttonStartGoTest_Click);
             // 
             // textBoxPIB
             // 
+            this.textBoxPIB.BackColor = System.Drawing.Color.White;
+            this.textBoxPIB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPIB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxPIB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPIB.Location = new System.Drawing.Point(306, 124);
-            this.textBoxPIB.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPIB.Location = new System.Drawing.Point(187, 144);
+            this.textBoxPIB.Margin = new System.Windows.Forms.Padding(0, 38, 0, 38);
             this.textBoxPIB.Name = "textBoxPIB";
-            this.textBoxPIB.Size = new System.Drawing.Size(420, 32);
+            this.textBoxPIB.Size = new System.Drawing.Size(188, 25);
             this.textBoxPIB.TabIndex = 3;
             // 
-            // label3
+            // labelPIB
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(182, 129);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 26);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "ПІБ";
+            this.labelPIB.AutoSize = true;
+            this.labelPIB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelPIB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPIB.ForeColor = System.Drawing.Color.White;
+            this.labelPIB.Location = new System.Drawing.Point(75, 106);
+            this.labelPIB.Margin = new System.Windows.Forms.Padding(0);
+            this.labelPIB.Name = "labelPIB";
+            this.labelPIB.Size = new System.Drawing.Size(112, 106);
+            this.labelPIB.TabIndex = 2;
+            this.labelPIB.Text = "ПІБ";
+            this.labelPIB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // comboBoxVariant
             // 
+            this.comboBoxVariant.BackColor = System.Drawing.Color.White;
+            this.comboBoxVariant.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBoxVariant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxVariant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxVariant.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxVariant.FormattingEnabled = true;
-            this.comboBoxVariant.Location = new System.Drawing.Point(306, 65);
-            this.comboBoxVariant.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxVariant.Location = new System.Drawing.Point(187, 38);
+            this.comboBoxVariant.Margin = new System.Windows.Forms.Padding(0, 38, 0, 38);
             this.comboBoxVariant.Name = "comboBoxVariant";
-            this.comboBoxVariant.Size = new System.Drawing.Size(92, 33);
+            this.comboBoxVariant.Size = new System.Drawing.Size(188, 33);
             this.comboBoxVariant.TabIndex = 1;
             this.comboBoxVariant.SelectedIndexChanged += new System.EventHandler(this.comboBoxVariant_SelectedIndexChanged);
             // 
-            // label2
+            // labelVariant
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(177, 67);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 26);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Варіант";
+            this.labelVariant.AutoSize = true;
+            this.labelVariant.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelVariant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelVariant.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelVariant.ForeColor = System.Drawing.Color.White;
+            this.labelVariant.Location = new System.Drawing.Point(75, 0);
+            this.labelVariant.Margin = new System.Windows.Forms.Padding(0);
+            this.labelVariant.Name = "labelVariant";
+            this.labelVariant.Size = new System.Drawing.Size(112, 106);
+            this.labelVariant.TabIndex = 0;
+            this.labelVariant.Text = "Варіант";
+            this.labelVariant.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanelStart
             // 
@@ -1096,7 +1118,7 @@
             this.tableLayoutPanelStart.Name = "tableLayoutPanelStart";
             this.tableLayoutPanelStart.RowCount = 1;
             this.tableLayoutPanelStart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelStart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelStart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 424F));
             this.tableLayoutPanelStart.Size = new System.Drawing.Size(750, 424);
             this.tableLayoutPanelStart.TabIndex = 3;
             // 
@@ -1122,7 +1144,7 @@
             // pictureBoxGoTest
             // 
             this.pictureBoxGoTest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxGoTest.Image = global::IsputCSharpWinFormsV2.Properties.Resources.icons8_running_96;
+            this.pictureBoxGoTest.Image = global::IsputCSharpWinFormsV2.Properties.Resources.icon_run_512px;
             this.pictureBoxGoTest.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxGoTest.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxGoTest.Name = "pictureBoxGoTest";
@@ -1173,7 +1195,7 @@
             // pictureBoxEditTest
             // 
             this.pictureBoxEditTest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxEditTest.Image = global::IsputCSharpWinFormsV2.Properties.Resources.icons8_edit_96;
+            this.pictureBoxEditTest.Image = global::IsputCSharpWinFormsV2.Properties.Resources.iconf_edit_48px;
             this.pictureBoxEditTest.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxEditTest.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxEditTest.Name = "pictureBoxEditTest";
@@ -1212,6 +1234,74 @@
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(369, 37);
             this.textBoxPassword.TabIndex = 2;
+            // 
+            // tableLayoutPanelStartGoTest
+            // 
+            this.tableLayoutPanelStartGoTest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(73)))), ((int)(((byte)(107)))));
+            this.tableLayoutPanelStartGoTest.ColumnCount = 3;
+            this.tableLayoutPanelStartGoTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelStartGoTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelStartGoTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelStartGoTest.Controls.Add(this.buttonStartGoTest, 1, 2);
+            this.tableLayoutPanelStartGoTest.Controls.Add(this.tableLayoutPanel4, 1, 1);
+            this.tableLayoutPanelStartGoTest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelStartGoTest.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelStartGoTest.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanelStartGoTest.Name = "tableLayoutPanelStartGoTest";
+            this.tableLayoutPanelStartGoTest.RowCount = 3;
+            this.tableLayoutPanelStartGoTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelStartGoTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelStartGoTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelStartGoTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelStartGoTest.Size = new System.Drawing.Size(750, 424);
+            this.tableLayoutPanelStartGoTest.TabIndex = 5;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.pictureBoxVariant, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.textBoxPIB, 2, 1);
+            this.tableLayoutPanel4.Controls.Add(this.pictureBoxPIB, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.labelPIB, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.labelVariant, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.comboBoxVariant, 2, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(187, 106);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(375, 212);
+            this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // pictureBoxVariant
+            // 
+            this.pictureBoxVariant.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxVariant.Image = global::IsputCSharpWinFormsV2.Properties.Resources.icons8_numbered_list_96;
+            this.pictureBoxVariant.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxVariant.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBoxVariant.Name = "pictureBoxVariant";
+            this.pictureBoxVariant.Size = new System.Drawing.Size(75, 106);
+            this.pictureBoxVariant.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxVariant.TabIndex = 0;
+            this.pictureBoxVariant.TabStop = false;
+            // 
+            // pictureBoxPIB
+            // 
+            this.pictureBoxPIB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxPIB.Image = global::IsputCSharpWinFormsV2.Properties.Resources.icons8_user_96;
+            this.pictureBoxPIB.Location = new System.Drawing.Point(0, 106);
+            this.pictureBoxPIB.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBoxPIB.Name = "pictureBoxPIB";
+            this.pictureBoxPIB.Size = new System.Drawing.Size(75, 106);
+            this.pictureBoxPIB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxPIB.TabIndex = 1;
+            this.pictureBoxPIB.TabStop = false;
             // 
             // MainForm
             // 
@@ -1267,13 +1357,17 @@
             this.TableLayoutPanel.ResumeLayout(false);
             this.ControlPanel.ResumeLayout(false);
             this.panelStartGoTest.ResumeLayout(false);
-            this.panelStartGoTest.PerformLayout();
             this.tableLayoutPanelStart.ResumeLayout(false);
             this.tableLayoutPanelGoTest.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGoTest)).EndInit();
             this.tableLayoutPanelEditTest.ResumeLayout(false);
             this.tableLayoutPanelEditTest.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEditTest)).EndInit();
+            this.tableLayoutPanelStartGoTest.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVariant)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPIB)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1347,10 +1441,10 @@
         private System.Windows.Forms.Button PreviousQuestionButton;
         private System.Windows.Forms.Button NextQuestionButton;
         private System.Windows.Forms.Panel panelStartGoTest;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelVariant;
         private System.Windows.Forms.Button buttonStartGoTest;
         private System.Windows.Forms.TextBox textBoxPIB;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelPIB;
         private System.Windows.Forms.ComboBox comboBoxVariant;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelStart;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelGoTest;
@@ -1360,6 +1454,10 @@
         private System.Windows.Forms.PictureBox pictureBoxEditTest;
         private System.Windows.Forms.Button buttonEditTest;
         private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelStartGoTest;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.PictureBox pictureBoxVariant;
+        private System.Windows.Forms.PictureBox pictureBoxPIB;
     }
 }
 
