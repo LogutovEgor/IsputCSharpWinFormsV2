@@ -37,7 +37,6 @@ namespace IsputCSharpWinFormsV2
 
         public void UIForTets()
         {
-
             for (int i = 0; i < Manager.Instance.CurrentTest.Questions.Count; i++)
             {
                 CreateUIForSlide(i + 1);

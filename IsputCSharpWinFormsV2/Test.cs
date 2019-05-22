@@ -14,8 +14,6 @@ namespace IsputCSharpWinFormsV2
         {
             Questions = new List<Question>();
             variantCount = 1;
-            password = "1234";
         }
-        
     }
 }

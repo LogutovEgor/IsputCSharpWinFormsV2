@@ -16,13 +16,22 @@ namespace IsputCSharpWinFormsV2
         /// </summary>
         int indexQuestion;
         Thread thread;
-        Question currentQuestion { get { return Manager.Instance.CurrentTest.Questions[indexQuestion]; } }
+        Question currentQuestion {
+            get
+            {
+                if (Manager.Instance.CurrentTest.Questions.Count != 0)
+                    return Manager.Instance.CurrentTest.Questions[indexQuestion];
+                else
+                    return null;
+            }
+        }
         int indexAnswer;
+        Control currentPanel;
 
         /// </summary>
         private int activeAnswer = -1;
-        private Point mouseStart;
-        private Point mouseEnd;
+        private System.Drawing.Point mouseStart;
+        private System.Drawing.Point mouseEnd;
         private bool isStartMatching;
         private int numberMatch;
         private int variantMatch;
@@ -37,7 +46,7 @@ namespace IsputCSharpWinFormsV2
             InitializeComponent();
             _arrows = new List<GraphicsPath>();
             openStartPage = true;
-            Program.arg.Add("C:\\Users\\Maxon\\Desktop\\1.tst");
+            Program.arg.Add("C:\\Users\\Maxon\\Desktop\\pas.tst");
             for (int i = 0; i < Program.arg.Count; i++)
             {
                 if (Program.arg[i].Split('.')[Program.arg[i].Split('.').Length - 1] == "tst")
@@ -49,7 +58,29 @@ namespace IsputCSharpWinFormsV2
             if (openStartPage)
                 textBoxPassword.Visible = false;
 
+            SetCurrentPanel(tableLayoutPanelStart);
+
+            for (int i = 0; i < Program.arg.Count; i++)
+            {
+                if (Program.arg[i].Split('.')[Program.arg[i].Split('.').Length - 1] == "tst")
+                {
+                    ReadWriteTest.GetInstance().ReadTest(Program.arg[i]);
+                }
+            }
+
+            //tableLayoutPanelStart.Hide();
+            //panelStartGoTest.Visible = true;
+            //panelStartGoTest.BringToFront();
         }
+
+        public void SetCurrentPanel(Control panel)
+        {
+            if (currentPanel != null)
+                currentPanel.Visible = false;
+            currentPanel = panel;
+            currentPanel.Visible = true;
+        }
+
         public void EditTest()
         {
             if (textBoxPassword.Text != Manager.Instance.CurrentTest.password && !openStartPage)
@@ -58,9 +89,9 @@ namespace IsputCSharpWinFormsV2
             }
             else
             {
-                this.tableLayoutPanelStart.Visible = false;
+                SetCurrentPanel(MainWorkSpacePanel);
+
                 timerUpdateElements.Start();
-                this.MainWorkSpacePanel.BringToFront();
                 indexAnswer = 0;
                 indexQuestion = 0;
                 MouseMove += MainForm_MouseMove;
@@ -84,15 +115,15 @@ namespace IsputCSharpWinFormsV2
 
                 //ReadWriteTest.GetInstance().WriteTest();
 
-                test = new TestData();
+                //test = new TestData();
                 defImageSlide = new Bitmap(panel2.Width, panel2.Height);
-                panel2.DrawToBitmap(defImageSlide, new Rectangle(0, 0, panel2.Width, panel2.Height));
+                panel2.DrawToBitmap(defImageSlide, new System.Drawing.Rectangle(0, 0, panel2.Width, panel2.Height));
 
 
                 //Thread read = new Thread(KeyRead);
                 //read.Start();
 
-                test.Show();
+                //test.Show();
 
                 for (int i = 0; i < 25; i++)
                 {
@@ -141,11 +172,12 @@ namespace IsputCSharpWinFormsV2
                         openStartPage = false;
                         break;
                     }
-
                 }
 
                 if (openStartPage)
                 {
+                    Manager.Instance.CurrentTest.Questions.Add(new Question());
+                    UIForTets();
                     needSave = true;
                     saveAs = true;
                 }
@@ -154,6 +186,7 @@ namespace IsputCSharpWinFormsV2
                     needSave = true;
                     saveAs = false;
                 }
+           
             }
         }
 
@@ -161,8 +194,7 @@ namespace IsputCSharpWinFormsV2
         {
             //SettingsForm settingsForm = new SettingsForm();
             //settingsForm.ShowDialog();
-            this.panelSetting.Visible = true;
-            panelSetting.BringToFront();
+            SetCurrentPanel(panelSetting);
         }
 
         private void toolStripButtonCreateQuestion_Click(object sender, EventArgs e)
@@ -174,7 +206,7 @@ namespace IsputCSharpWinFormsV2
         {
             //Кнопка-слайдом
             Bitmap printscreen = new Bitmap(panel2.Width, panel2.Height);
-            panel2.DrawToBitmap(printscreen, new Rectangle(0, 0, panel2.Width, panel2.Height));
+            panel2.DrawToBitmap(printscreen, new System.Drawing.Rectangle(0, 0, panel2.Width, panel2.Height));
             SlidesPanel.Controls[indexQuestion].BackgroundImage = printscreen;   
         }
 
@@ -294,23 +326,26 @@ namespace IsputCSharpWinFormsV2
             indexQuestion = Convert.ToInt32(((sender2 as Button).Name));
             //Панель з питаннями та відповідями очищується
             QuestionGroupBox.Controls.Clear();
-            for (int i = 0; i < panel3.Controls[MatchCnt.matchLayoutPanel.ToString()].
-                                    Controls[MatchCnt.panelMatchleft.ToString()].Controls.Count; i++)
+            if (panel3.Controls[MatchCnt.matchLayoutPanel.ToString()] != null)
             {
-                panel3.Controls[MatchCnt.matchLayoutPanel.ToString()].
-                                Controls[MatchCnt.panelMatchleft.ToString()].Controls[i].Visible = false;
-            }
-            for (int i = 0; i < panel3.Controls[MatchCnt.matchLayoutPanel.ToString()].
-                                    Controls[MatchCnt.panelMatchRight.ToString()].Controls.Count; i++)
-            {
-                panel3.Controls[MatchCnt.matchLayoutPanel.ToString()].
-                                Controls[MatchCnt.panelMatchRight.ToString()].Controls[i].Visible = false;
-            }
-            for (int i = 0; i < panel3.Controls[MatchCnt.matchLayoutPanel.ToString()].
-                                    Controls[MatchCnt.panelMatchingLines.ToString()].Controls.Count; i++)
-            {
-                panel3.Controls[MatchCnt.matchLayoutPanel.ToString()].
-                                Controls[MatchCnt.panelMatchingLines.ToString()].Controls[i].Visible = false;
+                for (int i = 0; i < panel3.Controls[MatchCnt.matchLayoutPanel.ToString()].
+                                        Controls[MatchCnt.panelMatchleft.ToString()].Controls.Count; i++)
+                {
+                    panel3.Controls[MatchCnt.matchLayoutPanel.ToString()].
+                                    Controls[MatchCnt.panelMatchleft.ToString()].Controls[i].Visible = false;
+                }
+                for (int i = 0; i < panel3.Controls[MatchCnt.matchLayoutPanel.ToString()].
+                                        Controls[MatchCnt.panelMatchRight.ToString()].Controls.Count; i++)
+                {
+                    panel3.Controls[MatchCnt.matchLayoutPanel.ToString()].
+                                    Controls[MatchCnt.panelMatchRight.ToString()].Controls[i].Visible = false;
+                }
+                for (int i = 0; i < panel3.Controls[MatchCnt.matchLayoutPanel.ToString()].
+                                        Controls[MatchCnt.panelMatchingLines.ToString()].Controls.Count; i++)
+                {
+                    panel3.Controls[MatchCnt.matchLayoutPanel.ToString()].
+                                    Controls[MatchCnt.panelMatchingLines.ToString()].Controls[i].Visible = false;
+                }
             }
             for (int i = 0; i < panel3.Controls.Count; i++)
             {
@@ -462,12 +497,12 @@ namespace IsputCSharpWinFormsV2
         {
             //Кнопка-слайдом
             Bitmap printscreen = new Bitmap(panel2.Width, panel2.Height);
-            panel2.DrawToBitmap(printscreen, new Rectangle(0, 0, panel2.Width, panel2.Height));
+            panel2.DrawToBitmap(printscreen, new System.Drawing.Rectangle(0, 0, panel2.Width, panel2.Height));
             for (int i = 0; i < SlidesPanel.Controls.Count; i++)
                 if (SlidesPanel.Controls[i] is Button)
                     if (SlidesPanel.Controls[i].Name == indexQuestion.ToString())
                         (SlidesPanel.Controls[i] as Button).BackgroundImage = printscreen;
-            test.UpdateForm(new List<string>(), indexQuestion);
+            //test.UpdateForm(new List<string>(), indexQuestion);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -501,9 +536,10 @@ namespace IsputCSharpWinFormsV2
                         Dock = DockStyle.Left,
                         Text = (i + 1).ToString(),
                         Name = "VariantCheckbox_" + i, 
-                        Checked = currentQuestion.InVariant[i],
                         AutoSize = true
                     };
+                    if (currentQuestion != null)
+                        variant.Checked = currentQuestion.InVariant[i];
                     variant.CheckedChanged += Variant_CheckedChanged;
                     panelCheckBoxVariant.Controls.Add(variant);
                 }
@@ -549,7 +585,6 @@ namespace IsputCSharpWinFormsV2
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            
             EditTest();
         }
 
@@ -557,22 +592,245 @@ namespace IsputCSharpWinFormsV2
         {
             Manager.Instance.CurrentTest.password = textBoxChangePass.Text;
             MessageBox.Show("Успішно", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            panelSetting.Visible = false;
+            SetCurrentPanel(MainWorkSpacePanel);
         }
 
         private void buttonStartGoTest_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < Program.arg.Count; i++)
+            {
+                if (Program.arg[i].Split('.')[Program.arg[i].Split('.').Length - 1] == "tst")
+                {
+                    ReadWriteTest.GetInstance().ReadTest(Program.arg[i]);
+                    break;
+                }
+            }
             if (MessageBox.Show("Розпочати тестування", "Перевірка", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
             {
-                panelTestRun.Visible = true;
-                panelTestRun.BringToFront();
-                panelStartGoTest.Visible = false;
-                Manager.Instance.SetQuestionsForTest(Convert.ToInt32(comboBoxVariant.Text));
+                SetCurrentPanel(panelTestRun);
+                Manager.Instance.SetQuestionsForTest(1);//Convert.ToInt32(comboBoxVariant.Text));
                 Manager.GoTest goTestQues = Manager.Instance.goTest;
-                QuestionComboBox.Items.Clear();
-                for (int i = 0; i < goTestQues.questions.Count; i++)
+                CreateButtonsReferenceToQuestions();
+                Manager.Instance.goTest.indexQuestion = 0;
+                ShowQuestion();
+            }
+        }
+
+        public void CreateButtonsReferenceToQuestions()
+        {
+            for (int i = 0; i < Manager.Instance.goTest.questions.Count; i++)
+            {
+                Button nextPanel = new Button()
                 {
-                    QuestionComboBox.Items.Add(i + 1);
+                    Name = i.ToString(),
+                    Text = (i + 1).ToString(),
+                    Size = new Size(32, 32),
+                    BackColor = Color.White,
+                    ForeColor = Color.Black,
+                    Location = new Point((i % 25) * 34 + 5, (int)(i / 25) * 34 + 5)
+                };
+                nextPanel.Font = new Font("Times New Roman", 7);
+                nextPanel.Click += NextPanel_Click;
+                SlidesPanelInTest.Controls.Add(nextPanel);
+            }
+        }
+
+        private void NextPanel_Click(object sender, EventArgs e)
+        {
+            Manager.Instance.goTest.indexQuestion = Convert.ToInt32((sender as Control).Name);
+            ShowQuestion();
+        }
+        /// <summary>
+        /// Контроли для графічного питання
+        /// </summary>
+        void GraphicControlQuestion(Question question)
+        {
+            PictureBox questionPicture = new PictureBox()
+            {
+                Name = "questionPictureBox",
+                Dock = DockStyle.Left,
+                SizeMode = PictureBoxSizeMode.Zoom,
+                Padding = new Padding(5),
+                BackColor = Color.White,
+                Image = StringToImage(question.Text[1])
+            };
+            panelQuestion.Controls.Add(questionPicture);
+            panelQuestion.Controls.SetChildIndex(questionPicture, 0);
+            questionPicture.Invalidate();
+            Label questionTextBox = new Label()
+            {
+                Name = "labelQuestion",
+                Dock = DockStyle.Top,
+                Text = question.Text[0],
+                ForeColor = Color.White,
+                Font = new Font("Times New Roman", 16),
+                AutoSize = false
+            };
+            panelQuestion.Controls.Add(questionTextBox);
+            panelQuestion.Controls.SetChildIndex(questionTextBox, 0);
+        }
+
+        /// <summary>
+        /// Контроли для текстового питання
+        /// </summary>
+        void TextControlQuestion(Question question)
+        {
+            Label questionTextBox = new Label()
+            {
+                Name = "labelQuestion",
+                Dock = DockStyle.Fill,
+                Text = question.Text[0],
+                ForeColor = Color.White,
+                Font = new Font("Times New Roman", 16),
+                AutoSize = false,
+            };
+            panelQuestion.Controls.Add(questionTextBox);
+            panelQuestion.Controls.SetChildIndex(questionTextBox, 0);
+        }
+
+        /// <summary>
+        /// Контроли для текстової відповіді
+        /// </summary>
+        /// <param name="question"></param>
+        void ControlForTextAnswer(Question question)
+        {
+            for (int i = 0; i < question.Answers.Count; i++)
+            {
+                ///
+                GroupBox groupBox = new GroupBox
+                {
+                    Size = new Size(450, 44),
+                    Dock = DockStyle.Top,
+                    Padding = new Padding(10, 2, 2, 2),
+                    Name = "Answer_" + i,
+                    Font = DefaultFont,
+                };
+                ///
+                CheckBox checkBox = new CheckBox
+                {
+                    Size = new Size(25, 25),
+                    Dock = DockStyle.Right,
+                    Padding = new Padding(6, 0, 0, 5),
+                    Name = i.ToString(),
+                };
+                //Write userAnswer
+                checkBox.CheckedChanged += (sender, ev) =>
+                {
+                    (Manager.Instance.goTest.userQuestions[Manager.Instance.goTest.indexQuestion].
+                        Answers[Convert.ToInt32((sender as Control).Name)] as AnswerText).Right = (sender as CheckBox).Checked;
+                    for (int j = 0; j < panelAnswer.Controls.Count; j++)
+                    {
+                        if (panelAnswer.Controls["Answer_" + j].Controls[j.ToString()] is CheckBox)
+                        {
+                            if ((panelAnswer.Controls["Answer_" + j].Controls[j.ToString()] as CheckBox).Checked)
+                            {
+                                SlidesPanelInTest.Controls[Manager.Instance.goTest.indexQuestion].BackColor = Color.Gray;
+                                return;
+                            }
+                        }
+                    }
+                    SlidesPanelInTest.Controls[Manager.Instance.goTest.indexQuestion].BackColor = Color.White;
+                };
+                ///
+                Label textBox = new Label
+                {
+                    Size = new Size(10, 20),
+                    Dock = DockStyle.Fill,
+                    Margin = new Padding(0),
+                    Name = "TextBox_" + indexAnswer,
+                    Text = (question.Answers[i] as AnswerText).Text,
+                    ForeColor = Color.White
+                };
+                groupBox.Controls.AddRange(new Control[] { checkBox, textBox });
+                groupBox.ContextMenuStrip = contextMenuStripAnswers;
+                panelAnswer.Controls.Add(groupBox);
+                panelAnswer.Controls.SetChildIndex(groupBox, 0);
+            }
+        }
+
+        /// <summary>
+        /// Контроли для відповіді-зєднання
+        /// </summary>
+        void ControlForMatchAnswer(Question question)
+        {
+            int yDelta = 0;
+            for (int i = 0; i < question.Answers.Count; i++)
+            {
+                Label labelAnswerLeft = new Label()
+                {
+                    Dock = DockStyle.Top,
+                    Text = (i + 1) + ". " + (question.Answers[i] as AnswerMatch).Text.Key,
+                    ForeColor = Color.White
+                };
+                Label labelAnswerRight = new Label()
+                {
+                    Dock = DockStyle.Top,
+                    Text = Convert.ToChar(i + 1072) + ". " + (question.Answers[i] as AnswerMatch).Text.Value,
+                    ForeColor = Color.White,
+                    TextAlign = ContentAlignment.TopRight
+                };
+                panelAnswer.Controls.Add(labelAnswerLeft);
+                panelAnswer.Controls.SetChildIndex(labelAnswerLeft, 0);
+
+                panelAnswer.Controls.Add(labelAnswerRight);
+                panelAnswer.Controls.SetChildIndex(labelAnswerRight, 0);
+
+                yDelta = labelAnswerRight.Location.Y;
+            }
+
+            yDelta += 64;
+            for (int i = 0; i < question.Answers.Count; i++)
+            {
+                Label label = new Label()
+                {
+                    Text = (i + 1).ToString(),
+                    ForeColor = Color.White,
+                    Location = new Point(3, (i % 10) * 34 + 5 + yDelta),
+                    AutoSize = true
+                };
+                label.Font = new Font("Times New Roman", 10);
+                panelAnswer.Controls.Add(label);
+                label = new Label()
+                {
+                    Text = Convert.ToChar(i + 1072).ToString(),
+                    ForeColor = Color.White,
+                    Location = new Point(i * 34 + 38, yDelta - 16),
+                    AutoSize = true
+                };
+                label.Font = new Font("Times New Roman", 10);
+                panelAnswer.Controls.Add(label);
+            }
+
+            for (int i = 0; i < question.Answers.Count; i++)
+            {
+                for (int j = 0; j < question.Answers.Count; j++)
+                {
+                    Button nextPanel = new Button()
+                    {
+                        Name = i + "_" + j,
+                        //Text = i + "_" + j,
+                        Size = new Size(32, 32),
+                        BackColor = Color.White,
+                        ForeColor = Color.Black,
+                        Location = new Point(j * 34 + 32, (i % 10) * 34 + 5 + yDelta)
+                    };
+
+                    nextPanel.Click += (sender, ev) =>
+                    {
+                        Button button = (sender as Button);
+                        string[] buttonName = button.Name.Split('_');
+                        int x = Convert.ToInt32(buttonName[0]), y = Convert.ToInt32(buttonName[1]);
+                        (Manager.Instance.goTest.userQuestions[Manager.Instance.goTest.indexQuestion].Answers.
+                           Find(obj => (obj as AnswerMatch).Number == x) as AnswerMatch).RightVariant = y;
+                        for (int k = 0; k < question.Answers.Count; k++)
+                        {
+                            (panelAnswer.Controls.Find(x + "_" + k.ToString(), false)[0] as Button).BackColor = Color.White;
+                        }
+                        button.BackColor = Color.Gray;
+                        SlidesPanelInTest.Controls[Manager.Instance.goTest.indexQuestion].BackColor = Color.Gray;
+                    };
+                    nextPanel.Font = new Font("Times New Roman", 7);
+                    panelAnswer.Controls.Add(nextPanel);
                 }
             }
         }
@@ -580,6 +838,184 @@ namespace IsputCSharpWinFormsV2
         private void comboBoxVariant_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void SwitchQuestionButton_Click(object sender, EventArgs e)
+        {
+            Manager.Instance.goTest.indexQuestion++;
+            ShowQuestion();   
+        }
+
+        /// <summary>
+        /// Create Controls for current question
+        /// </summary>
+        public void ShowQuestion()
+        {
+            if (Manager.Instance.goTest.indexQuestion == Manager.Instance.goTest.questions.Count - 1)
+                SwitchQuestionButton.Visible = false;
+            else
+                SwitchQuestionButton.Visible = true;
+
+            Question question = Manager.Instance.goTest.questions[Manager.Instance.goTest.indexQuestion];
+            //Створення елементів для питання
+            panelQuestion.Controls.Clear();
+            if (question.graphicInQuestion)
+            {
+                GraphicControlQuestion(question);
+            }
+            else
+            {
+                TextControlQuestion(question);
+            }
+            panelAnswer.Controls.Clear();
+            if (question.Answers.Count != 0)
+            {
+                if (question.Answers[0] is AnswerText)
+                {
+                    ControlForTextAnswer(question);
+                }
+                else
+                {
+                    ControlForMatchAnswer(question);
+                }
+            }
+        }
+
+        //Підрахунок результатів
+        private void buttonEndTest_Click(object sender, EventArgs e)
+        {
+            int answerCount = Manager.Instance.goTest.questions.Count;
+            float answerRightUserCount = 0;
+            int addBall = 1;
+            int countRightAnswerInQuestion = 0;
+            Button curBut;
+            for (int i = 0; i < Manager.Instance.goTest.userQuestions.Count; i++)
+            {
+                curBut = (SlidesPanelInTest.Controls[i.ToString()] as Button);
+                curBut.Enabled = false;
+                if (Manager.Instance.goTest.userQuestions[i].Answers.Count > 0)
+                {
+                    if (Manager.Instance.goTest.userQuestions[i].Answers[0] is AnswerText)
+                    {
+                        for (int j = 0; j < Manager.Instance.goTest.userQuestions.Count; j++)
+                        {
+                            //
+                            if ((Manager.Instance.goTest.userQuestions[i].Answers[j] as AnswerText).Right !=
+                                 (Manager.Instance.goTest.questions[i].Answers[j] as AnswerText).Right)
+                            {
+                                addBall = 0;
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (int j = 0; j < Manager.Instance.goTest.userQuestions.Count; j++)
+                        {
+                            if ((Manager.Instance.goTest.userQuestions[i].Answers[j] as AnswerMatch).RightVariant !=
+                                 (Manager.Instance.goTest.questions[i].Answers[j] as AnswerMatch).RightVariant)
+                            {
+                                addBall = 0;
+                                break;
+                            }
+                        }
+                    }
+                    //
+                    if (addBall == 1)
+                    {
+                        answerRightUserCount++;
+                        curBut.BackColor = Color.Green;
+                    }
+                    //else if (addBall > 0)
+                    //{
+                    //    answerRightUserCount += 0.5f;
+                    //    curBut.BackColor = Color.Yellow;
+                    //}
+                    else
+                        curBut.BackColor = Color.Red;
+                    //
+                    addBall = 1;
+                }
+            }
+
+            //
+            panelQuestion.Controls.Clear();
+            panelAnswer.Controls.Clear();
+            buttonEndTest.Visible = false;
+            SwitchQuestionButton.Visible = false;
+            Label labelRezult = new Label()
+            {
+                Text = "Балів: " + answerRightUserCount + " з " + answerCount + " можливих",
+                Dock = DockStyle.Top,
+                AutoSize = true,
+                Font = new Font("Arial", 14),
+                ForeColor = Color.White
+            };
+            panelQuestion.Controls.Add(labelRezult);
+            //
+            float percent = answerRightUserCount / answerCount * 100;
+            int rating = 0;
+            for (int i = 1; i < Manager.Instance.rating.Count; i++)
+            {
+                if (percent > Manager.Instance.rating[i] && percent <= Manager.Instance.rating[i + 1])
+                {
+                    rating = i;
+                }
+            }
+            labelRezult.Text += Environment.NewLine + "Оцінка: " + rating;
+        }
+
+        private void toolStripButtonGoMenu_Click(object sender, EventArgs e)
+        {
+            if (needSave)
+            {
+                DialogResult rezult = MessageBox.Show(
+                    "Зберегти зміни в " + currentFileName + "?",
+                    "ТЕСТ",
+                    MessageBoxButtons.YesNoCancel,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.DefaultDesktopOnly);
+                if (rezult == DialogResult.Yes)
+                    Save();
+                if (rezult != DialogResult.Cancel)
+                {
+                    SetCurrentPanel(tableLayoutPanelStart);
+                    TopMost = true;
+                }
+                if (rezult == DialogResult.Cancel)
+                    TopMost = true;
+            }
+            else
+            {
+                SetCurrentPanel(tableLayoutPanelStart);
+                TopMost = true;
+            }
+        }
+
+
+        /// <summary>
+        /// LoadTestFromWord
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripButtonLoadTestFromWord_Click(object sender, EventArgs e)
+        {
+            Manager.Instance.LoadQuestionsFromWord();
+            for (int j = 0; j < Manager.Instance.CurrentTest.variantCount; j++)
+            {
+                CheckBox variant = new CheckBox()
+                {
+                    Dock = DockStyle.Left,
+                    Text = (j + 1).ToString(),
+                    Name = "VariantCheckbox_" + j,
+                    Checked = currentQuestion.InVariant[j],
+                    AutoSize = true
+                };
+                variant.CheckedChanged += Variant_CheckedChanged;
+                panelCheckBoxVariant.Controls.Add(variant);
+            }
+            UIForTets();
         }
     }
 }

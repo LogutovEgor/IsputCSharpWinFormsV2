@@ -32,6 +32,9 @@ namespace IsputCSharpWinFormsV2
                 Manager.Instance.CurrentTest = (Test)binaryFormatter.Deserialize(fs); 
             }
 
+            if (Manager.Instance.CurrentTest.password == null)
+                Manager.Instance.CurrentTest.password = "1111";
+            
         }
         public void WriteTest(string fileName)
         {
