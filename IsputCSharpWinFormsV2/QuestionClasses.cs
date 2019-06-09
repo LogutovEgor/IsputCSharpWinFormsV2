@@ -20,6 +20,7 @@ namespace IsputCSharpWinFormsV2
         public Image ImageSlide { get; set; }
 
         public List<bool> InVariant { get; set; }
+        public Subject subject;
 
         public Question()
         {
@@ -30,7 +31,7 @@ namespace IsputCSharpWinFormsV2
             {
                 InVariant.Add(false);
             }
-
+            subject = Subject.Відсутній;
         }
         public int AnswersCount
         {

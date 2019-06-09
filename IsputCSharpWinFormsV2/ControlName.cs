@@ -16,4 +16,9 @@ namespace IsputCSharpWinFormsV2
         groupBoxQuestionLeft, groupBoxQuestionRight, textLeft, labelLeft, textRight, labelRight
     }
 
+    public enum Subject
+    {
+        Відсутній, Матем, Алгоритм
+    }
+
 }

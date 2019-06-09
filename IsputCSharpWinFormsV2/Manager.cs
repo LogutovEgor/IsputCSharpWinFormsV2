@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 //using Microsoft.Office.Interop.Word;
 
 namespace IsputCSharpWinFormsV2
@@ -47,7 +48,8 @@ namespace IsputCSharpWinFormsV2
                         Text = CurrentTest.Questions[i].Text,
                         Answers = new List<Answer>(),
                         ImageSlide = CurrentTest.Questions[i].ImageSlide,
-                        graphicInQuestion = CurrentTest.Questions[i].graphicInQuestion
+                        graphicInQuestion = CurrentTest.Questions[i].graphicInQuestion,
+                        subject = CurrentTest.Questions[i].subject
                     });
                     for (int j = 0; j < CurrentTest.Questions[i].Answers.Count; j++)
                     {
@@ -79,7 +81,8 @@ namespace IsputCSharpWinFormsV2
                 goTest.userQuestions.Add(new Question()
                 {
                     Text = goTest.questions[i].Text,
-                    Answers = new List<Answer>()
+                    Answers = new List<Answer>(),
+                    subject = goTest.questions[i].subject
                 });
                 for (int j = 0; j < goTest.questions[i].Answers.Count; j++)
                 {
@@ -122,6 +125,8 @@ namespace IsputCSharpWinFormsV2
             public List<Question> questions;
             public List<Question> userQuestions;
             public int indexQuestion;
+
+
             public GoTest()
             {
                 questions = new List<Question>();
@@ -133,48 +138,64 @@ namespace IsputCSharpWinFormsV2
         /// <summary>
         /// Load Questions From Word
         /// </summary>
-        public void LoadQuestionsFromWord()
+        public bool LoadQuestionsFromWord()
         {
             StringBuilder text = new StringBuilder();
             Microsoft.Office.Interop.Word.Application word = new Microsoft.Office.Interop.Word.Application();
             object miss = System.Reflection.Missing.Value;
-            object path = @"C:\Users\Maxon\Desktop\тесты\тест за варіантами — копия.doc";
-            object readOnly = true;
-            Microsoft.Office.Interop.Word.Document docs = word.Documents.Open(ref path, ref miss, ref readOnly, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss);
-            string[] docsStrings = docs.Content.Text.Split('\r');
-            docs.Close();
-            //docStrings split to Test
-            int currentVariant = 0, indexQuestion = 0, k;
-            string nextLine = "";
-            for (int i = 0; i < docsStrings.Length; i++)
+            // Displays an OpenFileDialog so the user can select a Cursor.  
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "(*.doc)|*.doc|(*docx)|*docx";
+            openFileDialog.Title = "Select a Cursor File";
+            // Show the Dialog.  
+            // If the user clicked OK in the dialog and  
+            // a .CUR file was selected, open it.  
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                nextLine = docsStrings[i];
-                if (nextLine.Split(' ')[0].ToLower() == "варіант" && int.TryParse(nextLine.Split(' ')[1], out currentVariant))
+                object path = openFileDialog.FileName;// @"C:\Users\Maxon\Desktop\тесты\тест за варіантами — копия.doc";
+                object readOnly = true;
+                Microsoft.Office.Interop.Word.Document docs = word.Documents.Open(ref path, ref miss, ref readOnly, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss);
+                string[] docsStrings = docs.Content.Text.Split('\r');
+                docs.Close();
+                //docStrings split to Test
+                int currentVariant = 0, indexQuestion = 0, k;
+                string nextLine = "";
+                CurrentTest.Questions.Clear();
+                for (int i = 0; i < docsStrings.Length; i++)
                 {
-                    if (currentVariant > CurrentTest.variantCount)
+                    nextLine = docsStrings[i];
+                    if (nextLine.Split(' ')[0].ToLower() == "варіант" && int.TryParse(nextLine.Split(' ')[1], out currentVariant))
                     {
-                        CurrentTest.variantCount++;
-                        for (int j = 0; j < CurrentTest.Questions.Count; j++)
+                        if (currentVariant > CurrentTest.variantCount)
                         {
-                            CurrentTest.Questions[j].InVariant.Add(false);
+                            CurrentTest.variantCount++;
+                            for (int j = 0; j < CurrentTest.Questions.Count; j++)
+                            {
+                                CurrentTest.Questions[j].InVariant.Add(false);
+                            }
                         }
                     }
-                }
-                else if (int.TryParse(nextLine.Split('.')[0], out k))
-                {
-                    CurrentTest.Questions.Add(new Question());
-                    indexQuestion = CurrentTest.Questions.Count - 1;
-                    CurrentTest.Questions[indexQuestion].Text.Add(nextLine);
-                    CurrentTest.Questions[indexQuestion].InVariant[currentVariant - 1] = true;
-                }
-                else if (nextLine != "")
-                {
-                    CurrentTest.Questions[indexQuestion].Answers.Add(new AnswerText()
+                    else if (int.TryParse(nextLine.Split('.')[0], out k))
                     {
-                        Text = nextLine
-                    });
+                        CurrentTest.Questions.Add(new Question());
+                        indexQuestion = CurrentTest.Questions.Count - 1;
+                        CurrentTest.Questions[indexQuestion].Text.Add(nextLine);
+                        CurrentTest.Questions[indexQuestion].InVariant[currentVariant - 1] = true;
+                    }
+                    else if (nextLine != "")
+                    {
+                        CurrentTest.Questions[indexQuestion].Answers.Add(new AnswerText()
+                        {
+                            Text = nextLine
+                        });
+                    }
+
                 }
+                return true;
             }
+            else
+                return false;
         }
     }
 

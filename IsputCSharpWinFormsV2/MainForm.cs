@@ -6,6 +6,8 @@ using System.IO;
 using System.Drawing.Drawing2D;
 using System.Threading;
 using System.Runtime.InteropServices;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
 
 namespace IsputCSharpWinFormsV2
 {
@@ -44,9 +46,11 @@ namespace IsputCSharpWinFormsV2
         public MainForm()
         {
             InitializeComponent();
+
+
             _arrows = new List<GraphicsPath>();
             openStartPage = true;
-            Program.arg.Add("C:\\Users\\Maxon\\Desktop\\pas.tst");
+            //Program.arg.Add("C:\\Users\\Maxon\\Desktop\\pas.tst");
             for (int i = 0; i < Program.arg.Count; i++)
             {
                 if (Program.arg[i].Split('.')[Program.arg[i].Split('.').Length - 1] == "tst")
@@ -71,6 +75,9 @@ namespace IsputCSharpWinFormsV2
             //tableLayoutPanelStart.Hide();
             //panelStartGoTest.Visible = true;
             //panelStartGoTest.BringToFront();
+            comboBoxSubject.Items.Add(Subject.Відсутній);
+            comboBoxSubject.Items.Add(Subject.Алгоритм);
+            comboBoxSubject.Items.Add(Subject.Матем);
         }
 
         public void SetCurrentPanel(Control panel)
@@ -143,6 +150,7 @@ namespace IsputCSharpWinFormsV2
 
                 //bool openStartPage = true;
                 //Program.arg.Add("C:\\Users\\Maxon\\Desktop\\1.tst");
+                openStartPage = true;
                 for (int i = 0; i < Program.arg.Count; i++)
                 {
                     if (Program.arg[i].Split('.')[Program.arg[i].Split('.').Length - 1] == "tst")
@@ -176,8 +184,9 @@ namespace IsputCSharpWinFormsV2
 
                 if (openStartPage)
                 {
-                    Manager.Instance.CurrentTest.Questions.Add(new Question());
-                    UIForTets();
+                    //Manager.Instance.CurrentTest.Questions.Add(new Question());
+                    //UIForTets();
+                    CreateSlideButton();
                     needSave = true;
                     saveAs = true;
                 }
@@ -216,7 +225,6 @@ namespace IsputCSharpWinFormsV2
             Manager.Instance.CurrentTest.Questions.Add(new Question());
             indexQuestion = Manager.Instance.CurrentTest.Questions.Count - 1;
             //Панель з питаннями та відповідями очищується
-            QuestionGroupBox.Controls.Clear();
             if (panel3.Controls[MatchCnt.matchLayoutPanel.ToString()] != null)
             {
                 for (int i = 0; i < panel3.Controls[MatchCnt.matchLayoutPanel.ToString()].
@@ -574,8 +582,7 @@ namespace IsputCSharpWinFormsV2
 
         private void buttonGoTest_Click(object sender, EventArgs e)
         {
-            tableLayoutPanelStart.Visible = false;
-            panelStartGoTest.Visible = true;
+            SetCurrentPanel(panelStartGoTest);
             for (int i = 0; i < Manager.Instance.CurrentTest.variantCount; i++)
             {
                 comboBoxVariant.Items.Add(i + 1);
@@ -597,6 +604,7 @@ namespace IsputCSharpWinFormsV2
 
         private void buttonStartGoTest_Click(object sender, EventArgs e)
         {
+            Program.arg.Add("C:\\Users\\Maxon\\Desktop\\тесты\\tests.tst");
             for (int i = 0; i < Program.arg.Count; i++)
             {
                 if (Program.arg[i].Split('.')[Program.arg[i].Split('.').Length - 1] == "tst")
@@ -608,7 +616,7 @@ namespace IsputCSharpWinFormsV2
             if (MessageBox.Show("Розпочати тестування", "Перевірка", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
             {
                 SetCurrentPanel(panelTestRun);
-                Manager.Instance.SetQuestionsForTest(1);//Convert.ToInt32(comboBoxVariant.Text));
+                Manager.Instance.SetQuestionsForTest(Convert.ToInt32(comboBoxVariant.Text));
                 Manager.GoTest goTestQues = Manager.Instance.goTest;
                 CreateButtonsReferenceToQuestions();
                 Manager.Instance.goTest.indexQuestion = 0;
@@ -629,7 +637,7 @@ namespace IsputCSharpWinFormsV2
                     ForeColor = Color.Black,
                     Location = new Point((i % 25) * 34 + 5, (int)(i / 25) * 34 + 5)
                 };
-                nextPanel.Font = new Font("Times New Roman", 7);
+                nextPanel.Font = new System.Drawing.Font("Times New Roman", 7);
                 nextPanel.Click += NextPanel_Click;
                 SlidesPanelInTest.Controls.Add(nextPanel);
             }
@@ -663,7 +671,7 @@ namespace IsputCSharpWinFormsV2
                 Dock = DockStyle.Top,
                 Text = question.Text[0],
                 ForeColor = Color.White,
-                Font = new Font("Times New Roman", 16),
+                Font = new System.Drawing.Font("Times New Roman", 16),
                 AutoSize = false
             };
             panelQuestion.Controls.Add(questionTextBox);
@@ -681,7 +689,7 @@ namespace IsputCSharpWinFormsV2
                 Dock = DockStyle.Fill,
                 Text = question.Text[0],
                 ForeColor = Color.White,
-                Font = new Font("Times New Roman", 16),
+                Font = new System.Drawing.Font("Times New Roman", 16),
                 AutoSize = false,
             };
             panelQuestion.Controls.Add(questionTextBox);
@@ -788,7 +796,7 @@ namespace IsputCSharpWinFormsV2
                     Location = new Point(3, (i % 10) * 34 + 5 + yDelta),
                     AutoSize = true
                 };
-                label.Font = new Font("Times New Roman", 10);
+                label.Font = new System.Drawing.Font("Times New Roman", 10);
                 panelAnswer.Controls.Add(label);
                 label = new Label()
                 {
@@ -797,7 +805,7 @@ namespace IsputCSharpWinFormsV2
                     Location = new Point(i * 34 + 38, yDelta - 16),
                     AutoSize = true
                 };
-                label.Font = new Font("Times New Roman", 10);
+                label.Font = new System.Drawing.Font("Times New Roman", 10);
                 panelAnswer.Controls.Add(label);
             }
 
@@ -829,7 +837,7 @@ namespace IsputCSharpWinFormsV2
                         button.BackColor = Color.Gray;
                         SlidesPanelInTest.Controls[Manager.Instance.goTest.indexQuestion].BackColor = Color.Gray;
                     };
-                    nextPanel.Font = new Font("Times New Roman", 7);
+                    nextPanel.Font = new System.Drawing.Font("Times New Roman", 7);
                     panelAnswer.Controls.Add(nextPanel);
                 }
             }
@@ -881,14 +889,84 @@ namespace IsputCSharpWinFormsV2
             }
         }
 
+        public ResultData SetRezulttData(Subject subject)
+        {
+            List<Question> questions = Manager.Instance.goTest.questions.FindAll(obj => obj.subject == subject);
+            List<Question> userQuestions = Manager.Instance.goTest.userQuestions.FindAll(obj => obj.subject == subject);
+            ResultData resultData = new ResultData()
+            {
+                userAnswer = new List<int>(),
+                rightAnswer = new List<int>()
+            };
+            resultData.subject = subject;
+            for (int i = 0; i < questions.Count; i++)
+            {
+                resultData.rightAnswer.Add(-1);
+                for (int j = 0; j < questions[i].Answers.Count; j++)
+                {
+                    if ((questions[i].Answers[j] as AnswerText).Right)
+                        resultData.rightAnswer[i] = j + 1;
+                }
+            }
+            for (int i = 0; i < userQuestions.Count; i++)
+            {
+                resultData.userAnswer.Add(-1);
+                for (int j = 0; j < userQuestions[i].Answers.Count; j++)
+                {
+                    if ((userQuestions[i].Answers[j] as AnswerText).Right)
+                        resultData.userAnswer[i] = j + 1;
+                }
+            }
+            resultData.questionCount = resultData.userAnswer.Count;
+            resultData.rightCount = 0;
+            for (int i = 0; i < resultData.questionCount; i++)
+            {
+                if (resultData.userAnswer[i] == resultData.rightAnswer[i])
+                    resultData.rightCount++;
+            }
+            if (resultData.questionCount != 0)
+                resultData.percentRight = resultData.rightCount / resultData.questionCount * 100;
+            else
+                resultData.percentRight = 100;
+            return resultData;
+        }
+
         //Підрахунок результатів
         private void buttonEndTest_Click(object sender, EventArgs e)
         {
+            List<ResultData> resultDataList = new List<ResultData>();
+            resultDataList.Add(SetRezulttData(Subject.Відсутній));
+            resultDataList.Add(SetRezulttData(Subject.Матем));
+            resultDataList.Add(SetRezulttData(Subject.Алгоритм));
+            PDFFileRezult(resultDataList);
+
+
             int answerCount = Manager.Instance.goTest.questions.Count;
             float answerRightUserCount = 0;
             int addBall = 1;
-            int countRightAnswerInQuestion = 0;
             Button curBut;
+            Manager.Instance.goTest.userQuestions.FindAll(obj => obj.subject == Subject.Алгоритм);
+
+            for (int i = 0; i < Manager.Instance.goTest.userQuestions.Count; i++)
+            {
+                if (Manager.Instance.goTest.userQuestions[i].Answers.Count > 0)
+                {
+                    if (Manager.Instance.goTest.userQuestions[i].Answers[0] is AnswerText)
+                    {
+                        for (int j = 0; j < Manager.Instance.goTest.userQuestions[i].Answers.Count; j++)
+                        {
+                            //
+                            if ((Manager.Instance.goTest.userQuestions[i].Answers[j] as AnswerText).Right !=
+                                 (Manager.Instance.goTest.questions[i].Answers[j] as AnswerText).Right)
+                            {
+                                addBall = 0;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
             for (int i = 0; i < Manager.Instance.goTest.userQuestions.Count; i++)
             {
                 curBut = (SlidesPanelInTest.Controls[i.ToString()] as Button);
@@ -897,7 +975,7 @@ namespace IsputCSharpWinFormsV2
                 {
                     if (Manager.Instance.goTest.userQuestions[i].Answers[0] is AnswerText)
                     {
-                        for (int j = 0; j < Manager.Instance.goTest.userQuestions.Count; j++)
+                        for (int j = 0; j < Manager.Instance.goTest.userQuestions[i].Answers.Count; j++)
                         {
                             //
                             if ((Manager.Instance.goTest.userQuestions[i].Answers[j] as AnswerText).Right !=
@@ -910,7 +988,7 @@ namespace IsputCSharpWinFormsV2
                     }
                     else
                     {
-                        for (int j = 0; j < Manager.Instance.goTest.userQuestions.Count; j++)
+                        for (int j = 0; j < Manager.Instance.goTest.userQuestions[i].Answers.Count; j++)
                         {
                             if ((Manager.Instance.goTest.userQuestions[i].Answers[j] as AnswerMatch).RightVariant !=
                                  (Manager.Instance.goTest.questions[i].Answers[j] as AnswerMatch).RightVariant)
@@ -948,7 +1026,7 @@ namespace IsputCSharpWinFormsV2
                 Text = "Балів: " + answerRightUserCount + " з " + answerCount + " можливих",
                 Dock = DockStyle.Top,
                 AutoSize = true,
-                Font = new Font("Arial", 14),
+                Font = new System.Drawing.Font("Arial", 14),
                 ForeColor = Color.White
             };
             panelQuestion.Controls.Add(labelRezult);
@@ -962,7 +1040,70 @@ namespace IsputCSharpWinFormsV2
                     rating = i;
                 }
             }
-            labelRezult.Text += Environment.NewLine + "Оцінка: " + rating;
+            labelRezult.Text += Environment.NewLine + "Відсоток правильних відповідей: " + percent;
+        }
+
+        public void PDFFileRezult(List<ResultData> resultDataList)
+        {
+            var document = new iTextSharp.text.Document();
+            using (var writer = PdfWriter.GetInstance(document, new FileStream("result.pdf", FileMode.Create)))
+            {
+                document.Open();
+                Paragraph p;
+
+                iTextSharp.text.pdf.BaseFont bfR;
+                bfR = iTextSharp.text.pdf.BaseFont.CreateFont("C:\\WINDOWS\\Fonts\\Arial.TTF",
+                  iTextSharp.text.pdf.BaseFont.IDENTITY_H,
+                  iTextSharp.text.pdf.BaseFont.EMBEDDED);
+                iTextSharp.text.Font font = new iTextSharp.text.Font(bfR, 18, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+
+                document.Add(new Paragraph("Протокол тестування.", font));
+                document.Add(new Paragraph("Здобувач освіти: " + textBoxPIB.Text, font));
+
+                font.Size = 14;
+                
+                document.Add(new Paragraph("\n     Дисципліна", font));
+
+                p = new Paragraph();
+                p.Alignment = Element.ALIGN_LEFT;
+                p.TabSettings = new TabSettings(100f);
+                p.Add(Chunk.TABBING);
+                p.Add(new Chunk("Правильний варіант", font));
+                p.Add(Chunk.TABBING);
+                p.Add(new Chunk("Вибраний варіант", font));
+                document.Add(p);
+                font.SetStyle(iTextSharp.text.Font.NORMAL);
+                
+                for (int i = 0; i < resultDataList.Count; i++)
+                {
+                    document.Add(new Paragraph("     " + resultDataList[i].subject.ToString(), font));
+                    for (int j = 0; j < resultDataList[i].questionCount; j++)
+                    {
+                        p = new Paragraph();
+                        p.TabSettings = new TabSettings(150f);
+                        p.Add(Chunk.TABBING);
+                        p.Add(new Chunk(resultDataList[i].rightAnswer[j].ToString(), font));
+                        p.TabSettings = new TabSettings(150f);
+                        p.Add(Chunk.TABBING);
+                        p.Add(new Chunk(resultDataList[i].userAnswer[j].ToString(), font));
+                        document.Add(p);
+                    }
+                    p = new Paragraph("Відсоток правильних відповідей: " + resultDataList[i].percentRight + " %", font);
+                    p.Alignment = Element.ALIGN_RIGHT;
+                    document.Add(p);
+                }
+                float totalPercent = 0;
+                for (int i = 0; i < resultDataList.Count; i++)
+                {
+                    totalPercent += resultDataList[i].percentRight;
+                }
+                if (resultDataList.Count != 0)
+                    totalPercent /= resultDataList.Count;
+                p = new Paragraph("\nЗагальний відсоток правильних відповідей: " + totalPercent + " %", font);
+                p.Alignment = Element.ALIGN_RIGHT;
+                document.Add(p);
+                document.Close();
+            }
         }
 
         private void toolStripButtonGoMenu_Click(object sender, EventArgs e)
@@ -1001,21 +1142,39 @@ namespace IsputCSharpWinFormsV2
         /// <param name="e"></param>
         private void toolStripButtonLoadTestFromWord_Click(object sender, EventArgs e)
         {
-            Manager.Instance.LoadQuestionsFromWord();
-            for (int j = 0; j < Manager.Instance.CurrentTest.variantCount; j++)
+            if (Manager.Instance.LoadQuestionsFromWord())
             {
-                CheckBox variant = new CheckBox()
+                SlidesPanel.Controls.Clear();
+                for (int j = 0; j < Manager.Instance.CurrentTest.variantCount; j++)
                 {
-                    Dock = DockStyle.Left,
-                    Text = (j + 1).ToString(),
-                    Name = "VariantCheckbox_" + j,
-                    Checked = currentQuestion.InVariant[j],
-                    AutoSize = true
-                };
-                variant.CheckedChanged += Variant_CheckedChanged;
-                panelCheckBoxVariant.Controls.Add(variant);
+                    CheckBox variant = new CheckBox()
+                    {
+                        Dock = DockStyle.Left,
+                        Text = (j + 1).ToString(),
+                        Name = "VariantCheckbox_" + j,
+                        Checked = currentQuestion.InVariant[j],
+                        AutoSize = true
+                    };
+                    variant.CheckedChanged += Variant_CheckedChanged;
+                    panelCheckBoxVariant.Controls.Add(variant);
+                }
+                UIForTets();
             }
-            UIForTets();
         }
+
+        private void comboBoxSubject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Manager.Instance.CurrentTest.Questions[indexQuestion].subject = (Subject)Enum.Parse(typeof(Subject), (sender as ComboBox).Text);
+        }
+    }
+
+    public class ResultData
+    {
+        public Subject subject;
+        public int questionCount;
+        public int rightCount;
+        public List<int> userAnswer;
+        public List<int> rightAnswer;
+        public float percentRight;
     }
 }
