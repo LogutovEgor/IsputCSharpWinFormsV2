@@ -149,6 +149,15 @@ namespace IsputCSharpWinFormsV2
             }
             tablematchLayoutPanel.Controls[MatchCnt.panelMatchleft.ToString()].
                 Controls[MatchCnt.groupBoxQuestionLeft + "_" + indexAnswer].Visible = true;
+
+            tablematchLayoutPanel.Controls[MatchCnt.panelMatchleft.ToString()].
+                Controls[MatchCnt.groupBoxQuestionLeft + "_" + indexAnswer].
+                Controls["textLeft_" + indexAnswer].Text = (currentQuestion.Answers[indexAnswer] as AnswerMatch).Text.Key;
+
+            tablematchLayoutPanel.Controls[MatchCnt.panelMatchRight.ToString()].
+                Controls[MatchCnt.groupBoxQuestionRight + "_" + indexAnswer].
+                Controls["textRight_" + indexAnswer].Text = (currentQuestion.Answers[indexAnswer] as AnswerMatch).Text.Value;
+
             tablematchLayoutPanel.Controls[MatchCnt.panelMatchRight.ToString()].
                 Controls[MatchCnt.groupBoxQuestionRight + "_" + indexAnswer].Visible = true;
             tablematchLayoutPanel.Controls[MatchCnt.panelMatchingLines.ToString()].

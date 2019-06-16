@@ -149,7 +149,7 @@ namespace IsputCSharpWinFormsV2
                 //SlideGetFocus(this.SlidesPanel.Controls["0"]);
 
                 //bool openStartPage = true;
-                //Program.arg.Add("C:\\Users\\Maxon\\Desktop\\1.tst");
+                Program.arg.Add("C:\\Users\\Maxon\\Desktop\\тесты\\tests.tst");
                 openStartPage = true;
                 for (int i = 0; i < Program.arg.Count; i++)
                 {
@@ -660,6 +660,7 @@ namespace IsputCSharpWinFormsV2
                 SizeMode = PictureBoxSizeMode.Zoom,
                 Padding = new Padding(5),
                 BackColor = Color.White,
+                Size = new Size(300, 100),
                 Image = StringToImage(question.Text[1])
             };
             panelQuestion.Controls.Add(questionPicture);

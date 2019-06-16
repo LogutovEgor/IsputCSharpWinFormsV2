@@ -46,6 +46,12 @@
             this.labelSubject = new System.Windows.Forms.Label();
             this.comboBoxSubject = new System.Windows.Forms.ComboBox();
             this.QuestionGroupBox = new System.Windows.Forms.GroupBox();
+            this.ToolStripMain = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonSettings = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCreateQuestion = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonGoMenu = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonLoadTestFromWord = new System.Windows.Forms.ToolStripButton();
             this.ToolStripInsert = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButtonAddQuestion = new System.Windows.Forms.ToolStripDropDownButton();
             this.textToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,12 +59,6 @@
             this.toolStripDropDownButtonAnswer = new System.Windows.Forms.ToolStripDropDownButton();
             this.variantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMain = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonSettings = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonCreateQuestion = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonGoMenu = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonLoadTestFromWord = new System.Windows.Forms.ToolStripButton();
             this.TabsLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.InsertTabButton = new System.Windows.Forms.Button();
             this.FileTabButton = new System.Windows.Forms.Button();
@@ -129,8 +129,8 @@
             this.panelCheckBoxVariant.SuspendLayout();
             this.panelNumberOfVariant.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVariantCount)).BeginInit();
-            this.ToolStripInsert.SuspendLayout();
             this.ToolStripMain.SuspendLayout();
+            this.ToolStripInsert.SuspendLayout();
             this.TabsLayoutPanel.SuspendLayout();
             this.Header.SuspendLayout();
             this.BottomPanel.SuspendLayout();
@@ -351,6 +351,7 @@
             this.labelSubject.Size = new System.Drawing.Size(86, 20);
             this.labelSubject.TabIndex = 1;
             this.labelSubject.Text = "Предмет";
+            this.labelSubject.Visible = false;
             // 
             // comboBoxSubject
             // 
@@ -361,6 +362,7 @@
             this.comboBoxSubject.Name = "comboBoxSubject";
             this.comboBoxSubject.Size = new System.Drawing.Size(189, 28);
             this.comboBoxSubject.TabIndex = 0;
+            this.comboBoxSubject.Visible = false;
             this.comboBoxSubject.SelectedIndexChanged += new System.EventHandler(this.comboBoxSubject_SelectedIndexChanged);
             // 
             // QuestionGroupBox
@@ -378,6 +380,74 @@
             this.QuestionGroupBox.TabIndex = 9;
             this.QuestionGroupBox.TabStop = false;
             this.QuestionGroupBox.Text = "Питання";
+            // 
+            // ToolStripMain
+            // 
+            this.ToolStripMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ToolStripMain.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.ToolStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonSettings,
+            this.toolStripButtonCreateQuestion,
+            this.toolStripButtonSave,
+            this.toolStripButtonGoMenu,
+            this.toolStripButtonLoadTestFromWord});
+            this.ToolStripMain.Location = new System.Drawing.Point(0, 37);
+            this.ToolStripMain.Name = "ToolStripMain";
+            this.ToolStripMain.Size = new System.Drawing.Size(1000, 27);
+            this.ToolStripMain.TabIndex = 2;
+            this.ToolStripMain.Text = "toolStrip1";
+            this.ToolStripMain.Visible = false;
+            // 
+            // toolStripButtonSettings
+            // 
+            this.toolStripButtonSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
+            this.toolStripButtonSettings.Image = global::IsputCSharpWinFormsV2.Properties.Resources.icons8_settings_32__1_;
+            this.toolStripButtonSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSettings.Name = "toolStripButtonSettings";
+            this.toolStripButtonSettings.Size = new System.Drawing.Size(108, 24);
+            this.toolStripButtonSettings.Text = "Настройки";
+            this.toolStripButtonSettings.ToolTipText = "Настройки";
+            this.toolStripButtonSettings.Click += new System.EventHandler(this.toolStripButtonSettings_Click);
+            // 
+            // toolStripButtonCreateQuestion
+            // 
+            this.toolStripButtonCreateQuestion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonCreateQuestion.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCreateQuestion.Image")));
+            this.toolStripButtonCreateQuestion.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCreateQuestion.Name = "toolStripButtonCreateQuestion";
+            this.toolStripButtonCreateQuestion.Size = new System.Drawing.Size(140, 24);
+            this.toolStripButtonCreateQuestion.Text = "Створити питання";
+            this.toolStripButtonCreateQuestion.Click += new System.EventHandler(this.toolStripButtonCreateQuestion_Click);
+            // 
+            // toolStripButtonSave
+            // 
+            this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonSave.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSave.Image")));
+            this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSave.Name = "toolStripButtonSave";
+            this.toolStripButtonSave.Size = new System.Drawing.Size(76, 24);
+            this.toolStripButtonSave.Text = "Зберегти";
+            this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
+            // 
+            // toolStripButtonGoMenu
+            // 
+            this.toolStripButtonGoMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonGoMenu.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonGoMenu.Image")));
+            this.toolStripButtonGoMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonGoMenu.Name = "toolStripButtonGoMenu";
+            this.toolStripButtonGoMenu.Size = new System.Drawing.Size(111, 24);
+            this.toolStripButtonGoMenu.Text = "Вийти в меню";
+            this.toolStripButtonGoMenu.Click += new System.EventHandler(this.toolStripButtonGoMenu_Click);
+            // 
+            // toolStripButtonLoadTestFromWord
+            // 
+            this.toolStripButtonLoadTestFromWord.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonLoadTestFromWord.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonLoadTestFromWord.Image")));
+            this.toolStripButtonLoadTestFromWord.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonLoadTestFromWord.Name = "toolStripButtonLoadTestFromWord";
+            this.toolStripButtonLoadTestFromWord.Size = new System.Drawing.Size(200, 24);
+            this.toolStripButtonLoadTestFromWord.Text = "Завантажити тести з Ворду";
+            this.toolStripButtonLoadTestFromWord.Click += new System.EventHandler(this.toolStripButtonLoadTestFromWord_Click);
             // 
             // ToolStripInsert
             // 
@@ -449,74 +519,6 @@
             this.matchToolStripMenuItem.Text = "З\'єднання";
             this.matchToolStripMenuItem.Click += new System.EventHandler(this.зєднанняToolStripMenuItem_Click);
             // 
-            // ToolStripMain
-            // 
-            this.ToolStripMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.ToolStripMain.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ToolStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonSettings,
-            this.toolStripButtonCreateQuestion,
-            this.toolStripButtonSave,
-            this.toolStripButtonGoMenu,
-            this.toolStripButtonLoadTestFromWord});
-            this.ToolStripMain.Location = new System.Drawing.Point(0, 37);
-            this.ToolStripMain.Name = "ToolStripMain";
-            this.ToolStripMain.Size = new System.Drawing.Size(1000, 27);
-            this.ToolStripMain.TabIndex = 2;
-            this.ToolStripMain.Text = "toolStrip1";
-            this.ToolStripMain.Visible = false;
-            // 
-            // toolStripButtonSettings
-            // 
-            this.toolStripButtonSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
-            this.toolStripButtonSettings.Image = global::IsputCSharpWinFormsV2.Properties.Resources.icons8_settings_32__1_;
-            this.toolStripButtonSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSettings.Name = "toolStripButtonSettings";
-            this.toolStripButtonSettings.Size = new System.Drawing.Size(108, 24);
-            this.toolStripButtonSettings.Text = "Настройки";
-            this.toolStripButtonSettings.ToolTipText = "Настройки";
-            this.toolStripButtonSettings.Click += new System.EventHandler(this.toolStripButtonSettings_Click);
-            // 
-            // toolStripButtonCreateQuestion
-            // 
-            this.toolStripButtonCreateQuestion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonCreateQuestion.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCreateQuestion.Image")));
-            this.toolStripButtonCreateQuestion.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonCreateQuestion.Name = "toolStripButtonCreateQuestion";
-            this.toolStripButtonCreateQuestion.Size = new System.Drawing.Size(140, 24);
-            this.toolStripButtonCreateQuestion.Text = "Створити питання";
-            this.toolStripButtonCreateQuestion.Click += new System.EventHandler(this.toolStripButtonCreateQuestion_Click);
-            // 
-            // toolStripButtonSave
-            // 
-            this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonSave.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSave.Image")));
-            this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSave.Name = "toolStripButtonSave";
-            this.toolStripButtonSave.Size = new System.Drawing.Size(76, 24);
-            this.toolStripButtonSave.Text = "Зберегти";
-            this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
-            // 
-            // toolStripButtonGoMenu
-            // 
-            this.toolStripButtonGoMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonGoMenu.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonGoMenu.Image")));
-            this.toolStripButtonGoMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonGoMenu.Name = "toolStripButtonGoMenu";
-            this.toolStripButtonGoMenu.Size = new System.Drawing.Size(111, 24);
-            this.toolStripButtonGoMenu.Text = "Вийти в меню";
-            this.toolStripButtonGoMenu.Click += new System.EventHandler(this.toolStripButtonGoMenu_Click);
-            // 
-            // toolStripButtonLoadTestFromWord
-            // 
-            this.toolStripButtonLoadTestFromWord.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonLoadTestFromWord.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonLoadTestFromWord.Image")));
-            this.toolStripButtonLoadTestFromWord.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonLoadTestFromWord.Name = "toolStripButtonLoadTestFromWord";
-            this.toolStripButtonLoadTestFromWord.Size = new System.Drawing.Size(200, 24);
-            this.toolStripButtonLoadTestFromWord.Text = "Завантажити тести з Ворду";
-            this.toolStripButtonLoadTestFromWord.Click += new System.EventHandler(this.toolStripButtonLoadTestFromWord_Click);
-            // 
             // TabsLayoutPanel
             // 
             this.TabsLayoutPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
@@ -587,7 +589,7 @@
             this.MainTabButton.Name = "MainTabButton";
             this.MainTabButton.Size = new System.Drawing.Size(105, 37);
             this.MainTabButton.TabIndex = 1;
-            this.MainTabButton.Text = "Главная";
+            this.MainTabButton.Text = "Головна";
             this.MainTabButton.UseVisualStyleBackColor = true;
             this.MainTabButton.Click += new System.EventHandler(this.TabButton_Click);
             // 
@@ -742,7 +744,7 @@
             this.SaveFileAsButton.Name = "SaveFileAsButton";
             this.SaveFileAsButton.Size = new System.Drawing.Size(171, 59);
             this.SaveFileAsButton.TabIndex = 3;
-            this.SaveFileAsButton.Text = "Сохранить как";
+            this.SaveFileAsButton.Text = "Збереги як";
             this.SaveFileAsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SaveFileAsButton.UseVisualStyleBackColor = true;
             this.SaveFileAsButton.Click += new System.EventHandler(this.SaveFileAsButton_Click);
@@ -761,7 +763,7 @@
             this.CreateFileButton.Name = "CreateFileButton";
             this.CreateFileButton.Size = new System.Drawing.Size(171, 59);
             this.CreateFileButton.TabIndex = 0;
-            this.CreateFileButton.Text = "Создать";
+            this.CreateFileButton.Text = "Створити";
             this.CreateFileButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CreateFileButton.UseVisualStyleBackColor = true;
             this.CreateFileButton.Click += new System.EventHandler(this.CreateFileButton_Click);
@@ -779,7 +781,7 @@
             this.SaveFileButton.Name = "SaveFileButton";
             this.SaveFileButton.Size = new System.Drawing.Size(171, 59);
             this.SaveFileButton.TabIndex = 2;
-            this.SaveFileButton.Text = "Сохранить";
+            this.SaveFileButton.Text = "Зберегти";
             this.SaveFileButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SaveFileButton.UseVisualStyleBackColor = true;
             this.SaveFileButton.Click += new System.EventHandler(this.SaveFileButton_Click);
@@ -798,7 +800,7 @@
             this.OpenFileButton.Name = "OpenFileButton";
             this.OpenFileButton.Size = new System.Drawing.Size(171, 59);
             this.OpenFileButton.TabIndex = 1;
-            this.OpenFileButton.Text = "Открыть";
+            this.OpenFileButton.Text = "Відкрити";
             this.OpenFileButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.OpenFileButton.UseVisualStyleBackColor = true;
             this.OpenFileButton.Click += new System.EventHandler(this.OpenFileButton_Click);
@@ -1415,10 +1417,10 @@
             this.panelNumberOfVariant.ResumeLayout(false);
             this.panelNumberOfVariant.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVariantCount)).EndInit();
-            this.ToolStripInsert.ResumeLayout(false);
-            this.ToolStripInsert.PerformLayout();
             this.ToolStripMain.ResumeLayout(false);
             this.ToolStripMain.PerformLayout();
+            this.ToolStripInsert.ResumeLayout(false);
+            this.ToolStripInsert.PerformLayout();
             this.TabsLayoutPanel.ResumeLayout(false);
             this.Header.ResumeLayout(false);
             this.BottomPanel.ResumeLayout(false);
