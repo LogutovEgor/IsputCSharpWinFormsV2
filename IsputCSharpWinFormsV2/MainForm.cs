@@ -149,7 +149,7 @@ namespace IsputCSharpWinFormsV2
                 //SlideGetFocus(this.SlidesPanel.Controls["0"]);
 
                 //bool openStartPage = true;
-                Program.arg.Add("C:\\Users\\Maxon\\Desktop\\тесты\\tests.tst");
+                //Program.arg.Add("C:\\Users\\Maxon\\Desktop\\тесты\\tests.tst");
                 openStartPage = true;
                 for (int i = 0; i < Program.arg.Count; i++)
                 {
@@ -604,7 +604,7 @@ namespace IsputCSharpWinFormsV2
 
         private void buttonStartGoTest_Click(object sender, EventArgs e)
         {
-            Program.arg.Add("C:\\Users\\Maxon\\Desktop\\тесты\\tests.tst");
+            //Program.arg.Add("C:\\Users\\Maxon\\Desktop\\тесты\\tests.tst");
             for (int i = 0; i < Program.arg.Count; i++)
             {
                 if (Program.arg[i].Split('.')[Program.arg[i].Split('.').Length - 1] == "tst")
@@ -890,162 +890,15 @@ namespace IsputCSharpWinFormsV2
             }
         }
 
-        public ResultData SetRezulttData(Subject subject)
-        {
-            List<Question> questions = Manager.Instance.goTest.questions.FindAll(obj => obj.subject == subject);
-            List<Question> userQuestions = Manager.Instance.goTest.userQuestions.FindAll(obj => obj.subject == subject);
-            ResultData resultData = new ResultData()
-            {
-                userAnswer = new List<int>(),
-                rightAnswer = new List<int>()
-            };
-            resultData.subject = subject;
-            for (int i = 0; i < questions.Count; i++)
-            {
-                resultData.rightAnswer.Add(-1);
-                for (int j = 0; j < questions[i].Answers.Count; j++)
-                {
-                    if ((questions[i].Answers[j] as AnswerText).Right)
-                        resultData.rightAnswer[i] = j + 1;
-                }
-            }
-            for (int i = 0; i < userQuestions.Count; i++)
-            {
-                resultData.userAnswer.Add(-1);
-                for (int j = 0; j < userQuestions[i].Answers.Count; j++)
-                {
-                    if ((userQuestions[i].Answers[j] as AnswerText).Right)
-                        resultData.userAnswer[i] = j + 1;
-                }
-            }
-            resultData.questionCount = resultData.userAnswer.Count;
-            resultData.rightCount = 0;
-            for (int i = 0; i < resultData.questionCount; i++)
-            {
-                if (resultData.userAnswer[i] == resultData.rightAnswer[i])
-                    resultData.rightCount++;
-            }
-            if (resultData.questionCount != 0)
-                resultData.percentRight = resultData.rightCount / resultData.questionCount * 100;
-            else
-                resultData.percentRight = 100;
-            return resultData;
-        }
-
         //Підрахунок результатів
         private void buttonEndTest_Click(object sender, EventArgs e)
         {
-            List<ResultData> resultDataList = new List<ResultData>();
-            resultDataList.Add(SetRezulttData(Subject.Відсутній));
-            resultDataList.Add(SetRezulttData(Subject.Матем));
-            resultDataList.Add(SetRezulttData(Subject.Алгоритм));
-            PDFFileRezult(resultDataList);
-
-
-            int answerCount = Manager.Instance.goTest.questions.Count;
-            float answerRightUserCount = 0;
-            int addBall = 1;
             Button curBut;
-            Manager.Instance.goTest.userQuestions.FindAll(obj => obj.subject == Subject.Алгоритм);
+            int rightAns = 0, wrongAns = 0, ballCount = 0;
+            int rightInOneAns = 0;
+            int indexRightAns = 0;
+            float percent;
 
-            for (int i = 0; i < Manager.Instance.goTest.userQuestions.Count; i++)
-            {
-                if (Manager.Instance.goTest.userQuestions[i].Answers.Count > 0)
-                {
-                    if (Manager.Instance.goTest.userQuestions[i].Answers[0] is AnswerText)
-                    {
-                        for (int j = 0; j < Manager.Instance.goTest.userQuestions[i].Answers.Count; j++)
-                        {
-                            //
-                            if ((Manager.Instance.goTest.userQuestions[i].Answers[j] as AnswerText).Right !=
-                                 (Manager.Instance.goTest.questions[i].Answers[j] as AnswerText).Right)
-                            {
-                                addBall = 0;
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
-
-            for (int i = 0; i < Manager.Instance.goTest.userQuestions.Count; i++)
-            {
-                curBut = (SlidesPanelInTest.Controls[i.ToString()] as Button);
-                curBut.Enabled = false;
-                if (Manager.Instance.goTest.userQuestions[i].Answers.Count > 0)
-                {
-                    if (Manager.Instance.goTest.userQuestions[i].Answers[0] is AnswerText)
-                    {
-                        for (int j = 0; j < Manager.Instance.goTest.userQuestions[i].Answers.Count; j++)
-                        {
-                            //
-                            if ((Manager.Instance.goTest.userQuestions[i].Answers[j] as AnswerText).Right !=
-                                 (Manager.Instance.goTest.questions[i].Answers[j] as AnswerText).Right)
-                            {
-                                addBall = 0;
-                                break;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        for (int j = 0; j < Manager.Instance.goTest.userQuestions[i].Answers.Count; j++)
-                        {
-                            if ((Manager.Instance.goTest.userQuestions[i].Answers[j] as AnswerMatch).RightVariant !=
-                                 (Manager.Instance.goTest.questions[i].Answers[j] as AnswerMatch).RightVariant)
-                            {
-                                addBall = 0;
-                                break;
-                            }
-                        }
-                    }
-                    //
-                    if (addBall == 1)
-                    {
-                        answerRightUserCount++;
-                        curBut.BackColor = Color.Green;
-                    }
-                    //else if (addBall > 0)
-                    //{
-                    //    answerRightUserCount += 0.5f;
-                    //    curBut.BackColor = Color.Yellow;
-                    //}
-                    else
-                        curBut.BackColor = Color.Red;
-                    //
-                    addBall = 1;
-                }
-            }
-
-            //
-            panelQuestion.Controls.Clear();
-            panelAnswer.Controls.Clear();
-            buttonEndTest.Visible = false;
-            SwitchQuestionButton.Visible = false;
-            Label labelRezult = new Label()
-            {
-                Text = "Балів: " + answerRightUserCount + " з " + answerCount + " можливих",
-                Dock = DockStyle.Top,
-                AutoSize = true,
-                Font = new System.Drawing.Font("Arial", 14),
-                ForeColor = Color.White
-            };
-            panelQuestion.Controls.Add(labelRezult);
-            //
-            float percent = answerRightUserCount / answerCount * 100;
-            int rating = 0;
-            for (int i = 1; i < Manager.Instance.rating.Count; i++)
-            {
-                if (percent > Manager.Instance.rating[i] && percent <= Manager.Instance.rating[i + 1])
-                {
-                    rating = i;
-                }
-            }
-            labelRezult.Text += Environment.NewLine + "Відсоток правильних відповідей: " + percent;
-        }
-
-        public void PDFFileRezult(List<ResultData> resultDataList)
-        {
             var document = new iTextSharp.text.Document();
             using (var writer = PdfWriter.GetInstance(document, new FileStream("result.pdf", FileMode.Create)))
             {
@@ -1060,11 +913,7 @@ namespace IsputCSharpWinFormsV2
 
                 document.Add(new Paragraph("Протокол тестування.", font));
                 document.Add(new Paragraph("Здобувач освіти: " + textBoxPIB.Text, font));
-
                 font.Size = 14;
-                
-                document.Add(new Paragraph("\n     Дисципліна", font));
-
                 p = new Paragraph();
                 p.Alignment = Element.ALIGN_LEFT;
                 p.TabSettings = new TabSettings(100f);
@@ -1074,38 +923,134 @@ namespace IsputCSharpWinFormsV2
                 p.Add(new Chunk("Вибраний варіант", font));
                 document.Add(p);
                 font.SetStyle(iTextSharp.text.Font.NORMAL);
-                
-                for (int i = 0; i < resultDataList.Count; i++)
+                for (int i = 0; i < Manager.Instance.goTest.userQuestions.Count; i++)
                 {
-                    document.Add(new Paragraph("     " + resultDataList[i].subject.ToString(), font));
-                    for (int j = 0; j < resultDataList[i].questionCount; j++)
+                    indexRightAns = 0;
+                    rightInOneAns = 0;
+                    //
+                    curBut = (SlidesPanelInTest.Controls[i.ToString()] as Button);
+                    curBut.Enabled = false;
+                    curBut.BackColor = Color.Green;
+                    //
+                    if (Manager.Instance.goTest.userQuestions[i].Answers.Count > 0)
                     {
-                        p = new Paragraph();
-                        p.TabSettings = new TabSettings(150f);
-                        p.Add(Chunk.TABBING);
-                        p.Add(new Chunk(resultDataList[i].rightAnswer[j].ToString(), font));
-                        p.TabSettings = new TabSettings(150f);
-                        p.Add(Chunk.TABBING);
-                        p.Add(new Chunk(resultDataList[i].userAnswer[j].ToString(), font));
-                        document.Add(p);
+                        //TextAnswer
+                        if (Manager.Instance.goTest.userQuestions[i].Answers[0] is AnswerText)
+                        {
+                            //Find index of right answers
+                            for (int j = 0; j < Manager.Instance.goTest.userQuestions[i].Answers.Count; j++)
+                            {
+                                //
+                                if ((Manager.Instance.goTest.questions[i].Answers[j] as AnswerText).Right)
+                                {
+                                    indexRightAns = j;
+                                    //
+                                    p = new Paragraph();
+                                    p.TabSettings = new TabSettings(150f);
+                                    p.Add(Chunk.TABBING);
+                                    p.Add(new Chunk((indexRightAns + 1).ToString(), font));
+                                    ballCount++;
+                                    //
+                                }
+                            }
+                            //if index of right answers == userAnswer index then ++ball
+                            for (int j = 0; j < Manager.Instance.goTest.userQuestions[i].Answers.Count; j++)
+                            {
+                                if ((Manager.Instance.goTest.userQuestions[i].Answers[j] as AnswerText).Right)
+                                {
+                                    //
+                                    p.TabSettings = new TabSettings(150f);
+                                    p.Add(Chunk.TABBING);
+                                    p.Add(new Chunk((j + 1).ToString(), font));
+                                    document.Add(p);
+                                    //
+                                    if (j == indexRightAns)
+                                        rightInOneAns++;
+                                    else
+                                    {
+                                        wrongAns++;
+                                        rightInOneAns = 0;
+                                        break;
+                                    }
+                                }
+                            }
+                            if (rightInOneAns == 0)
+                                curBut.BackColor = Color.Red;
+                            rightAns += rightInOneAns;
+                        }
+                        //MatchAnwer
+                        else
+                        {
+                            ballCount += Manager.Instance.goTest.questions[i].Answers.Count;
+                            //
+                            p = new Paragraph();
+                            p.TabSettings = new TabSettings(150f);
+                            p.Add(Chunk.TABBING);
+                            //
+                            //if index of right answers == userAnswer index then ++ball
+                            for (int j = 0; j < Manager.Instance.goTest.questions[i].Answers.Count; j++)
+                            {
+                                p.Add(new Chunk((j + 1).ToString() + ") - " + ((Manager.Instance.goTest.questions[i].Answers[j] as AnswerMatch).RightVariant + 1).ToString() + " ", font));
+                                //
+                                if ((Manager.Instance.goTest.userQuestions[i].Answers[j] as AnswerMatch).RightVariant ==
+                                    (Manager.Instance.goTest.questions[i].Answers[j] as AnswerMatch).RightVariant)
+                                {
+                                    rightAns++;
+                                    rightInOneAns++;
+                                }
+                                else
+                                {
+                                    wrongAns++;
+                                }
+                            }
+                            for (int j = 0; j < Manager.Instance.goTest.userQuestions[i].Answers.Count; j++)
+                            {
+                                p.Add(new Chunk((j + 1).ToString() + ") - " + ((Manager.Instance.goTest.userQuestions[i].Answers[j] as AnswerMatch).RightVariant + 1).ToString() + " ", font));
+                                //
+                            }
+                            //
+                            document.Add(p);
+                            //
+                            if (rightInOneAns == 0)
+                            {
+                                curBut.BackColor = Color.Red;
+                            }
+                            else if (rightInOneAns > 0 && rightInOneAns < Manager.Instance.goTest.userQuestions[i].Answers.Count)
+                            {
+                                curBut.BackColor = Color.Yellow;
+                            }
+                        }
                     }
-                    p = new Paragraph("Відсоток правильних відповідей: " + resultDataList[i].percentRight + " %", font);
-                    p.Alignment = Element.ALIGN_RIGHT;
-                    document.Add(p);
                 }
-                float totalPercent = 0;
-                for (int i = 0; i < resultDataList.Count; i++)
-                {
-                    totalPercent += resultDataList[i].percentRight;
-                }
-                if (resultDataList.Count != 0)
-                    totalPercent /= resultDataList.Count;
-                p = new Paragraph("\nЗагальний відсоток правильних відповідей: " + totalPercent + " %", font);
+                //
+                percent = (float)rightAns / (ballCount) * 100f;
+                //
+                p = new Paragraph("\nВідсоток правильних відповідей: " + percent + " %", font);
                 p.Alignment = Element.ALIGN_RIGHT;
                 document.Add(p);
                 document.Close();
             }
+            
+            
+
+            //
+            panelQuestion.Controls.Clear();
+            panelAnswer.Controls.Clear();
+            buttonEndTest.Visible = false;
+            SwitchQuestionButton.Visible = false;
+            Label labelRezult = new Label()
+            {
+                Text = "Балів: " + rightAns + " з " + (ballCount) + " можливих",
+                Dock = DockStyle.Top,
+                AutoSize = true,
+                Font = new System.Drawing.Font("Arial", 14),
+                ForeColor = Color.White
+            };
+            panelQuestion.Controls.Add(labelRezult);
+            
+            labelRezult.Text += Environment.NewLine + "Відсоток правильних відповідей: " + Math.Round(percent, 2) + " %";
         }
+
 
         private void toolStripButtonGoMenu_Click(object sender, EventArgs e)
         {
@@ -1167,15 +1112,5 @@ namespace IsputCSharpWinFormsV2
         {
             Manager.Instance.CurrentTest.Questions[indexQuestion].subject = (Subject)Enum.Parse(typeof(Subject), (sender as ComboBox).Text);
         }
-    }
-
-    public class ResultData
-    {
-        public Subject subject;
-        public int questionCount;
-        public int rightCount;
-        public List<int> userAnswer;
-        public List<int> rightAnswer;
-        public float percentRight;
     }
 }

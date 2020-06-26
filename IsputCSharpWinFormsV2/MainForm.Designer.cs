@@ -977,7 +977,7 @@
             this.TableLayoutPanel.RowCount = 2;
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.TableLayoutPanel.Size = new System.Drawing.Size(829, 523);
+            this.TableLayoutPanel.Size = new System.Drawing.Size(683, 523);
             this.TableLayoutPanel.TabIndex = 2;
             // 
             // SlidesPanelInTest
@@ -988,7 +988,7 @@
             this.SlidesPanelInTest.Location = new System.Drawing.Point(0, 0);
             this.SlidesPanelInTest.Margin = new System.Windows.Forms.Padding(0);
             this.SlidesPanelInTest.Name = "SlidesPanelInTest";
-            this.SlidesPanelInTest.Size = new System.Drawing.Size(829, 78);
+            this.SlidesPanelInTest.Size = new System.Drawing.Size(683, 78);
             this.SlidesPanelInTest.TabIndex = 0;
             // 
             // panelQA
@@ -998,7 +998,7 @@
             this.panelQA.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelQA.Location = new System.Drawing.Point(3, 81);
             this.panelQA.Name = "panelQA";
-            this.panelQA.Size = new System.Drawing.Size(823, 439);
+            this.panelQA.Size = new System.Drawing.Size(677, 439);
             this.panelQA.TabIndex = 1;
             // 
             // panelAnswer
@@ -1010,7 +1010,7 @@
             this.panelAnswer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(73)))), ((int)(((byte)(107)))));
             this.panelAnswer.Location = new System.Drawing.Point(3, 253);
             this.panelAnswer.Name = "panelAnswer";
-            this.panelAnswer.Size = new System.Drawing.Size(817, 185);
+            this.panelAnswer.Size = new System.Drawing.Size(671, 185);
             this.panelAnswer.TabIndex = 1;
             // 
             // panelQuestion
@@ -1020,7 +1020,7 @@
             this.panelQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(73)))), ((int)(((byte)(107)))));
             this.panelQuestion.Location = new System.Drawing.Point(3, 3);
             this.panelQuestion.Name = "panelQuestion";
-            this.panelQuestion.Size = new System.Drawing.Size(817, 244);
+            this.panelQuestion.Size = new System.Drawing.Size(671, 244);
             this.panelQuestion.TabIndex = 0;
             // 
             // ControlPanel
@@ -1031,20 +1031,23 @@
             this.ControlPanel.Controls.Add(this.PreviousQuestionButton);
             this.ControlPanel.Controls.Add(this.NextQuestionButton);
             this.ControlPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ControlPanel.Location = new System.Drawing.Point(829, 0);
+            this.ControlPanel.Location = new System.Drawing.Point(683, 0);
             this.ControlPanel.Margin = new System.Windows.Forms.Padding(0);
             this.ControlPanel.Name = "ControlPanel";
-            this.ControlPanel.Size = new System.Drawing.Size(171, 523);
+            this.ControlPanel.Size = new System.Drawing.Size(317, 523);
             this.ControlPanel.TabIndex = 1;
             // 
             // buttonEndTest
             // 
             this.buttonEndTest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
+            this.buttonEndTest.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buttonEndTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEndTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonEndTest.ForeColor = System.Drawing.Color.White;
-            this.buttonEndTest.Location = new System.Drawing.Point(13, 418);
+            this.buttonEndTest.Location = new System.Drawing.Point(0, 450);
+            this.buttonEndTest.Margin = new System.Windows.Forms.Padding(10);
             this.buttonEndTest.Name = "buttonEndTest";
-            this.buttonEndTest.Size = new System.Drawing.Size(151, 36);
+            this.buttonEndTest.Size = new System.Drawing.Size(317, 36);
             this.buttonEndTest.TabIndex = 7;
             this.buttonEndTest.Text = "Завершити Тест";
             this.buttonEndTest.UseVisualStyleBackColor = false;
@@ -1052,17 +1055,18 @@
             // 
             // SwitchQuestionButton
             // 
-            this.SwitchQuestionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.SwitchQuestionButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(83)))));
+            this.SwitchQuestionButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.SwitchQuestionButton.FlatAppearance.BorderSize = 0;
             this.SwitchQuestionButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
             this.SwitchQuestionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
             this.SwitchQuestionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SwitchQuestionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SwitchQuestionButton.ForeColor = System.Drawing.Color.White;
-            this.SwitchQuestionButton.Location = new System.Drawing.Point(13, 466);
-            this.SwitchQuestionButton.Margin = new System.Windows.Forms.Padding(0);
+            this.SwitchQuestionButton.Location = new System.Drawing.Point(0, 486);
+            this.SwitchQuestionButton.Margin = new System.Windows.Forms.Padding(10);
             this.SwitchQuestionButton.Name = "SwitchQuestionButton";
-            this.SwitchQuestionButton.Size = new System.Drawing.Size(149, 37);
+            this.SwitchQuestionButton.Size = new System.Drawing.Size(317, 37);
             this.SwitchQuestionButton.TabIndex = 6;
             this.SwitchQuestionButton.Text = "Наступне питання";
             this.SwitchQuestionButton.UseVisualStyleBackColor = false;
@@ -1093,7 +1097,7 @@
             this.NextQuestionButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(93)))), ((int)(((byte)(149)))));
             this.NextQuestionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(155)))), ((int)(((byte)(200)))));
             this.NextQuestionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NextQuestionButton.Location = new System.Drawing.Point(85, 920);
+            this.NextQuestionButton.Location = new System.Drawing.Point(231, 920);
             this.NextQuestionButton.Margin = new System.Windows.Forms.Padding(0);
             this.NextQuestionButton.Name = "NextQuestionButton";
             this.NextQuestionButton.Size = new System.Drawing.Size(85, 79);
